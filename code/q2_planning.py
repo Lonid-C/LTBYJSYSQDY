@@ -165,11 +165,22 @@ class Study:
                   [(terminal,terminal)]+[(0,None)]*(S*H))
         if risk: bounds += [(None,None)]+[(0,None)]*S
         started = time.perf_counter()
+        # SciPy 所携 HiGHS 版本在不同 Colab 镜像上偶发返回 status=4 /
+        # "HiGHS Status 0: Not Set"。这是求解器驱动问题，不是模型状态。
+        # 同一 LP 在双单纯形与内点法间可确定性退避，最终仍须通过
+        # 下方原始/对偶、驻点和互补残差检查。
+        ans = None; solver_method = None
+        attempts=[('highs',{'presolve':True,'dual_feasibility_tolerance':1e-8,
+                            'primal_feasibility_tolerance':1e-8}),
+                  ('highs-ds',{'presolve':False}),('highs-ipm',{'presolve':True})]
         with warnings.catch_warnings():
             warnings.filterwarnings('ignore',message='Unrecognized options')
-            ans = linprog(obj,A_ub=Aub,b_ub=bub,A_eq=Aeq,b_eq=beq,bounds=bounds,
-                method='highs',options={'presolve':True,'threads':1,
-                'dual_feasibility_tolerance':1e-8,'primal_feasibility_tolerance':1e-8})
+            for method,options in attempts:
+                candidate=linprog(obj,A_ub=Aub,b_ub=bub,A_eq=Aeq,b_eq=beq,bounds=bounds,
+                                  method=method,options=options)
+                if candidate.success:
+                    ans=candidate;solver_method=method;break
+                ans=candidate
         seconds = time.perf_counter()-started
         if not ans.success: raise RuntimeError(f'LP failed: {ans.status} {ans.message}; beta={beta} B={budget}')
         x = ans.x
@@ -210,7 +221,7 @@ class Study:
             'risk_parameters':np.array([beta if risk else np.nan,budget if budget is not None else np.nan,penalty,float(risk_only)]),
             'dual_eq':deq,'dual_ub':dub,'dual_lower':dl,'dual_upper':du,
             'checks':checks,'expected':float(w@physical_cost),'cvar':risk_value,
-            'objective':float(ans.fun),'dual_objective':dual,'seconds':seconds,
+            'objective':float(ans.fun),'dual_objective':dual,'seconds':seconds,'solver_method':solver_method,
             'risk_multiplier':float(max(0,-dub[budget_row])) if budget_row is not None else 0.,
             'postprocessed':bool(raw_sim.max(initial=0)>1e-7)}
 
