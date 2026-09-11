@@ -16,6 +16,8 @@ import warnings
 import numpy as np
 import pandas as pd
 from scipy.ndimage import gaussian_filter1d
+from scipy.optimize import linprog
+from scipy.sparse import coo_matrix
 
 from q2_planning import (CAP, DT, ETA, HI, INITIAL, LO, SEED, T, Study,
                          atom_json, bootstrap, cvar, file_hash, weights_for)
@@ -273,6 +275,46 @@ class HybridStudy:
         margin = smooth_margin(np.quantile(pool, cfg.alpha, axis=0), cfg.smooth)
         return self.forecast_net(method, d) + margin, hist
 
+    def solve_reference(self, net_energy, initial, terminal=INITIAL):
+        """确定性日前 LP；严格保留队友基准的目标和平局处理以便费用回归。"""
+        net_energy = np.asarray(net_energy, float)
+        n = len(net_energy)
+        row, col, value = [], [], []
+        def add(r, c, v):
+            row.append(r); col.append(c); value.append(v)
+        for t in range(n):
+            for block, coefficient in ((0, 1), (1, -1), (2, 1), (3, -1)):
+                add(t, block * n + t, coefficient)
+            add(n + t, 4 * n + t, 1)
+            add(n + t, n + t, -ETA)
+            add(n + t, 2 * n + t, 1 / ETA)
+            if t:
+                add(n + t, 4 * n + t - 1, -1)
+        add(2 * n, 5 * n - 1, 1)
+        A = coo_matrix((value, (row, col)), shape=(2 * n + 1, 5 * n)).tocsr()
+        rhs = np.r_[net_energy, np.zeros(n), terminal]
+        rhs[n] = initial
+        objective = np.r_[self.price, np.zeros(4 * n)]
+        bounds = ([(0, None)] * n + [(0, CAP)] * (2 * n) + [(0, None)] * n
+                  + [(LO, HI)] * n)
+        started = time.perf_counter()
+        fit = linprog(objective, A_eq=A, b_eq=rhs, bounds=bounds,
+                      method="highs", options={"presolve": True})
+        seconds = time.perf_counter() - started
+        if not fit.success:
+            raise RuntimeError(fit.message)
+        q, c, v, spill, soc_end = np.split(fit.x, 5)
+        remove = np.minimum(c, v / ETA ** 2)
+        c = c - remove; v = v - ETA ** 2 * remove
+        spill = spill + (1 - ETA ** 2) * remove
+        soc = np.r_[initial, soc_end]
+        balance = q + v - c - spill - net_energy
+        dynamics = np.diff(soc) - ETA * c + v / ETA
+        if max(np.abs(balance).max(), np.abs(dynamics).max()) > 1e-5:
+            raise AssertionError("reference LP back-substitution failed")
+        return {"q": q, "c": c, "v": v, "spill": spill, "soc": soc,
+                "seconds": seconds, "objective": float(self.price @ q)}
+
     def plan(self, method, d, family, cfg, initial, fixed_initial=False):
         plan_initial = INITIAL if fixed_initial else float(initial)
         cache_key = (method, int(d), family, cfg, round(plan_initial, 6))
@@ -292,7 +334,10 @@ class HybridStudy:
             w = weights_for(len(pool), 14)
         else:
             raise KeyError(family)
-        sol = self.base.solve(scen / DT, w, initial=plan_initial, terminal=INITIAL)
+        if family == "saa":
+            sol = self.base.solve(scen / DT, w, initial=plan_initial, terminal=INITIAL)
+        else:
+            sol = self.solve_reference(scen[0], plan_initial, INITIAL)
         result = {**sol, "history": hist, "plan_initial": plan_initial}
         self._plan_cache[cache_key] = result
         return result
