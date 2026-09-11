@@ -59,7 +59,14 @@ def main():
     write_status('launching_remote_worker',session=SESSION)
     ok=False
     try:
-        run(['colab','exec','-s',SESSION,'-f','code/q2_v2/colab_launch_detached_v2.py','--timeout','120'])
+        probe=subprocess.run(['colab','download','-s',SESSION,REMOTE_STATUS,str(LOCAL_REMOTE_STATUS)],
+                             cwd=ROOT,text=True,capture_output=True)
+        attached=False
+        if probe.returncode==0:
+            state=json.loads(LOCAL_REMOTE_STATUS.read_text())
+            attached=state.get('phase') in ('launching','executing_notebook','packing_outputs')
+        if not attached:
+            run(['colab','exec','-s',SESSION,'-f','code/q2_v2/colab_launch_detached_v2.py','--timeout','120'])
         write_status('remote_worker_running',session=SESSION,poll_interval_minutes=40)
         first=True
         while True:
