@@ -1,0 +1,3 @@
+PURE-PV 6 {'issue': 6, 'pv_information_cash_value': np.float64(100777.83795901015), 'pv_information_inventory_adjusted_value': np.float64(100777.83795900829)}
+PURE-PV 12 {'issue': 12, 'pv_information_cash_value': np.float64(166723.18929551542), 'pv_information_inventory_adjusted_value': np.float64(166723.18929551356)}
+PURE-PV 18 {'issue': 18, 'pv_information_cash_value': np.float64(-124.00570218637586), 'pv_information_inventory_adjusted_value': np.float64(-124.00570218637586)}

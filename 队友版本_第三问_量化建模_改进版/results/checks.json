@@ -1,0 +1,23 @@
+{
+  "causality_future_perturbation_max_diff": 0.0,
+  "cross_midnight_horizon_uses_published_nextday_forecast": true,
+  "balance_max_error": 1.4210854715202004e-13,
+  "soc_dynamics_max_error": 9.094947017729282e-13,
+  "soc_min": 1200.0,
+  "soc_max": 10800.0,
+  "cross_day_soc_max_gap": 0.0,
+  "main_down_kwh": 715987.0182991556,
+  "main_up_kwh": 606724.0361670256,
+  "legacy_down_kwh": 0.0,
+  "stepwise_cost_minus_net": 169488.35709477589,
+  "dates": 334,
+  "interval_rows": 48096,
+  "optimization_horizon": "rolling24",
+  "alpha0_interior": true,
+  "alpha_update_interior": true,
+  "fraction_full_beats_none": 1.0,
+  "all_assertions_passed": true,
+  "elapsed_seconds": 1011.533518075943,
+  "python": "3.13.12",
+  "scipy": "1.18.1"
+}

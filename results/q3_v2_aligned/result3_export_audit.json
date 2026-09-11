@@ -1,0 +1,10 @@
+{
+  "path": "/content/CUMCM_2026_Last_Dance/result3.xlsx",
+  "days": 334,
+  "events": 380,
+  "plan_cost": 11832281.444523228,
+  "planned_kwh": 19543916.583418082,
+  "adjusted_kwh": 20849537.73943684,
+  "template_headers_kept": true,
+  "passed": true
+}

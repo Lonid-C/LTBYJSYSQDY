@@ -1,0 +1,15 @@
+{
+  "day": 265,
+  "date": "2025-09-23",
+  "lp_objective": 47825.6097133726,
+  "ga_objective": 64834.91983535455,
+  "gap": 17009.31012198195,
+  "gap_relative": 0.3556527606008951,
+  "ga_seconds": 17.474645799000086,
+  "lp_seconds": 0.06629046500006552,
+  "population": 300,
+  "generations": 400,
+  "evaluations": 120000,
+  "best_generation": 400,
+  "note": "GA 目标函数与 LP 完全相同；SOC 越界按 10 倍最高电价罚金处理"
+}

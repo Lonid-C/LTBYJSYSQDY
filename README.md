@@ -23,7 +23,7 @@
 | --- | --- | --- | --- |
 | 问题 1 | ✅ 完成 | `result1.xlsx` | `code/problem1.ipynb` |
 | 问题 2 | ✅ 完成 | `result2.xlsx` | `code/q2_v32/q2_final.py` → `code/problem2_v32_final_output.ipynb` |
-| 问题 3 | ⬜ 未开始 | `result3.xlsx`（待生成） | 见第五节 |
+| 问题 3 | 🔶 对齐版已出数 | `result3.xlsx`（已生成，见下注） | `code/q3_v2/q3_aligned.py` |
 | 问题 4 | ⬜ 未开始 | `result4-2.xlsx`、`result4-3.xlsx`（待生成） | 见第五节 |
 
 ---

@@ -1,0 +1,49 @@
+{
+  "all_pass": true,
+  "tests": [
+    {
+      "test": "causality",
+      "value": 0.0,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "test": "balance",
+      "value": 1.9184653865522705e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "soc_recursion",
+      "value": 9.094947017729282e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "soc_bounds",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "power_cap",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "cross_day_continuity",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "adjusted_equals_purchase",
+      "value": 0.0,
+      "tolerance": 0.0,
+      "passed": true
+    }
+  ],
+  "solve_calls": 1336,
+  "solve_seconds": 66.94568234799988
+}

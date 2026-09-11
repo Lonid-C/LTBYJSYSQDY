@@ -17,6 +17,9 @@
 | `problem2_v32_final.ipynb` | 上述模型的 Colab 源 notebook（由 `build_q2_v32_notebook.py` 生成，自包含）。 |
 | `problem2_v32_final_output.ipynb` | 上述 notebook 的 **Colab 执行版**，含完整输出。论文取证看这个。 |
 | `build_q2_v32_notebook.py` | 生成 `problem2_v32_final.ipynb`。 |
+| `q3_v2/q3_aligned.py` | **问题 3 对齐版**：0:00 契约计划在 Q3 结算规则下重优化（调整 1.5p/0.5p 作为场景补救），6/12/18 部分补救按净额结算，产出 `result3.xlsx`。 |
+| `problem3_v2_aligned_output.ipynb` | 问题 3 对齐版的 Colab 执行版。 |
+| `build_q3_v2_notebook.py`、`q3_v2/colab_*.py` | 问题 3 对齐版的 notebook 生成与 Colab 驱动。 |
 | `q2_v32/colab_pack_v32.py` | 打包 Colab 上传所需的输入（附件、模型、notebook、预测文件）。 |
 | `q2_v32/colab_prepare_v32.py` | 在 Colab 上解包并安装运行环境。 |
 | `q2_v32/colab_launch_v32.py` | 在 Colab 上后台执行 notebook 并打包产物。 |

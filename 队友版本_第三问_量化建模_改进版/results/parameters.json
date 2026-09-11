@@ -1,0 +1,184 @@
+{
+  "selected": {
+    "alpha0": 0.6,
+    "alpha_update": 0.6,
+    "window": 28,
+    "decay_days": 14.0,
+    "bias_window": 6,
+    "bias_decay": 6.0,
+    "slope": 1000000.0,
+    "weekday": 0.00625,
+    "eta": 0.9,
+    "capacity": 12000.0,
+    "power": 5000.0,
+    "emergency": 5.0,
+    "up": 1.5,
+    "down": 0.5,
+    "settlements": "net_refund",
+    "terminal": "inventory_value",
+    "target": 0.5,
+    "horizon": "rolling24",
+    "reserve": 0.0,
+    "correction": 1.0,
+    "forecast_scale": 1.0,
+    "threshold": 0.0,
+    "interpolate": "linear",
+    "epsilon": 1e-07,
+    "lam_delta": 0.0
+  },
+  "theory_base": {
+    "alpha0_base": 0.8,
+    "alpha_update_base": 0.7,
+    "name": "经济理论基准分位 / 无储能局部单阶段理论临界分位",
+    "alpha0_source": "1 - p/(m p) = 1 - 1/5",
+    "alpha_update_source": "1 - a p /(m p) = 1 - 1.5/5",
+    "role": "仅作为完整储能滚动优化模型的理论锚点，不视为完整动态问题的理论最优值"
+  },
+  "selection": {
+    "primary_rule": "rolling/expanding multi-window validation on pre-evaluation January blocks",
+    "primary_alpha0": 0.6,
+    "primary_alpha_update": 0.6,
+    "single_window_rule": "2025-01-15/2025-01-31",
+    "single_window_alpha0": 0.6,
+    "single_window_alpha_update": 0.55,
+    "single_window_cost_adjusted": 850475.2188861627,
+    "folds": [
+      {
+        "fold": 1,
+        "train": "2025-01-01/2025-01-07",
+        "validation": "2025-01-08/2025-01-15"
+      },
+      {
+        "fold": 2,
+        "train": "2025-01-01/2025-01-15",
+        "validation": "2025-01-16/2025-01-23"
+      },
+      {
+        "fold": 3,
+        "train": "2025-01-01/2025-01-23",
+        "validation": "2025-01-24/2025-01-31"
+      }
+    ],
+    "folds_note": "训练窗口随折次扩展，选参依据为三个验证区间的平均库存校正成本；全部区块早于 2025-02-01",
+    "grid_extension_log": [
+      {
+        "step": 0,
+        "grid_alpha0": [
+          0.45,
+          0.9
+        ],
+        "grid_alpha_update": [
+          0.5,
+          0.8
+        ],
+        "n_candidates": 70,
+        "best_alpha0": 0.6,
+        "best_alpha_update": 0.55,
+        "best_adjusted_cost": 850475.2188861627,
+        "at_edge": []
+      }
+    ],
+    "alpha0_grid": [
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ],
+    "alpha_update_grid": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8
+    ],
+    "optimum_interior": true
+  },
+  "ridge_hyperparameters": {
+    "slope": 1000000.0,
+    "weekday": 0.00625,
+    "class": "预测子模型工程超参数（四级，无经济含义）",
+    "selected_by": "rolling-origin time-series cross-validation of the day-ahead load forecast (expanding fit window, validation blocks 2025-01-08/15, 01-16/23, 01-24/31); primary criterion RMSE, secondary MAE",
+    "candidates_slope": [
+      0.05,
+      0.1,
+      0.2,
+      0.4,
+      0.8,
+      1.6,
+      3.2,
+      1000000.0
+    ],
+    "candidates_weekday": [
+      0.00625,
+      0.0125,
+      0.025,
+      0.05,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "folds": [
+      [
+        7,
+        15
+      ],
+      [
+        15,
+        23
+      ],
+      [
+        23,
+        31
+      ]
+    ]
+  },
+  "terminal_inventory_value_vE": 0.41255555555555556,
+  "price_min": 0.3713,
+  "eta": 0.9,
+  "selection_period": "2025-01-08/2025-01-31 (pre-evaluation only)",
+  "evaluation_period": "2025-02-01/2025-12-31",
+  "initial_feb1": 1520.654817963887,
+  "parameter_candidates": 70,
+  "stability": {
+    "fraction_full_beats_none": 1.0,
+    "fraction_within_0.2pct_of_min": 0.14285714285714285,
+    "n_candidates": 70
+  },
+  "optimization_horizon": "rolling 24 hours from each issue; only the next 6 hours are executed",
+  "time_structure": {
+    "error_window_days": 28,
+    "error_window_source": "4 complete weekly cycles",
+    "load_decay_days": 14,
+    "load_decay_source": "2 complete weekly cycles",
+    "intraday_bias_window_intervals": 6,
+    "intraday_bias_window_minutes": 60,
+    "bias_decay_hours": 6,
+    "bias_decay_source": "interval between successive forecast issues"
+  },
+  "settlement": {
+    "main": "net_refund: plan fully priced, increases at 1.5x, cancellations bear only 0.5x, settled once on the net change against the 00:00 baseline",
+    "formula": "C_t = p_t q_t^0 + 1.5 p_t (q_t-q_t^0)^+ - 0.5 p_t (q_t^0-q_t)^+ + 5 p_t z_t",
+    "price_convention": "delivery-period TOU tariff p_t for the interval the energy belongs to",
+    "sensitivity_variants": [
+      "legacy_gross: plan fully priced and 0.5x penalty charged on top",
+      "stepwise: each issue settled separately against the preceding effective plan"
+    ]
+  },
+  "no_unsourced_penalties": {
+    "lambda_delta": 0.0,
+    "soc_penalty": 0.0,
+    "reserve": 0.0,
+    "epsilon": 1e-07,
+    "epsilon_role": "numerical degeneracy tie-break only"
+  },
+  "model_boundary": "deterministic rolling-horizon optimization over the information set available at each issue; NOT a full multi-stage stochastic program",
+  "qualification": "chronological historical simulation; every calibrated parameter uses pre-evaluation data only"
+}

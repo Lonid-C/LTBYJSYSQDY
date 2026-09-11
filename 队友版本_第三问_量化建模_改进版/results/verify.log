@@ -1,0 +1,16 @@
+{
+  "intervals": 48096,
+  "days": 334,
+  "independent_balance_max_error": 1.333546606474556e-10,
+  "independent_soc_max_error": 1.4572165696336015e-10,
+  "independent_cost_max_daily_error": 1.9426806829869747e-09,
+  "independent_component_max_error": 1.380612957291305e-09,
+  "vE_used": 0.41255555555555556,
+  "declared_vE": 0.41255555555555556,
+  "xlsx_values_match_ledger": true,
+  "xlsx_summary_columns_match": true,
+  "xlsx_all_dates_match": true,
+  "xlsx_charge_and_emergency_reconcile": true,
+  "xlsx_block_markers_fixed": true,
+  "passed": true
+}
