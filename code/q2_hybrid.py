@@ -318,7 +318,8 @@ class HybridStudy:
     def plan(self, method, d, family, cfg, initial, fixed_initial=False):
         plan_initial = INITIAL if fixed_initial else float(initial)
         cache_key = (method, int(d), family, cfg, round(plan_initial, 6))
-        if cache_key in self._plan_cache:
+        reusable = family == "saa" and fixed_initial
+        if reusable and cache_key in self._plan_cache:
             return self._plan_cache[cache_key]
         if family == "point":
             scen, w, hist = self.forecast_net(method, d)[None, :], np.ones(1), np.array([], int)
@@ -339,7 +340,8 @@ class HybridStudy:
         else:
             sol = self.solve_reference(scen[0], plan_initial, INITIAL)
         result = {**sol, "history": hist, "plan_initial": plan_initial}
-        self._plan_cache[cache_key] = result
+        if reusable:
+            self._plan_cache[cache_key] = result
         return result
 
     def _day_row(self, method, policy, d, sol, initial, fixed=False, rho=.5, keep_slots=False):
