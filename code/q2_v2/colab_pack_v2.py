@@ -8,7 +8,9 @@ ARCHIVE=Path('/content/q2_fused_v2_outputs.tar.gz')
 
 def main():
     targets=[ROOT/'results/q2_fused_v2',ROOT/'figures/q2_fused_v2',
-             ROOT/'reports/Q2_FUSED_V2_RESULTS.md']
+             ROOT/'reports/Q2_FUSED_V2_RESULTS.md',
+             ROOT/'results/q2_fused_v2_extensions',ROOT/'figures/q2_fused_v2_extensions',
+             ROOT/'reports/Q2_FUSED_V2_EXTENSIONS_RESULTS.md']
     missing=[str(x) for x in targets if not x.exists()]
     if missing:raise FileNotFoundError(missing)
     with tarfile.open(ARCHIVE,'w:gz') as tf:

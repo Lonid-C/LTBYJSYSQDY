@@ -155,12 +155,92 @@ print('RUN:', ' '.join(cmd),flush=True)
 subprocess.run(cmd,check=True)
 """)
 
+md(r"""
+## 7. 规划端扩展的统一场景构造
+
+下面三项实验全部重新使用本次 V2 的点预测、残差和当月已通过验收的配置，不读取旧版
+`q2_planning_v1` 结果。设历史完整日残差向量为
+$\boldsymbol r_j=\boldsymbol N_j-\widehat{\boldsymbol N}_j$。全局残差池与条件相似日池分别
+分配质量 $1-b$ 与 $b$，池内等权；重复日期合并后归一化为 $w_s$。场景为
+
+\[
+\boldsymbol N_d^{(s)}=\widehat{\boldsymbol N}_d+\boldsymbol r_s,
+\qquad w_s>0,\quad\sum_s w_s=1.
+\]
+
+这里原风险净负荷的分位数 $\alpha$ 不再进入风险中性经验分布：$\alpha$ 是单轨迹安全裕度参数，
+而SAA需要保留全部历史场景及其概率，二者不能重复保守化。条件池的 `blend`、特征和邻居数仍
+继承当月已验收配置。所有完整日残差路径整体抽取，保留日内相关性。
+""")
+
+md(r"""
+## 8. P4：CVaR风险前沿与对偶风险价格
+
+两阶段 SAA 的第一阶段变量是日前计划购电 $q_t$、充放电 $c_t,v_t$ 和SOC $E_t$；场景 $s$
+的第二阶段变量是紧急购电 $z_{s,t}$。风险中性目标为
+
+\[
+RP=\min_x\sum_s w_s C_s(x),\qquad
+C_s(x)=\sum_t p_tq_t+5p_tz_{s,t}.
+\]
+
+采用 Rockafellar--Uryasev 线性化：引入VaR辅助变量 $\zeta$ 和超额损失 $\xi_s\ge0$，
+
+\[
+\operatorname{CVaR}_{\beta}(C)=\zeta+\frac{1}{1-\beta}\sum_sw_s\xi_s,
+\quad \xi_s\ge C_s-\zeta.
+\]
+
+分别取 $\beta=0.90,0.95$。风险预算不是随机指定：先求风险中性解的CVaR上端 $U$，再求
+最小CVaR解的下端 $L$，然后令 $B_k=(1-\gamma_k)U+\gamma_kL$，
+$\gamma_k\in\{0,0.25,0.5,0.75,1\}$，得到完整可行前沿。预算约束的非负对偶乘子
+$\lambda_{risk}$ 表示预算再收紧一元的局部边际成本；同时求
+$\min\mathbb E[C]+\lambda_{risk}\operatorname{CVaR}_{\beta}(C)$ 核对KKT等价。
+它不是数据学习出的用户风险偏好，因此只报告前沿，不事后挑一个最好点。
+""")
+
+md(r"""
+## 9. P5：VSS与EVPI
+
+在同一天、同一场景集、同一初始与终端SOC下计算：随机规划解 $RP$；用均值场景先求决策、
+再放回全部场景评价的 $EEV$；每个场景都预先知道后分别求解的等待观望值 $WS$。于是
+
+\[
+VSS=EEV-RP,\qquad EVPI=RP-WS,
+\qquad WS\le RP\le EEV.
+\]
+
+$VSS$ 回答考虑多场景值多少钱，$EVPI$ 回答完美预测最多还值多少钱。这两个量属于经验场景
+分布内的理论量，不能拿实际回测的策略费用差冒充。逐日检查上述序关系。
+""")
+
+md(r"""
+## 10. P6：2/3日滚动SOC与跨日规划
+
+在每天0点求未来 $H\in\{2,3\}$ 日规划，只执行首日144个时槽，再以实际SOC进入次日重规划。
+第2/3日不能读取未来真实值，故递归生成 V2 成员预测，并把组合权重冻结在预测原点；未来未知
+残差创新取条件均值0。场景残差改为连续 $H$ 日历史块，且块末日严格小于决策日，从而保留
+跨日相关性并防止泄漏。
+
+远端SOC边界取1200、6000、10800 kWh，分别代表保护下界、50%参考点和保护上界；这三档来自
+题设电池边界而非调参。滚动SOC实验检验“每天参考终点6000”是否造成短视。由于题意是否允许
+跨日重规划存在解释空间，P6作为边界扩展，不自动替代H1主模型。
+""")
+
+code("""
+# 全新运行规划端扩展；程序按月写检查点，并保存原始逐日/逐时结果。
+cmd=[sys.executable,'code/q2_v2/planning_extensions_v2.py','--stage','all']
+print('RUN:', ' '.join(cmd),flush=True)
+subprocess.run(cmd,check=True)
+""")
+
 code("""
 # 只使用本次输出构建论文图表和数据驱动报告。
 subprocess.run([sys.executable,'code/q2_v2/build_delivery_v2.py'],check=True)
+subprocess.run([sys.executable,'code/q2_v2/build_extensions_delivery_v2.py'],check=True)
 """)
 
-md("""## 7. 全年结果、成本分解与月度稳定性
+md("""## 11. 全年结果、成本分解与月度稳定性
 
 以下数字由本次 Colab 输出现场读取，不手工填写。""")
 code("""
@@ -170,7 +250,7 @@ display(Image(filename=str(F/'01_cost_and_risk.png')))
 display(Image(filename=str(F/'02_monthly_stability.png')))
 """)
 
-md("""## 8. 参数更新、`near()` 和 Validation/CVaR 证据
+md("""## 12. 参数更新、`near()` 和 Validation/CVaR 证据
 
 表中保留每月候选、在位参数、Bootstrap区间、14天成本验收和56天风险验收。""")
 code("""
@@ -182,7 +262,7 @@ display(Image(filename=str(F/'03_parameter_path.png')))
 display(Image(filename=str(F/'04_validation_and_cvar.png')))
 """)
 
-md("""## 9. $E_{target}$ 与期末库存价值敏感性
+md("""## 13. $E_{target}$ 与期末库存价值敏感性
 
 $E_{target}$ 敏感性是真实重跑，期末价值敏感性是对同一SOC轨迹的核算；两者不混淆。""")
 code("""
@@ -193,7 +273,7 @@ display(Image(filename=str(F/'05_terminal_target_sensitivity.png')))
 display(Image(filename=str(F/'06_inventory_value_sensitivity.png')))
 """)
 
-md("""## 10. Bootstrap、压力测试与验收
+md("""## 14. Bootstrap、压力测试与验收
 
 若费用差的区间跨过0，不将点估计的优势表述为稳健改进。冻结期是后期检查，但已被研究者查看，不夸大为真正未开封盲测。""")
 code("""
@@ -205,7 +285,25 @@ assert verification['all_pass'] and all(x['passed'] for x in verification['tests
 print('ALL VERIFICATION TESTS PASSED:',verification['count'])
 """)
 
-md("""## 11. 局限与论文使用边界
+md("""## 15. CVaR、VSS/EVPI与滚动规划结果
+
+先看理论信息价值，再看风险—费用前沿与影子价格，最后比较2/3日跨日滚动策略。每张图的
+解释写在图下方和扩展报告中。""")
+code("""
+RX=PROJECT/'results/q2_fused_v2_extensions';FX=PROJECT/'figures/q2_fused_v2_extensions'
+display(pd.read_csv(RX/'information_monthly.csv'))
+display(Image(filename=str(FX/'08_vss_evpi_monthly.png')))
+display(pd.read_csv(RX/'cvar_frontier_summary.csv'))
+display(Image(filename=str(FX/'09_cvar_frontier.png')))
+display(pd.read_csv(RX/'dual_risk_price.csv'))
+display(Image(filename=str(FX/'10_dual_risk_price.png')))
+display(pd.read_csv(RX/'rolling_summary.csv'))
+display(Image(filename=str(FX/'11_rolling_horizon.png')))
+xverify=json.loads((RX/'verification.json').read_text());display(pd.DataFrame(xverify['tests']))
+assert xverify['all_pass'];display(Markdown((PROJECT/'reports/Q2_FUSED_V2_EXTENSIONS_RESULTS.md').read_text()))
+""")
+
+md("""## 16. 局限与论文使用边界
 
 - 单年回测不等于跨年泛化保证；56天CVaR95仍只含2.8个等权尾部日，所以同时报告CVaR90、worst-day和压力情景。
 - `near()` 只是搜索段简约化，不是候选等价的证明。

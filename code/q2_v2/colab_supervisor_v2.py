@@ -10,9 +10,9 @@ import traceback
 import nbformat
 
 ROOT=Path(__file__).resolve().parents[2]
-SESSION='cumcm-q2-fused-v2'
-STATUS=ROOT/'tmp/q2_fused_v2_background_status.json'
-ARCHIVE=ROOT/'tmp/q2_fused_v2_outputs.tar.gz'
+SESSION='cumcm-q2-v2-extensions'
+STATUS=ROOT/'tmp/q2_v2_extensions_background_status.json'
+ARCHIVE=ROOT/'tmp/q2_v2_extensions_outputs.tar.gz'
 NOTEBOOK=ROOT/'code/problem2_fused_v2.ipynb'
 OUTPUT_NOTEBOOK=ROOT/'code/problem2_fused_v2_output.ipynb'
 
@@ -34,7 +34,8 @@ def safe_extract(archive):
             target=(ROOT/m.name).resolve()
             if root!=target and root not in target.parents:raise RuntimeError(f'unsafe path {m.name}')
             if m.issym() or m.islnk():raise RuntimeError(f'link member {m.name}')
-        for path in [ROOT/'results/q2_fused_v2',ROOT/'figures/q2_fused_v2']:
+        for path in [ROOT/'results/q2_fused_v2',ROOT/'figures/q2_fused_v2',
+                     ROOT/'results/q2_fused_v2_extensions',ROOT/'figures/q2_fused_v2_extensions']:
             if path.exists():shutil.rmtree(path)
         tf.extractall(ROOT,filter='data')
 
@@ -65,12 +66,24 @@ def main():
         notebook_audit=validate_notebook(OUTPUT_NOTEBOOK)
         verification=json.loads((ROOT/'results/q2_fused_v2/verification.json').read_text())
         manifest=json.loads((ROOT/'results/q2_fused_v2/run_manifest.json').read_text())
+        xverification=json.loads((ROOT/'results/q2_fused_v2_extensions/verification.json').read_text())
+        xmanifest=json.loads((ROOT/'results/q2_fused_v2_extensions/run_manifest.json').read_text())
         if not verification.get('all_pass') or not manifest.get('fresh_run') or not manifest.get('complete'):
             raise RuntimeError('verification or fresh-run manifest failed')
+        if not xverification.get('all_pass') or not xmanifest.get('fresh_run') or not xmanifest.get('complete'):
+            raise RuntimeError('extension verification or fresh-run manifest failed')
         shutil.copy2(OUTPUT_NOTEBOOK,NOTEBOOK)
         shutil.copy2(OUTPUT_NOTEBOOK,ROOT/'code/problem2_hybrid.ipynb')
+        # Commit only this run's explicit deliverables; preserve unrelated user changes.
+        run(['git','add','code/problem2_fused_v2.ipynb','code/problem2_hybrid.ipynb',
+             'results/q2_fused_v2','figures/q2_fused_v2','reports/Q2_FUSED_V2_RESULTS.md',
+             'results/q2_fused_v2_extensions','figures/q2_fused_v2_extensions',
+             'reports/Q2_FUSED_V2_EXTENSIONS_RESULTS.md'])
+        committed=subprocess.run(['git','commit','-m','Add executed Q2 V2 planning extensions'],cwd=ROOT,text=True,capture_output=True)
+        if committed.returncode not in (0,1):raise RuntimeError(committed.stderr)
+        run(['git','push','origin','HEAD'])
         write_status('completed_and_synced',session=SESSION,notebook=notebook_audit,
-                     verification_count=verification['count'])
+                     verification_count=verification['count']+xverification['count'],git_commit=committed.stdout.strip())
         ok=True
     except Exception as exc:
         write_status('failed',session=SESSION,error=repr(exc),traceback=traceback.format_exc())
