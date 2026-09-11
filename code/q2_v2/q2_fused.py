@@ -9,7 +9,7 @@ from dataclasses import dataclass,asdict,replace
 import argparse,json,time,itertools,shutil,sys,hashlib,platform
 import numpy as np
 import pandas as pd
-from utils import load_data,BATTERY,DT,T,INTERVALS,write_csv,write_json
+from utils import load_data,data_audit,BATTERY,DT,T,INTERVALS,write_csv,write_json
 from dispatch import optimize_day,execute_day,check_dispatch
 from forecast_core import OptimizedBank
 ROOT=Path(__file__).resolve().parents[2]
@@ -525,6 +525,7 @@ def main():
         for path in [OUT,FIG]:
             if path.exists():shutil.rmtree(path)
     OUT.mkdir(parents=True,exist_ok=True);FIG.mkdir(parents=True,exist_ok=True)
+    if a.stage=='all':data_audit(load_data())
     if a.stage in ['all','user']:run_user()
     if a.stage in ['all','fusion']:run_fusion()
     if a.stage in ['all','ridge']:run_ridge_h1_replan()

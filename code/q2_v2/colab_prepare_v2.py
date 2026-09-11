@@ -26,8 +26,9 @@ def main():
     # "HiGHS Status 0: Not Set"；1.15.3 已用常数场景和真实场景双重试运行验证。
     subprocess.run([sys.executable,'-m','pip','install','-q','openpyxl','scikit-learn',
                     'matplotlib','pandas','scipy==1.15.3','nbformat'],check=True)
-    subprocess.run(['apt-get','update','-qq'],check=True)
-    subprocess.run(['apt-get','install','-y','-qq','fonts-noto-cjk'],check=True)
+    if not any(Path('/usr/share/fonts').rglob('*CJK*.ttc')):
+        subprocess.run(['apt-get','update','-qq'],check=True,timeout=300)
+        subprocess.run(['apt-get','install','-y','-qq','fonts-noto-cjk'],check=True,timeout=300)
     print('python',platform.python_version())
     print('cpu_count',os.cpu_count())
     gpu=subprocess.run(['nvidia-smi','--query-gpu=name,memory.total','--format=csv,noheader'],
