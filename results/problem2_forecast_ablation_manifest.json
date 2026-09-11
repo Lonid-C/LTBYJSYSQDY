@@ -1,0 +1,75 @@
+{
+  "experiment": "Q2 forecast-side ablation with unchanged SAA planner",
+  "generated_at": "2026-09-11T03:17:57.859084",
+  "periods": {
+    "full_334": [
+      "2025-02-01",
+      "2025-12-31",
+      334
+    ],
+    "forecast_common_275": [
+      "2025-04-01",
+      "2025-12-31",
+      275
+    ],
+    "development_184": [
+      "2025-05-01",
+      "2025-10-31",
+      184
+    ],
+    "holdout_61": [
+      "2025-11-01",
+      "2025-12-31",
+      61
+    ]
+  },
+  "fixed_planner": {
+    "window_days": 21,
+    "rho": 0.9516951530106196,
+    "cyclic_soc_kwh": 6000.0,
+    "emergency_multiplier": 5.0
+  },
+  "current_regression": {
+    "MAE_kW": 272.4394557946904,
+    "RMSE_kW": 389.2042801353938,
+    "SAA_total_cost_yuan": 14539240.537931435
+  },
+  "development_candidate": "Ridge",
+  "recommended_method": "Ridge",
+  "replacement_accepted": true,
+  "model_failures": [],
+  "model_numerical_events": [
+    {
+      "model": "ucm",
+      "target": "pv",
+      "origin": "2025-04-01",
+      "component": 1,
+      "event": "clip_AR1_optimizer_start",
+      "raw_start": 1.0435336984548256,
+      "used_start": 0.95
+    },
+    {
+      "model": "ucm",
+      "target": "pv",
+      "origin": "2025-05-01",
+      "component": 1,
+      "event": "clip_AR1_optimizer_start",
+      "raw_start": 1.0966074475060978,
+      "used_start": 0.95
+    }
+  ],
+  "planning_checks_max": {
+    "soc_recursion_error_kwh": 0.0,
+    "terminal_soc_error_kwh": 1.0913936421275139e-11,
+    "soc_lower_violation_kwh": 1.000444171950221e-11,
+    "soc_upper_violation_kwh": 9.094947017729282e-12,
+    "power_balance_error_kwh": 1.1368683772161603e-13
+  },
+  "planning_checks_min": {
+    "min_plan_kwh": 0.0,
+    "min_charge_kwh": 0.0,
+    "min_discharge_kwh": 0.0,
+    "min_emergency_kwh": 0.0
+  },
+  "official_result2_overwritten": false
+}

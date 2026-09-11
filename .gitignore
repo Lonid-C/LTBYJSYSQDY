@@ -1,0 +1,22 @@
+# macOS and Python caches
+.DS_Store
+**/.DS_Store
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Local orchestration, temporary renders, logs, and teammate snapshots
+tmp/
+
+# Colab execution caches and raw LP certificates can be regenerated.
+results/q2_planning_v1/checkpoints/
+results/q2_planning_v1/certificates/
+
+# Never commit local credentials or environment files.
+.env
+.env.*
+*.pem
+*.key
+*oauth*
+*credential*
+*token*

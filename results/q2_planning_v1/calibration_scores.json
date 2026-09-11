@@ -1,0 +1,8322 @@
+[
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 34904.04088658281
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 34386.144411586065
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 34986.73361132468
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 34398.293857708886
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 34986.04767487035
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 34398.585541382956
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 35032.47592458799
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 34448.030797374995
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 34800.930924257016
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 34289.786688623964
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 34858.330465467254
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 34331.06663380686
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 35033.411721598786
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 34418.48897255979
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 35161.991926165436
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 34489.309734409755
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 34769.841632419666
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 34228.798933517355
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 34871.95995259005
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 34272.958436882705
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 34941.15326344014
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 34298.07164974047
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 35078.40933560051
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 34365.41273295211
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 34741.83074442031
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 34203.265158746384
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 34801.110626330636
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 34218.65010103934
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 34940.05837685925
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 34306.24723211307
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 35159.3502228513
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 34434.41230044713
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 34725.68763879269
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 34196.67909660425
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 34793.90040502285
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 34200.74579024538
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 34971.18873019561
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 34286.32082394606
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 35223.884430193255
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 34422.75593428382
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 35032.66256038287
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 34448.06853557677
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 35162.1720660045
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 34489.360342207154
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 35078.63352745785
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 34365.48780179097
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 35166.02908424824
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 34437.839481150695
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 35664.55122215419
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 34934.771242871975
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 35293.87279637054
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 34642.79576376941
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 35219.67221245276
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 34509.18074681091
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 35117.970781805525
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 34365.5592922458
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 35535.51348021943
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 34876.968205068944
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 35411.12555940077
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 34629.44300011735
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 35188.236980181784
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 34502.15631679777
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 35231.34972828553
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 34413.64901480737
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 47054.32706047511
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 42230.098097726805
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 47570.8616232873
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 42513.556668129815
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 47699.11833384093
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 42580.330784523394
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 47916.1439907535
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 42713.47108629429
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 47273.24963939942
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 42263.39544912888
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 47753.492298216544
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 42536.14341500731
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 48103.148837110435
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 42797.9226465857
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 48470.80051137196
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 43042.453005586016
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 47320.50547873852
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 42245.11104028742
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 47730.298872649044
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 42464.564212714045
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 48095.89032553993
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 42651.3769553837
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 48545.11935367596
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 42906.245374916834
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 47199.288624455476
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 42156.743071777564
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 47478.71716379258
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 42295.96526529129
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 47699.611527757676
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 42421.6583238279
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 47836.3529236123
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 42582.859080645256
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 47183.23837622053
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 42142.751805226166
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 47505.99552209723
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 42313.78405836863
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 47809.43938606733
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 42545.263532770274
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 48199.86435221888
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 42897.44868985139
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 47916.15792721546
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 42713.528651459026
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 48470.83163412171
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 43042.55724331539
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 48545.17499480387
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 42906.38149792185
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 47837.88461801769
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 42590.3589976562
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 48836.70999038462
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 43291.7998034211
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 47954.518054122906
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 42704.751298675874
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 48019.89753455087
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 42672.065867998
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 48179.22882003283
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 42812.27879538422
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 48304.89070326991
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 42964.53895654158
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 47995.03221931763
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 42755.14018636445
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 47977.836204169624
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 42648.47374437219
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 48138.44512449595
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 42830.88533091231
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 49824.81910029282
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 49238.04664650625
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 50224.909385801155
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 49627.725605548345
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 50353.278739793386
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 49735.07649222661
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 50516.88635913638
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 49902.98213803662
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 50021.32503044343
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 49334.89308592672
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 50388.31122197584
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 49673.149235453144
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 50824.10511866165
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 49986.858463763725
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 51174.049203464536
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 50197.882433806415
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 50004.25471906269
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 49260.56923878053
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 50452.153780040106
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 49534.96679516175
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 50817.67113045135
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 49774.03743047418
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 51085.322754544075
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 50017.89288255727
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 49847.749094768275
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 49107.94395545782
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 50133.09392205479
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 49224.56348468406
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 50264.733398185
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 49280.45880489023
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 50311.36804844488
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 49281.930030820644
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 49861.6225526993
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 49108.02952195351
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 50249.20983821474
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 49262.88335636243
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 50525.07069446852
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 49404.309723802806
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 50884.795711757964
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 49634.15077427878
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 50517.19046337092
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 49903.14301703746
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 51174.16806646395
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 50197.945474990796
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 51085.175568926265
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 50017.822226830926
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 50311.22961639321
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 49281.868786509214
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 51147.51128464379
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 50155.555441309094
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 50653.07106198661
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 49599.31004836607
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 50897.29096970638
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 49706.50181494213
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 50585.99167147981
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 49521.48494550793
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 51650.987492370776
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 50271.718262788774
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 51023.6943634958
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 49799.40184896529
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 50911.567330757454
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 49672.48212568603
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 50681.56783702141
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 49558.01786240306
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 45524.04696267774
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 47249.16086848592
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 45511.73317796165
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 47320.85749202402
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 45492.38904172258
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 47366.522686656965
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 45524.30124770675
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 47469.76111636889
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 45293.98487060759
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 47179.07137870976
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 45205.75865632433
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 47276.1367738211
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 45191.51271268719
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 47366.08332661721
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 45244.27823901318
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 47452.45765488801
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 45249.45413893786
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 47163.23793350926
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 45202.87289246491
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 47332.9667208719
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 45245.695109333945
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 47499.85153955808
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 45325.43718815155
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 47662.6222997682
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 45227.31118565519
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 47116.37201981844
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 45284.16809861762
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 47284.38556727175
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 45581.255763272646
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 47490.29111204033
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 45948.93407658466
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 47703.56157907007
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 45215.52766421854
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 47111.45032123099
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 45279.91973375215
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 47311.97152043025
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 45649.66637908505
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 47588.07549985873
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 46265.632169817014
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 48001.56539523246
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 45522.67627019277
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 47469.17313410714
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 45244.44791544043
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 47452.30146619742
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 45321.09654822928
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 47660.07897343766
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 45942.06479679954
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 47699.75024992348
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 45808.169531317246
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 48034.003755744896
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 45885.36749004474
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 47776.14514964628
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 46031.139654942366
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 47892.23230823532
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 46137.476321447975
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 47850.223256908874
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 45743.92822315893
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 48310.70242309855
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 45730.443471002865
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 47877.27297765376
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 45840.31699652451
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 47873.768587064114
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 45951.84841935749
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 47816.36760074937
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 40409.72246770285
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 42923.983551686295
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 40664.23655638103
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 43045.354562058325
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 40674.472403494256
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 43041.42449847036
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 40835.93767941072
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 43134.76507790933
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 40262.83092453544
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 42718.84485414811
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 40451.17369985494
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 42756.32452820047
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 40494.58369948658
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 42758.30193012284
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 40756.369830361546
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 42908.8281386346
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 40136.17195031545
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 42619.5503356072
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 40240.07972482335
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 42608.656487408276
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 40377.53822601645
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 42674.38683284259
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 40538.97472411449
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 42770.279726448935
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 40060.36663996277
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 42560.697337226076
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 40071.3352953056
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 42539.30511560268
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 40089.07383589309
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 42662.0035745025
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 40148.836682436166
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 42852.31611108467
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 40055.245947708885
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 42554.050593171254
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 40108.689658426905
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 42569.31516095394
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 40192.971753208105
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 42780.85687662195
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 40321.24967103533
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 43168.275768959604
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 40833.894117911266
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 43132.81142017851
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 40755.39832922203
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 42908.14941797511
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 40521.48106012908
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 42759.15367027648
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 40130.620090196906
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 42840.034994978465
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 40646.16440662658
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 43055.46858545418
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 40288.43515508615
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 42899.27564791435
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 40191.01809797705
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 42927.04703134995
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 40218.75366788097
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 42988.89045731392
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 40677.63635049462
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 43024.04533104742
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 40315.794265245124
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 42830.87992627563
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 40258.77620369702
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 42856.41775490641
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 40396.744241817796
+  },
+  {
+    "method": "ManualWeekly",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 43001.3781560643
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 34547.17773234569
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 34210.25527290773
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 34602.03624060435
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 34173.4349046169
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 34614.55667804272
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 34184.82932074198
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 34642.82470838246
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 34203.02067666617
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 34423.54562656575
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 34117.68233877708
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 34484.98744155984
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 34141.8963074746
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 34551.25025815673
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 34180.52118339131
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 34611.854425952384
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 34228.131182011704
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 34406.3492653026
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 34068.98951203589
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 34459.268970263554
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 34063.13058876848
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 34518.78636380198
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 34096.188155783355
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 34634.05856415853
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 34133.31764796027
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 34379.52988454668
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 34027.79661678669
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 34393.72686203074
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 34015.14653321851
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 34474.636879032565
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 34070.10622349154
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 34602.65542733345
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 34183.94543909545
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 34372.11542134829
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 34022.123037604404
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 34398.30721629678
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 33996.70106974157
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 34506.3912672522
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 34074.92118992783
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 34693.95449372624
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 34257.363877977936
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 34685.905723474796
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 34321.756225984274
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 34789.189064393126
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 34401.64146490402
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 34816.189727740355
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 34295.896895753765
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 34787.68087826114
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 34312.39085904081
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 35205.11751913412
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 34742.240819399616
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 34852.12261810984
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 34491.976449260124
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 34828.37913508213
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 34350.25644933817
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 34731.3532946648
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 34260.76255032278
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 35082.05320641932
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 34638.3104104164
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 34940.80450803118
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 34419.17148654239
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 34811.776057356685
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 34332.57991506248
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 34800.96161799307
+  },
+  {
+    "method": "Ridge",
+    "month": 6,
+    "origin": "2025-06-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-05-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 34264.199665767446
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 46451.0367935387
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 41538.63380352855
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 46659.28119001874
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 41666.59147769213
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 46764.14311671751
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 41720.45394548211
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 46948.15840706164
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 41827.70065755673
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 46638.42277281805
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 41555.892027891074
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 46917.04487512441
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 41706.492828303446
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 47102.2328054227
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 41827.46555279689
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 47326.29696609608
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 41971.985606888906
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 46671.74474422407
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 41542.28767242432
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 46943.807297798696
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 41658.134892967944
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 47164.020247246066
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 41771.07149007652
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 47377.252565345574
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 41894.07521201039
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 46646.465540181416
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 41509.52723379872
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 46748.88285102351
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 41512.4648498186
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 46880.62314522256
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 41583.01190590337
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 47034.78358824751
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 41710.70723752001
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 46639.20243335907
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 41503.46147921292
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 46785.497112316065
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 41546.262329404635
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 46983.645969380894
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 41692.30470978149
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 47436.20329617503
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 42025.240760522815
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 46966.20170654132
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 41847.97681619717
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 47367.245539965654
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 42026.76600701706
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 47427.56738611784
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 41964.797239684485
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 47121.92180274848
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 41836.50095715374
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 47668.72517599348
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 42256.057646639696
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 47178.60707388069
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 41893.16828695467
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 47133.852617823104
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 41819.88212249072
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 47410.11767571933
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 42039.75339054446
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 47533.01862765744
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 42165.67966966952
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 47225.730847876344
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 41941.81406006033
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 47297.62358231273
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 41926.59395861401
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 47438.98618385301
+  },
+  {
+    "method": "Ridge",
+    "month": 7,
+    "origin": "2025-07-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-06-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 42061.58740905141
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 49133.35122541975
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 48362.9699624089
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 49277.59105577017
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 48485.50088403467
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 49331.3996232222
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 48552.22263168501
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 49368.05271870498
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 48626.50899710721
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 49149.995803812475
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 48445.779318490284
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 49192.476136712416
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 48558.43983832757
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 49293.94828017246
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 48668.65088777565
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 49345.004026095536
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 48741.29580187658
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 49169.47616260194
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 48444.384984341465
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 49336.993084675356
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 48614.935810818184
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 49498.79015104904
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 48776.074405063744
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 49692.06400578719
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 48958.58442211367
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 49201.983721312485
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 48449.297387785395
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 49554.8259460152
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 48624.44196404197
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 49930.38265619326
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 48836.380602708035
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 50335.33499628381
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 49084.761146389195
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 49209.69103124807
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 48444.69602278101
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 49691.167059374086
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 48681.93881824058
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 50218.39559216369
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 48982.71266800288
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 50860.65783839802
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 49423.68809823117
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 49368.05271870499
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 48626.26791058287
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 49345.004026095536
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 48743.81865010021
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 49692.06400578719
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 48966.3338611085
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 50336.914122277136
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 49103.42148707754
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 50401.22195755037
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 49425.10810644003
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 50685.63232883974
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 49346.31512982051
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 50694.05074927969
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 49321.98437122869
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 50505.44280408007
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 49239.90363861038
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 50863.74643714917
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 49654.53425196266
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 50751.721388850834
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 49406.58255167788
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 50759.57627124836
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 49391.252784423516
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 50587.51467284503
+  },
+  {
+    "method": "Ridge",
+    "month": 8,
+    "origin": "2025-08-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-07-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 49291.91259179402
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 45492.166305801606
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 47058.472501524106
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 45463.25072701343
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 47088.00341116404
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 45464.10701333077
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 47133.53532840918
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 45499.987408476234
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 47189.948115859566
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 45328.53922217783
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 46996.76067659414
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 45298.4899321908
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 47019.29349088684
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 45350.994819736516
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 47092.07002852632
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 45389.17873253136
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 47110.298976628445
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 45287.56941241482
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 47010.52564702132
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 45288.0256888694
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 47112.664083550335
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 45321.0196869928
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 47208.94644932946
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 45411.3880650703
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 47349.20705053218
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 45272.52310610521
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 47036.40481875808
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 45420.72615626691
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 47306.09812070955
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 45615.146219218695
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 47587.03466590168
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 45892.22635819313
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 47926.59184282062
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 45262.417336993574
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 47037.24588920114
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 45473.03480760835
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 47408.471763557165
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 45842.961212055576
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 47879.929824715065
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 46397.291087792204
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 48506.40323307864
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 45497.85909082603
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 47188.883957034464
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 45390.04448913131
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 47110.718124105224
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 45407.469885127284
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 47347.24796056067
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 45891.62055594491
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 47926.33697489778
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 45941.23696068736
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 47995.23124754099
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 45956.448671574755
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 48148.55220595072
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 46341.467466757385
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 48368.55311686087
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 46754.95832767848
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 48511.316328852154
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 46043.63583161052
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 48311.97171627115
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 45922.130268479814
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 48218.11719646143
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 46321.34684316388
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 48436.735996583164
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 46708.80201635877
+  },
+  {
+    "method": "Ridge",
+    "month": 9,
+    "origin": "2025-09-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-08-31",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 48536.73298638958
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 39759.47567111399
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 7
+    },
+    "mean_cost": 42408.68607731526
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 39775.69119456005
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 14
+    },
+    "mean_cost": 42398.855052199266
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 39750.894714335715
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": 28
+    },
+    "mean_cost": 42382.2204467896
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 39708.47274768528
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 14,
+      "half": null
+    },
+    "mean_cost": 42364.45587922407
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 39563.84514199295
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 7
+    },
+    "mean_cost": 42207.47117589251
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 39497.35595020013
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 14
+    },
+    "mean_cost": 42136.88133986417
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 39487.47968782155
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": 28
+    },
+    "mean_cost": 42141.71028740537
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 39628.665214665954
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 21,
+      "half": null
+    },
+    "mean_cost": 42228.95017247488
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 39531.072378363635
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 7
+    },
+    "mean_cost": 42160.82340518079
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 39457.14637131313
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 14
+    },
+    "mean_cost": 42095.93337822195
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 39522.12983647497
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": 28
+    },
+    "mean_cost": 42127.66048530985
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 39607.6116669329
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 28,
+      "half": null
+    },
+    "mean_cost": 42200.97543443682
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 39536.26649885067
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 7
+    },
+    "mean_cost": 42148.05356707185
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 39559.00851221299
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 14
+    },
+    "mean_cost": 42192.79800103613
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 39656.381290049096
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": 28
+    },
+    "mean_cost": 42324.01127124707
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 39875.28379493498
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 42,
+      "half": null
+    },
+    "mean_cost": 42561.28700650919
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 39529.48839426673
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 7
+    },
+    "mean_cost": 42137.67816955523
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 39535.41004910954
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 14
+    },
+    "mean_cost": 42203.95983817717
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 39672.06825154284
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": 28
+    },
+    "mean_cost": 42435.86939696772
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 39967.65115925339
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "time",
+      "window": 56,
+      "half": null
+    },
+    "mean_cost": 42836.70175942208
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 39731.852660440825
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 14
+    },
+    "mean_cost": 42375.01995173048
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 39660.92291927198
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 21
+    },
+    "mean_cost": 42245.44696047389
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 39636.99550134225
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 28
+    },
+    "mean_cost": 42213.58352910625
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 39905.7635474232
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "season",
+      "k": 42
+    },
+    "mean_cost": 42577.899560472244
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 40054.09243879973
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 14
+    },
+    "mean_cost": 42670.63006421863
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 39972.55294893585
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 21
+    },
+    "mean_cost": 42584.615175752486
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 39754.73570938252
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 28
+    },
+    "mean_cost": 42628.83830892837
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 39870.08333803415
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "weekday",
+      "k": 42
+    },
+    "mean_cost": 42937.41938207044
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 40004.147304899896
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 14
+    },
+    "mean_cost": 42683.983574269056
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 39818.9551971918
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 21
+    },
+    "mean_cost": 42486.94473268347
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 39766.69020663736
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 28
+    },
+    "mean_cost": 42640.146423430015
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 28,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 39699.72577439154
+  },
+  {
+    "method": "Ridge",
+    "month": 10,
+    "origin": "2025-10-01",
+    "calibration_days": 56,
+    "last_training_date": "2025-09-30",
+    "cfg": {
+      "kind": "conditional",
+      "features": "level",
+      "k": 42
+    },
+    "mean_cost": 42843.87490084127
+  }
+]

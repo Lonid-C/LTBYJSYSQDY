@@ -1,0 +1,2 @@
+﻿solver_success,solver_status,max_power_balance_residual_kWh,max_soc_recursion_residual_kWh,terminal_soc_error_kWh,soc_lower_violation_kWh,soc_upper_violation_kWh,charge_cap_violation_kWh,discharge_cap_violation_kWh,minimum_grid_purchase_kWh,simultaneous_charge_discharge_slots,primal_dual_absolute_gap,primal_dual_relative_gap
+True,0,1.4921397450962104e-13,9.094947017729282e-13,0.0,0.0,0.0,0.0,0.0,0.0,0,7.275957614183426e-11,2.0713320765478683e-15

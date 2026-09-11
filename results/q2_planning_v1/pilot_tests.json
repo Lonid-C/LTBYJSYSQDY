@@ -1,0 +1,22 @@
+[
+  {
+    "test": "equal_weight_permutation",
+    "gap": 5.820766091346741e-11
+  },
+  {
+    "test": "bias_cancellation",
+    "gap": 9.094947017729282e-13
+  },
+  {
+    "test": "risk_dual_equivalence",
+    "gap": 0.0
+  },
+  {
+    "test": "horizon_2days",
+    "gap": 4.547473508864641e-13
+  },
+  {
+    "test": "horizon_3days",
+    "gap": 4.547473508864641e-13
+  }
+]

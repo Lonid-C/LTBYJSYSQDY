@@ -1,0 +1,7 @@
+{
+  "phase": "baselines",
+  "utc": "2026-09-11T05:21:19.237927+00:00",
+  "fingerprint": "a60bd4a783bc4a9dc24c94b61f1e38897d2bf963c05a0e8a517d8ff61a717582",
+  "method": "Ridge",
+  "policy": "SAA_selected"
+}
