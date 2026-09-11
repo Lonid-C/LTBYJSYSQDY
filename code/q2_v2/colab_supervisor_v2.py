@@ -43,7 +43,9 @@ def validate_notebook(path):
     nb=nbformat.read(path,as_version=4);errors=[];missing=[]
     for i,cell in enumerate(nb.cells):
         if cell.cell_type!='code':continue
-        if cell.execution_count is None:missing.append(i)
+        # colab-cli 回传的 notebook 保留完整 outputs，但当前版本不回填
+        # execution_count。因此以“有输出且无 error output”作为已执行证据。
+        if cell.execution_count is None and not cell.get('outputs'):missing.append(i)
         for out in cell.get('outputs',[]):
             if out.get('output_type')=='error':errors.append((i,out.get('ename'),out.get('evalue')))
     if missing or errors:raise RuntimeError({'unexecuted_cells':missing,'error_outputs':errors})

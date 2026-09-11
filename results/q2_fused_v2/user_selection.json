@@ -1,0 +1,77 @@
+[
+  {
+    "month": 6,
+    "decision_date": "2025-06-01",
+    "config": {
+      "alpha": 0.8,
+      "rho": 0.5,
+      "window": 14,
+      "smooth": 0,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0
+    },
+    "history_start": "2025-04-06",
+    "history_end": "2025-05-31"
+  },
+  {
+    "month": 7,
+    "decision_date": "2025-07-01",
+    "config": {
+      "alpha": 0.8,
+      "rho": 0.75,
+      "window": 14,
+      "smooth": 0,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0
+    },
+    "history_start": "2025-05-06",
+    "history_end": "2025-06-30"
+  },
+  {
+    "month": 8,
+    "decision_date": "2025-08-01",
+    "config": {
+      "alpha": 0.8,
+      "rho": 0.5,
+      "window": 42,
+      "smooth": 0,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0
+    },
+    "history_start": "2025-06-06",
+    "history_end": "2025-07-31"
+  },
+  {
+    "month": 9,
+    "decision_date": "2025-09-01",
+    "config": {
+      "alpha": 0.8,
+      "rho": 0.5,
+      "window": 14,
+      "smooth": 0,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0
+    },
+    "history_start": "2025-07-07",
+    "history_end": "2025-08-31"
+  },
+  {
+    "month": 10,
+    "decision_date": "2025-10-01",
+    "config": {
+      "alpha": 0.8,
+      "rho": 0.5,
+      "window": 14,
+      "smooth": 0,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0
+    },
+    "history_start": "2025-08-06",
+    "history_end": "2025-09-30"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "figure": "01_cost_and_risk",
+    "meaning": "同时展示计划费、紧急费、CVaR95 和最坏日，避免只看总费用。"
+  },
+  {
+    "figure": "02_monthly_stability",
+    "meaning": "检查优势是否只来自少数月份。"
+  },
+  {
+    "figure": "03_parameter_path",
+    "meaning": "展示参数是否频繁波动、更新是否被后置验收拒绝。"
+  },
+  {
+    "figure": "04_validation_and_cvar",
+    "meaning": "直观证明14日CVaR95信息量不足，并展示用于验收的56日风险证据。"
+  },
+  {
+    "figure": "05_terminal_target_sensitivity",
+    "meaning": "每个Etarget均重新规划与因果执行，而非事后换算。"
+  },
+  {
+    "figure": "06_inventory_value_sensitivity",
+    "meaning": "说明期末SOC价值是核算假设，不是凭空获得的唯一真值。"
+  },
+  {
+    "figure": "07_bootstrap_vs_ridge",
+    "meaning": "区分观测差额与在周相关下仍可支持的稳健差异。"
+  }
+]

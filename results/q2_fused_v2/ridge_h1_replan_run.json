@@ -1,0 +1,8 @@
+{
+  "seconds": 17.70855901999994,
+  "recomputed_planning": true,
+  "reused_v1_daily_results": false,
+  "prediction_artifact": "results/problem2_forecast_ablation_predictions.csv.gz",
+  "prediction_sha256": "d6a5e9eee4131debec4e14d5eb15ab1477ab8504f3ef342bcd99d9a3408e9550",
+  "comparison_definition": "Ridge + 21-day/14-day-half-life SAA + H1 causal replanning"
+}

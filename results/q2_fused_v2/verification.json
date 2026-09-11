@@ -1,0 +1,628 @@
+{
+  "tests": [
+    {
+      "test": "baseline complete days",
+      "passed": true
+    },
+    {
+      "test": "baseline continuous SOC",
+      "passed": true
+    },
+    {
+      "test": "baseline settlement",
+      "passed": true
+    },
+    {
+      "test": "user complete days",
+      "passed": true
+    },
+    {
+      "test": "user continuous SOC",
+      "passed": true
+    },
+    {
+      "test": "user settlement",
+      "passed": true
+    },
+    {
+      "test": "fused complete days",
+      "passed": true
+    },
+    {
+      "test": "fused continuous SOC",
+      "passed": true
+    },
+    {
+      "test": "fused settlement",
+      "passed": true
+    },
+    {
+      "test": "no_conditional complete days",
+      "passed": true
+    },
+    {
+      "test": "no_conditional continuous SOC",
+      "passed": true
+    },
+    {
+      "test": "no_conditional settlement",
+      "passed": true
+    },
+    {
+      "test": "search_only complete days",
+      "passed": true
+    },
+    {
+      "test": "search_only continuous SOC",
+      "passed": true
+    },
+    {
+      "test": "search_only settlement",
+      "passed": true
+    },
+    {
+      "test": "loose_gate complete days",
+      "passed": true
+    },
+    {
+      "test": "loose_gate continuous SOC",
+      "passed": true
+    },
+    {
+      "test": "loose_gate settlement",
+      "passed": true
+    },
+    {
+      "test": "strict_gate complete days",
+      "passed": true
+    },
+    {
+      "test": "strict_gate continuous SOC",
+      "passed": true
+    },
+    {
+      "test": "strict_gate settlement",
+      "passed": true
+    },
+    {
+      "test": "ridge_h1_replan complete days",
+      "passed": true
+    },
+    {
+      "test": "ridge_h1_replan continuous SOC",
+      "passed": true
+    },
+    {
+      "test": "ridge_h1_replan settlement",
+      "passed": true
+    },
+    {
+      "test": "A fixed regression reproduced from raw inputs",
+      "passed": true,
+      "observed": 13820986.576531284
+    },
+    {
+      "test": "user TeamA forecast matches audited A",
+      "passed": true,
+      "max_difference_kwh": 5.684341886080801e-13
+    },
+    {
+      "test": "fused selection chronology month 6",
+      "passed": true
+    },
+    {
+      "test": "fused 14-day CVaR95 degeneracy recorded month 6",
+      "passed": true
+    },
+    {
+      "test": "fused 56-day risk window month 6",
+      "passed": true
+    },
+    {
+      "test": "fused step limit month 6",
+      "passed": true
+    },
+    {
+      "test": "fused gate replay month 6",
+      "passed": true
+    },
+    {
+      "test": "fused selection chronology month 7",
+      "passed": true
+    },
+    {
+      "test": "fused 14-day CVaR95 degeneracy recorded month 7",
+      "passed": true
+    },
+    {
+      "test": "fused 56-day risk window month 7",
+      "passed": true
+    },
+    {
+      "test": "fused step limit month 7",
+      "passed": true
+    },
+    {
+      "test": "fused gate replay month 7",
+      "passed": true
+    },
+    {
+      "test": "fused selection chronology month 8",
+      "passed": true
+    },
+    {
+      "test": "fused 14-day CVaR95 degeneracy recorded month 8",
+      "passed": true
+    },
+    {
+      "test": "fused 56-day risk window month 8",
+      "passed": true
+    },
+    {
+      "test": "fused step limit month 8",
+      "passed": true
+    },
+    {
+      "test": "fused gate replay month 8",
+      "passed": true
+    },
+    {
+      "test": "fused selection chronology month 9",
+      "passed": true
+    },
+    {
+      "test": "fused 14-day CVaR95 degeneracy recorded month 9",
+      "passed": true
+    },
+    {
+      "test": "fused 56-day risk window month 9",
+      "passed": true
+    },
+    {
+      "test": "fused step limit month 9",
+      "passed": true
+    },
+    {
+      "test": "fused gate replay month 9",
+      "passed": true
+    },
+    {
+      "test": "fused selection chronology month 10",
+      "passed": true
+    },
+    {
+      "test": "fused 14-day CVaR95 degeneracy recorded month 10",
+      "passed": true
+    },
+    {
+      "test": "fused 56-day risk window month 10",
+      "passed": true
+    },
+    {
+      "test": "fused step limit month 10",
+      "passed": true
+    },
+    {
+      "test": "fused gate replay month 10",
+      "passed": true
+    },
+    {
+      "test": "fused November December parameter freeze",
+      "passed": true
+    },
+    {
+      "test": "no_conditional selection chronology month 6",
+      "passed": true
+    },
+    {
+      "test": "no_conditional 14-day CVaR95 degeneracy recorded month 6",
+      "passed": true
+    },
+    {
+      "test": "no_conditional 56-day risk window month 6",
+      "passed": true
+    },
+    {
+      "test": "no_conditional step limit month 6",
+      "passed": true
+    },
+    {
+      "test": "no_conditional gate replay month 6",
+      "passed": true
+    },
+    {
+      "test": "no_conditional selection chronology month 7",
+      "passed": true
+    },
+    {
+      "test": "no_conditional 14-day CVaR95 degeneracy recorded month 7",
+      "passed": true
+    },
+    {
+      "test": "no_conditional 56-day risk window month 7",
+      "passed": true
+    },
+    {
+      "test": "no_conditional step limit month 7",
+      "passed": true
+    },
+    {
+      "test": "no_conditional gate replay month 7",
+      "passed": true
+    },
+    {
+      "test": "no_conditional selection chronology month 8",
+      "passed": true
+    },
+    {
+      "test": "no_conditional 14-day CVaR95 degeneracy recorded month 8",
+      "passed": true
+    },
+    {
+      "test": "no_conditional 56-day risk window month 8",
+      "passed": true
+    },
+    {
+      "test": "no_conditional step limit month 8",
+      "passed": true
+    },
+    {
+      "test": "no_conditional gate replay month 8",
+      "passed": true
+    },
+    {
+      "test": "no_conditional selection chronology month 9",
+      "passed": true
+    },
+    {
+      "test": "no_conditional 14-day CVaR95 degeneracy recorded month 9",
+      "passed": true
+    },
+    {
+      "test": "no_conditional 56-day risk window month 9",
+      "passed": true
+    },
+    {
+      "test": "no_conditional step limit month 9",
+      "passed": true
+    },
+    {
+      "test": "no_conditional gate replay month 9",
+      "passed": true
+    },
+    {
+      "test": "no_conditional selection chronology month 10",
+      "passed": true
+    },
+    {
+      "test": "no_conditional 14-day CVaR95 degeneracy recorded month 10",
+      "passed": true
+    },
+    {
+      "test": "no_conditional 56-day risk window month 10",
+      "passed": true
+    },
+    {
+      "test": "no_conditional step limit month 10",
+      "passed": true
+    },
+    {
+      "test": "no_conditional gate replay month 10",
+      "passed": true
+    },
+    {
+      "test": "no_conditional November December parameter freeze",
+      "passed": true
+    },
+    {
+      "test": "loose_gate selection chronology month 6",
+      "passed": true
+    },
+    {
+      "test": "loose_gate 14-day CVaR95 degeneracy recorded month 6",
+      "passed": true
+    },
+    {
+      "test": "loose_gate 56-day risk window month 6",
+      "passed": true
+    },
+    {
+      "test": "loose_gate step limit month 6",
+      "passed": true
+    },
+    {
+      "test": "loose_gate gate replay month 6",
+      "passed": true
+    },
+    {
+      "test": "loose_gate selection chronology month 7",
+      "passed": true
+    },
+    {
+      "test": "loose_gate 14-day CVaR95 degeneracy recorded month 7",
+      "passed": true
+    },
+    {
+      "test": "loose_gate 56-day risk window month 7",
+      "passed": true
+    },
+    {
+      "test": "loose_gate step limit month 7",
+      "passed": true
+    },
+    {
+      "test": "loose_gate gate replay month 7",
+      "passed": true
+    },
+    {
+      "test": "loose_gate selection chronology month 8",
+      "passed": true
+    },
+    {
+      "test": "loose_gate 14-day CVaR95 degeneracy recorded month 8",
+      "passed": true
+    },
+    {
+      "test": "loose_gate 56-day risk window month 8",
+      "passed": true
+    },
+    {
+      "test": "loose_gate step limit month 8",
+      "passed": true
+    },
+    {
+      "test": "loose_gate gate replay month 8",
+      "passed": true
+    },
+    {
+      "test": "loose_gate selection chronology month 9",
+      "passed": true
+    },
+    {
+      "test": "loose_gate 14-day CVaR95 degeneracy recorded month 9",
+      "passed": true
+    },
+    {
+      "test": "loose_gate 56-day risk window month 9",
+      "passed": true
+    },
+    {
+      "test": "loose_gate step limit month 9",
+      "passed": true
+    },
+    {
+      "test": "loose_gate gate replay month 9",
+      "passed": true
+    },
+    {
+      "test": "loose_gate selection chronology month 10",
+      "passed": true
+    },
+    {
+      "test": "loose_gate 14-day CVaR95 degeneracy recorded month 10",
+      "passed": true
+    },
+    {
+      "test": "loose_gate 56-day risk window month 10",
+      "passed": true
+    },
+    {
+      "test": "loose_gate step limit month 10",
+      "passed": true
+    },
+    {
+      "test": "loose_gate gate replay month 10",
+      "passed": true
+    },
+    {
+      "test": "loose_gate November December parameter freeze",
+      "passed": true
+    },
+    {
+      "test": "strict_gate selection chronology month 6",
+      "passed": true
+    },
+    {
+      "test": "strict_gate 14-day CVaR95 degeneracy recorded month 6",
+      "passed": true
+    },
+    {
+      "test": "strict_gate 56-day risk window month 6",
+      "passed": true
+    },
+    {
+      "test": "strict_gate step limit month 6",
+      "passed": true
+    },
+    {
+      "test": "strict_gate gate replay month 6",
+      "passed": true
+    },
+    {
+      "test": "strict_gate selection chronology month 7",
+      "passed": true
+    },
+    {
+      "test": "strict_gate 14-day CVaR95 degeneracy recorded month 7",
+      "passed": true
+    },
+    {
+      "test": "strict_gate 56-day risk window month 7",
+      "passed": true
+    },
+    {
+      "test": "strict_gate step limit month 7",
+      "passed": true
+    },
+    {
+      "test": "strict_gate gate replay month 7",
+      "passed": true
+    },
+    {
+      "test": "strict_gate selection chronology month 8",
+      "passed": true
+    },
+    {
+      "test": "strict_gate 14-day CVaR95 degeneracy recorded month 8",
+      "passed": true
+    },
+    {
+      "test": "strict_gate 56-day risk window month 8",
+      "passed": true
+    },
+    {
+      "test": "strict_gate step limit month 8",
+      "passed": true
+    },
+    {
+      "test": "strict_gate gate replay month 8",
+      "passed": true
+    },
+    {
+      "test": "strict_gate selection chronology month 9",
+      "passed": true
+    },
+    {
+      "test": "strict_gate 14-day CVaR95 degeneracy recorded month 9",
+      "passed": true
+    },
+    {
+      "test": "strict_gate 56-day risk window month 9",
+      "passed": true
+    },
+    {
+      "test": "strict_gate step limit month 9",
+      "passed": true
+    },
+    {
+      "test": "strict_gate gate replay month 9",
+      "passed": true
+    },
+    {
+      "test": "strict_gate selection chronology month 10",
+      "passed": true
+    },
+    {
+      "test": "strict_gate 14-day CVaR95 degeneracy recorded month 10",
+      "passed": true
+    },
+    {
+      "test": "strict_gate 56-day risk window month 10",
+      "passed": true
+    },
+    {
+      "test": "strict_gate step limit month 10",
+      "passed": true
+    },
+    {
+      "test": "strict_gate gate replay month 10",
+      "passed": true
+    },
+    {
+      "test": "strict_gate November December parameter freeze",
+      "passed": true
+    },
+    {
+      "test": "near uses statistical fields",
+      "passed": true
+    },
+    {
+      "test": "future and prefix risk invariant 151 none",
+      "passed": true
+    },
+    {
+      "test": "intraday prefix 151 none",
+      "passed": true
+    },
+    {
+      "test": "future and prefix risk invariant 151 level",
+      "passed": true
+    },
+    {
+      "test": "intraday prefix 151 level",
+      "passed": true
+    },
+    {
+      "test": "past validation unaffected by future 151 none",
+      "passed": true
+    },
+    {
+      "test": "past validation unaffected by future 151 level",
+      "passed": true
+    },
+    {
+      "test": "future and prefix risk invariant 243 none",
+      "passed": true
+    },
+    {
+      "test": "intraday prefix 243 none",
+      "passed": true
+    },
+    {
+      "test": "future and prefix risk invariant 243 level",
+      "passed": true
+    },
+    {
+      "test": "intraday prefix 243 level",
+      "passed": true
+    },
+    {
+      "test": "past validation unaffected by future 243 none",
+      "passed": true
+    },
+    {
+      "test": "past validation unaffected by future 243 level",
+      "passed": true
+    },
+    {
+      "test": "future and prefix risk invariant 334 none",
+      "passed": true
+    },
+    {
+      "test": "intraday prefix 334 none",
+      "passed": true
+    },
+    {
+      "test": "future and prefix risk invariant 334 level",
+      "passed": true
+    },
+    {
+      "test": "intraday prefix 334 level",
+      "passed": true
+    },
+    {
+      "test": "past validation unaffected by future 334 none",
+      "passed": true
+    },
+    {
+      "test": "past validation unaffected by future 334 level",
+      "passed": true
+    },
+    {
+      "test": "user_checks.csv physical",
+      "passed": true,
+      "rows": 334
+    },
+    {
+      "test": "fused_checks.csv physical",
+      "passed": true,
+      "rows": 2004
+    },
+    {
+      "test": "ridge_h1_replan_checks.csv physical",
+      "passed": true,
+      "rows": 334
+    },
+    {
+      "test": "Etarget five-level coverage",
+      "passed": true
+    },
+    {
+      "test": "inventory three-value coverage",
+      "passed": true
+    }
+  ],
+  "all_pass": true,
+  "count": 154,
+  "retrospective_not_unseen": true
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "parameter": "battery/SOC/power/efficiency",
+    "category": "题设物理参数",
+    "source": "题目与附件直接给定",
+    "selection": "不参与寻优"
+  },
+  {
+    "parameter": "alpha",
+    "category": "数据学习参数",
+    "source": "预先声明候选域 0.50–0.95；搜索段拟合、后置验证段验收",
+    "selection": "滚动时间验证"
+  },
+  {
+    "parameter": "window",
+    "category": "结构候选参数",
+    "source": "14/21/28/42/56 天，均围绕 7 日周期构造",
+    "selection": "滚动时间验证"
+  },
+  {
+    "parameter": "rho",
+    "category": "数据学习参数",
+    "source": "[0,1] 等距离散为 0/0.25/0.5/0.75/1",
+    "selection": "滚动时间验证"
+  },
+  {
+    "parameter": "smooth",
+    "category": "结构候选参数",
+    "source": "0/3/5 点：无平滑、弱平滑、中等平滑",
+    "selection": "滚动时间验证"
+  },
+  {
+    "parameter": "similar-day blend",
+    "category": "数据学习参数",
+    "source": "0–0.5 以 0.1 为步长；条件残差样本更小，故不允许权重超过全局残差",
+    "selection": "搜索段选择+验证段验收"
+  },
+  {
+    "parameter": "similar-day K",
+    "category": "结构候选参数",
+    "source": "14/21/28/42 天，均为完整周的整数倍",
+    "selection": "搜索段选择+验证段验收"
+  },
+  {
+    "parameter": "42/14/1 temporal split",
+    "category": "实验协议参数",
+    "source": "6 周搜索 + 2 周成本后置验证 + 1 日信息隔离",
+    "selection": "事前固定，不按全年结果调节"
+  },
+  {
+    "parameter": "near tie rule",
+    "category": "统计选择规则",
+    "source": "删除固定0.1%带宽；用7日循环块Bootstrap 90%区间判断候选相对最优者是否可区分",
+    "selection": "搜索段内只作简约性规则，部署仍须独立验证"
+  },
+  {
+    "parameter": "one-grid update limit",
+    "category": "稳定性规则",
+    "source": "每次正式更新仅允许在预先声明网格上移动一档",
+    "selection": "事前固定，不按全年结果调节"
+  },
+  {
+    "parameter": "bootstrap block=7",
+    "category": "数值/统计参数",
+    "source": "保留周周期相关结构",
+    "selection": "事前固定"
+  },
+  {
+    "parameter": "bootstrap CI=90%",
+    "category": "统计口径参数",
+    "source": "有限14日验证窗下的保守证据门槛",
+    "selection": "事前固定并披露局限"
+  },
+  {
+    "parameter": "CVaR alpha=95%",
+    "category": "风险偏好参数",
+    "source": "风险管理口径；不是由样本拟合出的参数",
+    "selection": "使用56个历史日，尾部质量2.8日；14日CVaR95仅作退化诊断"
+  },
+  {
+    "parameter": "risk validation=56 days",
+    "category": "实验协议参数",
+    "source": "8个完整周且CVaR95包含2.8个尾部日，避免14日CVaR95严格等于worst-day",
+    "selection": "事前固定；不作为成本收益验证窗"
+  },
+  {
+    "parameter": "inventory value",
+    "category": "经济核算参数",
+    "source": "主值为最低电价补库成本 p_min/eta_c；另报0与eta_d*p_max上下口径",
+    "selection": "三口径敏感性，不声称精确市场终值"
+  },
+  {
+    "parameter": "reference E_target",
+    "category": "边界结构参数",
+    "source": "6000为题给初始SOC和容量50%；1200/4800/7200/10800覆盖保护边界与±10%容量",
+    "selection": "6000主报告，五档实际重跑敏感性"
+  },
+  {
+    "parameter": "SciPy=1.15.3",
+    "category": "数值环境参数",
+    "source": "Colab SciPy 1.16.3 对旧SAA稀疏LP返回HiGHS Status Not Set；1.15.3通过常数/真实场景试运行",
+    "selection": "锁定环境并仍检查原始/对偶残差"
+  },
+  {
+    "parameter": "forecast_core inherited constants",
+    "category": "继承模型参数",
+    "source": "来自已审计A预测主干；本版为保持基准可比性不重新事后寻优",
+    "selection": "保留并在报告中单列敏感性/局限"
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "seconds": 598.445739968,
+  "lp_calls": 54364,
+  "note": "parameter domains/protocol fixed ex ante; main gate uses bootstrap cost evidence plus CVaR95 non-inferiority; ablations are not post-hoc model promotion"
+}
