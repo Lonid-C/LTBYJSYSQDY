@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "fingerprint": "34182692e60b753665f6ee4fb7ff12a3271ce9c983ac0ce6f580bd30553569b0",
+  "best_h3_method": "Ridge",
+  "rows": 5344,
+  "slots": 336672,
+  "runtime_seconds": 2593.649928349,
+  "checks_all_pass": true,
+  "pilot": {
+    "all_checks_pass": true,
+    "future_perturbation_prefix_gap": 0.0,
+    "information_boundary_pass": true
+  },
+  "official_result2_overwritten": false,
+  "regressions": {
+    "legacy_saa_actual": 14539240.537931435,
+    "legacy_saa_reference": 14539240.537931435,
+    "team_a_port_actual": 13820986.576531284,
+    "team_a_reference": 13820986.576531284,
+    "team_a_error": 0.0
+  },
+  "parameter_protocol": "monthly causal 56-day calibration; Nov-Dec use Oct rule",
+  "figure_count": 4
+}

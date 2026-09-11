@@ -1,0 +1,18 @@
+[
+  {
+    "figure": "hybrid_cost_comparison",
+    "meaning": "同一开发期比较固定执行、因果执行、点预测和分位数策略的总费用。"
+  },
+  {
+    "figure": "selected_alpha_path",
+    "meaning": "逐月因果选择的分位数与0.8经济学锚点；变化反映误差分布和储能耦合。"
+  },
+  {
+    "figure": "monthly_stability",
+    "meaning": "各策略月度总费用，检查结论是否由少数月份驱动。"
+  },
+  {
+    "figure": "soc_causal_example",
+    "meaning": "实际SOC只由已发生误差更新，参考SOC仅用于形成保留线。"
+  }
+]

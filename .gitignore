@@ -11,6 +11,7 @@ tmp/
 # Colab execution caches and raw LP certificates can be regenerated.
 results/q2_planning_v1/checkpoints/
 results/q2_planning_v1/certificates/
+results/q2_hybrid_v1/checkpoints/
 
 # Never commit local credentials or environment files.
 .env
