@@ -21,3 +21,7 @@ results/q2_hybrid_v1/checkpoints/
 *oauth*
 *credential*
 *token*
+
+# Local agent session state and working notes (not deliverables).
+.workbuddy/
+.workbuddy-ai/
