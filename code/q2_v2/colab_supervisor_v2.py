@@ -15,6 +15,8 @@ STATUS=ROOT/'tmp/q2_v2_extensions_background_status.json'
 ARCHIVE=ROOT/'tmp/q2_v2_extensions_outputs.tar.gz'
 NOTEBOOK=ROOT/'code/problem2_fused_v2.ipynb'
 OUTPUT_NOTEBOOK=ROOT/'code/problem2_fused_v2_output.ipynb'
+REMOTE_STATUS='/content/q2_v2_remote_status.json'
+LOCAL_REMOTE_STATUS=ROOT/'tmp/q2_v2_remote_status.json'
 
 
 def write_status(phase,**extra):
@@ -54,13 +56,25 @@ def validate_notebook(path):
 
 
 def main():
-    write_status('running_notebook',session=SESSION)
+    write_status('launching_remote_worker',session=SESSION)
     ok=False
     try:
-        run(['colab','exec','-s',SESSION,'-f',str(NOTEBOOK.relative_to(ROOT)),'--timeout','10800'])
-        write_status('notebook_executed',session=SESSION)
-        run(['colab','exec','-s',SESSION,'-f','code/q2_v2/colab_pack_v2.py','--timeout','900'])
+        run(['colab','exec','-s',SESSION,'-f','code/q2_v2/colab_launch_detached_v2.py','--timeout','120'])
+        write_status('remote_worker_running',session=SESSION,poll_interval_minutes=40)
+        first=True
+        while True:
+            time.sleep(60 if first else 2400);first=False
+            downloaded=subprocess.run(['colab','download','-s',SESSION,REMOTE_STATUS,str(LOCAL_REMOTE_STATUS)],
+                                      cwd=ROOT,text=True,capture_output=True)
+            if downloaded.returncode:
+                raise RuntimeError('cannot read remote worker status: '+downloaded.stderr)
+            remote=json.loads(LOCAL_REMOTE_STATUS.read_text())
+            write_status('remote_'+remote['phase'],session=SESSION,poll_interval_minutes=40,remote=remote)
+            if remote['phase']=='failed':raise RuntimeError(remote)
+            if remote['phase']=='completed':break
         run(['colab','download','-s',SESSION,'/content/q2_fused_v2_outputs.tar.gz',str(ARCHIVE)])
+        run(['colab','download','-s',SESSION,
+             '/content/CUMCM_2026_Last_Dance/code/problem2_fused_v2_output.ipynb',str(OUTPUT_NOTEBOOK)])
         safe_extract(ARCHIVE)
         if not OUTPUT_NOTEBOOK.exists():raise FileNotFoundError(OUTPUT_NOTEBOOK)
         notebook_audit=validate_notebook(OUTPUT_NOTEBOOK)
