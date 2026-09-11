@@ -2,8 +2,20 @@
 from pathlib import Path
 import nbformat as nbf
 
-ROOT=Path(__file__).resolve().parents[1]
-MODULE=ROOT/'code/q2_v31/q2_terminal_ablation.py'
+def project_root(start):
+    """按只在仓库根存在的文件向上查找项目根。
+
+    使本模块不依赖自身在 code/ 下的深度，归档移动后仍可运行。
+    """
+    for candidate in (start, *start.parents):
+        if (candidate / 'C题/附件/附件2.xlsx').exists():
+            return candidate
+    raise FileNotFoundError('未找到含 C题/附件/附件2.xlsx 的项目根目录')
+
+
+
+ROOT=project_root(Path(__file__).resolve().parent)
+MODULE=ROOT/'code/archive/q2_v31/q2_terminal_ablation.py'
 OUT=ROOT/'code/problem2_v31_terminal_ablation.ipynb'
 nb=nbf.v4.new_notebook()
 nb.metadata.update({'kernelspec':{'display_name':'Python 3','language':'python','name':'python3'},
@@ -217,7 +229,7 @@ C_{[a,b]}^{\rm adj}
 
 source=MODULE.read_text(encoding='utf-8').replace('from __future__ import annotations\n','')
 source=source.replace("\nif __name__ == '__main__':\n    full()\n",'\n')
-code("# 以下是本次实验的完整可执行源码。\n__file__=str(PROJECT/'code/q2_v31/q2_terminal_ablation.py')\n"+source)
+code("# 以下是本次实验的完整可执行源码。\n__file__=str(PROJECT/'code/archive/q2_v31/q2_terminal_ablation.py')\n"+source)
 
 md('''## 8. 从头运行 V3.1\n\n本单元删除并重建 V3.1 专属输出，预测文件只读，旧版规划结果不作为本次策略费用输入。''')
 code('full()')

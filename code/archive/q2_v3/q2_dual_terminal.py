@@ -17,8 +17,19 @@ from scipy.optimize import linprog
 from scipy.sparse import coo_matrix, vstack, csr_matrix
 from sklearn.isotonic import IsotonicRegression
 
+def project_root(start):
+    """按只在仓库根存在的文件向上查找项目根。
+
+    使本模块不依赖自身在 code/ 下的深度，归档移动后仍可运行。
+    """
+    for candidate in (start, *start.parents):
+        if (candidate / 'C题/附件/附件2.xlsx').exists():
+            return candidate
+    raise FileNotFoundError('未找到含 C题/附件/附件2.xlsx 的项目根目录')
+
+
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
+ROOT = project_root(HERE)
 sys.path.insert(0, str(ROOT/'code'))
 sys.path.insert(0, str(ROOT/'code/q2_v2'))
 

@@ -46,14 +46,17 @@
 
 | 目录 | 内容 | 定位 |
 | --- | --- | --- |
-| `code/q2_v31/` | 终端条件消融：5 种终端处理 × 3 个分期、9/17 点网格收敛、配对 7 日块 Bootstrap | 证明「对偶终端价值」优于其他终端机制 |
-| `code/q2_v3/` | 对偶终端价值的首次实现 + 参数滚动验证 + VSS/EVPI | 参数来源与信息价值证据 |
-| `code/q2_v2/` | CVaR 风险前沿、VSS/EVPI、2/3 日滚动规划等规划端扩展 | 题意边界扩展，不替代主模型 |
+| `code/archive/q2_v31/` | 终端条件消融：5 种终端处理 × 3 个分期、9/17 点网格收敛、配对 7 日块 Bootstrap | 证明「对偶终端价值」优于其他终端机制 |
+| `code/archive/q2_v3/` | 对偶终端价值的首次实现 + 参数滚动验证 + VSS/EVPI | 参数来源与信息价值证据 |
+| `code/q2_v2/` | CVaR 风险前沿、VSS/EVPI、2/3 日滚动规划等规划端扩展（`dispatch.py`、`utils.py` 除外，见上表） | 题意边界扩展，不替代主模型 |
 | `code/q2_planning.py` | 早期两阶段 SAA 主实验 | 现仅被复用作数据读取（`Study`）与加权函数（`weights_for`） |
 | `code/q2_hybrid.py` | 早期「预测 × 策略」融合消融（H0–H4） | 预测器筛选证据 |
 | `code/problem2.ipynb` | 早期 Q2 全过程（含预测器消融） | 预测端选择与 `result2` 写入格式的来源 |
 
 > **重要**：`code/q2_planning.py` 与 `code/q2_hybrid.py` 里也各自有一套早期费用数字，与最终版口径不同（例如旧加权 SAA H0 的 14 539 240.54 元）。引用时必须注明来源，不要与最终版的 13 635 767.16 元混用。
+
+> **代码怎么找入口**：见 [`code/README.md`](code/README.md)（三层分级 + 依赖关系 + 新增实验的目录约定）。归档说明与源码哈希对照表见 [`code/archive/README.md`](code/archive/README.md)。
+
 
 ### 结果目录
 
@@ -191,7 +194,18 @@ $$
 │       ├── 附件3.xlsx            0/6/12/18 发布的未来 24 小时整点光伏预报
 │       ├── 附件4.xlsx            2025 全年逐日逐时波动电价
 │       └── 附件5/                result1 / result2 / result3 / result4-2 / result4-3 模板
-├── code/                         模型代码（版本地图见第二节）
+├── code/                         模型代码
+│   ├── README.md                 ★ 代码入口地图（三层分级 + 依赖关系）
+│   ├── problem1.ipynb            ★ 问题 1 最终模型
+│   ├── problem2_v32_final.ipynb  ★ 问题 2 最终版源 notebook
+│   ├── problem2_v32_final_output.ipynb  ★ 问题 2 最终版执行记录
+│   ├── q2_v32/                   ★ 问题 2 最终生产版 + Colab 驱动
+│   ├── q2_v2/dispatch.py         ★ H1 因果执行器（共享运行时）
+│   ├── q2_v2/utils.py            ★ 统一参数与时间网格（共享运行时）
+│   ├── q2_planning.py            ★ 共享运行时（Study / weights_for）
+│   ├── archive/                  研究记录归档（q2_v3、q2_v31 及其 builder）
+│   │   └── README.md             归档说明 + 源码哈希对照
+│   └── ...                       早期各版本 notebook 与实验脚本（保留原位）
 ├── results/                      全部实验输出（CSV / JSON / CSV.GZ）
 ├── figures/                      论文图表（PDF + PNG）
 ├── reports/                      题面审计、建模思路 HTML、结果报告
