@@ -3,14 +3,15 @@ from pathlib import Path
 import tarfile
 
 archive = Path("/content/q2_hybrid_input.tar.gz")
-destination = Path("/content")
+destination = Path("/content/CUMCM_2026_Last_Dance")
+destination.mkdir(parents=True, exist_ok=True)
 with tarfile.open(archive) as tf:
     for member in tf.getmembers():
         target = (destination / member.name).resolve()
         if not target.is_relative_to(destination.resolve()):
             raise ValueError(f"unsafe archive member: {member.name}")
     tf.extractall(destination, filter="data")
-root = destination / "CUMCM_2026_Last_Dance"
+root = destination
 required = [root / "code/q2_planning.py", root / "code/q2_hybrid.py",
             root / "C题/附件/附件1.xlsx", root / "C题/附件/附件2.xlsx",
             root / "results/problem2_forecast_ablation_predictions.csv.gz"]
