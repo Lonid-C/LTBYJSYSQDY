@@ -239,12 +239,15 @@ class HybridStudy:
         return (self.fc[method][0, d] - self.fc[method][1, d]) * DT
 
     def residual_pool(self, method, d, window):
-        start = max(7, d - int(window))
+        start = max(1, d - int(window))
         fc_hist = (self.fc[method][0, start:d] - self.fc[method][1, start:d]) * DT
         pool = self.net_energy[start:d] - fc_hist
+        hist = np.arange(start, d)
+        finite = np.isfinite(pool).all(axis=1)
+        pool, hist = pool[finite], hist[finite]
         if len(pool) == 0 or not np.isfinite(pool).all():
             raise ValueError(f"残差池非法: method={method}, d={d}, W={window}")
-        return pool, np.arange(start, d)
+        return pool, hist
 
     def conditional_pool(self, method, d, features, k):
         hist = np.arange(max(7, d - 120), d)

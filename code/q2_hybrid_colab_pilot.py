@@ -4,7 +4,10 @@ import sys
 
 root = Path("/content/CUMCM_2026_Last_Dance")
 sys.path.insert(0, str(root / "code"))
-from q2_hybrid import HybridStudy, PolicyConfig, run_pilot  # noqa: E402
+import importlib  # noqa: E402
+import q2_hybrid as hybrid  # noqa: E402
+hybrid = importlib.reload(hybrid)
+HybridStudy, PolicyConfig, run_pilot = hybrid.HybridStudy, hybrid.PolicyConfig, hybrid.run_pilot
 
 s = HybridStudy(root)
 pilot, tests = run_pilot(s)
