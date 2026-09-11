@@ -16,6 +16,10 @@ results/q2_hybrid_v1/checkpoints/
 # Month-end checkpoint dumps superseded byte-for-byte by the final CSV.
 results/**/*.partial.csv
 
+# Working-tree copy of the previous H0 submission workbook; the original
+# revision is already preserved in git history at fc57462.
+result2_H0_backup.xlsx
+
 # Never commit local credentials or environment files.
 .env
 .env.*

@@ -1,0 +1,25 @@
+{
+  "path": "/content/CUMCM_2026_Last_Dance/result2.xlsx",
+  "days": 334,
+  "events": 199,
+  "planned_kwh": 21776662.793159,
+  "planned_cost": 13291788.883849723,
+  "written_emergency_kwh": 56089.74014061838,
+  "model_emergency_kwh": 56089.740140618385,
+  "passed": true,
+  "checks": {
+    "plan_shape_ok": true,
+    "storage_shape_ok": true,
+    "event_shape_ok": true,
+    "plan_max_abs_error_kwh": 4.547473508864641e-13,
+    "total_kwh_max_abs_error": 7.275957614183426e-12,
+    "total_cost_max_abs_error_yuan": 2.1827872842550278e-11,
+    "storage_charge_max_abs_error_kwh": 5.4569682106375694e-12,
+    "storage_discharge_max_abs_error_kwh": 9.094947017729282e-13,
+    "soc_start_max_abs_error_kwh": 5.4569682106375694e-12,
+    "soc_end_max_abs_error_kwh": 5.4569682106375694e-12,
+    "event_energy_abs_error_kwh": 7.275957614183426e-12,
+    "formula_error_count": 0,
+    "pass": true
+  }
+}
