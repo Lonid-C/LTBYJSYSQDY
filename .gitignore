@@ -13,6 +13,9 @@ results/q2_planning_v1/checkpoints/
 results/q2_planning_v1/certificates/
 results/q2_hybrid_v1/checkpoints/
 
+# Month-end checkpoint dumps superseded byte-for-byte by the final CSV.
+results/**/*.partial.csv
+
 # Never commit local credentials or environment files.
 .env
 .env.*

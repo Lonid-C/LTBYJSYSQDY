@@ -1,0 +1,10 @@
+{
+  "fixed_terminal": 6000.0,
+  "free_terminal": 1200.0,
+  "value_terminal": 8400.000000000004,
+  "max_history_day": 179,
+  "decision_day": 180,
+  "all_finite": true,
+  "pilot_value_iterations": 3,
+  "solve_calls": 108
+}

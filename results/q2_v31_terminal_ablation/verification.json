@@ -1,0 +1,85 @@
+{
+  "all_pass": true,
+  "tests": [
+    {
+      "test": "causality",
+      "value": 0.0,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "test": "balance",
+      "value": 1.7053025658242404e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "soc_recursion",
+      "value": 9.094947017729282e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "lp_eq",
+      "value": 3.387867764104158e-11,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "test": "lp_ineq",
+      "value": 1.1368683772161603e-11,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "test": "dual_support",
+      "value": 3.637978807091713e-11,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "test": "dual_own_cut",
+      "value": 7.275957614183426e-12,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "test": "value_iteration_convergence",
+      "value": 0.0,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "test": "soc_continuity_cyclic_initial",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "soc_continuity_dual_terminal_g17",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "soc_continuity_dual_terminal_g9",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "soc_continuity_free_terminal",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "soc_continuity_hard_6000",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    }
+  ],
+  "solve_calls": 5674,
+  "solve_seconds": 164.24640871900084
+}

@@ -1,0 +1,187 @@
+[
+  {
+    "month": 6,
+    "origin": "2025-06-01",
+    "search_start": "2025-04-05",
+    "search_end": "2025-05-16",
+    "validation_start": "2025-05-17",
+    "validation_end": "2025-05-30",
+    "embargo_date": "2025-05-31",
+    "incumbent": {
+      "window": 21,
+      "half": 14,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "proposal": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "config": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "accepted": true,
+    "validation_saving_mean": 467.04498861765427,
+    "validation_ci_low95": 398.0981600574097,
+    "validation_ci_high95": 535.9918171778988
+  },
+  {
+    "month": 7,
+    "origin": "2025-07-01",
+    "search_start": "2025-05-05",
+    "search_end": "2025-06-15",
+    "validation_start": "2025-06-16",
+    "validation_end": "2025-06-29",
+    "embargo_date": "2025-06-30",
+    "incumbent": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "proposal": {
+      "window": 14,
+      "half": 7,
+      "features": "level",
+      "k": 14,
+      "blend": 0.25,
+      "rho": 0.5
+    },
+    "config": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "accepted": false,
+    "validation_saving_mean": -225.06105685600804,
+    "validation_ci_low95": -372.8928541376866,
+    "validation_ci_high95": -77.22925957432952
+  },
+  {
+    "month": 8,
+    "origin": "2025-08-01",
+    "search_start": "2025-06-05",
+    "search_end": "2025-07-16",
+    "validation_start": "2025-07-17",
+    "validation_end": "2025-07-30",
+    "embargo_date": "2025-07-31",
+    "incumbent": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "proposal": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.25
+    },
+    "config": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "accepted": false,
+    "validation_saving_mean": 53.97957073026659,
+    "validation_ci_low95": 0.0,
+    "validation_ci_high95": 107.95914146053317
+  },
+  {
+    "month": 9,
+    "origin": "2025-09-01",
+    "search_start": "2025-07-06",
+    "search_end": "2025-08-16",
+    "validation_start": "2025-08-17",
+    "validation_end": "2025-08-30",
+    "embargo_date": "2025-08-31",
+    "incumbent": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "proposal": {
+      "window": 14,
+      "half": 7,
+      "features": "season",
+      "k": 14,
+      "blend": 0.25,
+      "rho": 0.5
+    },
+    "config": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "accepted": false,
+    "validation_saving_mean": -7.128682441283153,
+    "validation_ci_low95": -28.71463035058358,
+    "validation_ci_high95": 14.457265468017274
+  },
+  {
+    "month": 10,
+    "origin": "2025-10-01",
+    "search_start": "2025-08-05",
+    "search_end": "2025-09-15",
+    "validation_start": "2025-09-16",
+    "validation_end": "2025-09-29",
+    "embargo_date": "2025-09-30",
+    "incumbent": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "proposal": {
+      "window": 14,
+      "half": null,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "config": {
+      "window": 14,
+      "half": 7,
+      "features": "none",
+      "k": 21,
+      "blend": 0.0,
+      "rho": 0.5
+    },
+    "accepted": false,
+    "validation_saving_mean": 57.13607218924361,
+    "validation_ci_low95": -64.55654698299882,
+    "validation_ci_high95": 178.3531740167247
+  }
+]

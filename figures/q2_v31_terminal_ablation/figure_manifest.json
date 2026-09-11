@@ -1,0 +1,14 @@
+{
+  "font_name": "Noto Sans CJK JP",
+  "font_path": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+  "files": [
+    "01_adjusted_cost_delta.pdf",
+    "01_adjusted_cost_delta.png",
+    "02_monthly_cost_delta.pdf",
+    "02_monthly_cost_delta.png",
+    "03_grid_value_comparison.pdf",
+    "03_grid_value_comparison.png",
+    "04_soc_distribution.pdf",
+    "04_soc_distribution.png"
+  ]
+}

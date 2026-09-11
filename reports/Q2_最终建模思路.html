@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>问题二：基于对偶库存价值的因果滚动两阶段 SAA 储能调度模型</title>
+  <script>
+    window.MathJax = {
+      tex: {inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']], tags: 'ams'},
+      svg: {fontCache: 'global'}
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    :root{
+      --ink:#172033; --muted:#596579; --blue:#1f5fae; --blue2:#eaf2fc;
+      --green:#21745b; --green2:#eaf7f1; --amber:#a76400; --amber2:#fff6df;
+      --line:#d9e0e9; --paper:#fff; --canvas:#eef2f7;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--canvas);color:var(--ink);font-family:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong",serif;line-height:1.82;font-size:16px}
+    main{max-width:1080px;margin:28px auto 72px;background:var(--paper);box-shadow:0 10px 36px rgba(25,42,70,.12);padding:64px 82px}
+    h1,h2,h3,h4{font-family:"Noto Sans CJK SC","Source Han Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:#11223e;line-height:1.35}
+    h1{font-size:32px;text-align:center;margin:0 0 12px;letter-spacing:.03em}
+    h2{font-size:24px;margin:58px 0 20px;padding-bottom:9px;border-bottom:2px solid var(--blue)}
+    h3{font-size:19px;margin:34px 0 12px;color:#173f73}
+    h4{font-size:16px;margin:24px 0 8px}
+    p{margin:10px 0;text-align:justify}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .subtitle{text-align:center;color:var(--muted);font-family:"Noto Sans CJK SC","PingFang SC",sans-serif;font-size:17px;margin-bottom:28px}
+    .identity{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0 32px}
+    .tag{border:1px solid #b8cbe4;background:#f3f7fc;color:#234e83;border-radius:999px;padding:4px 12px;font:14px/1.5 "Noto Sans CJK SC","PingFang SC",sans-serif}
+    .abstract,.callout{border-radius:10px;padding:18px 22px;margin:22px 0}
+    .abstract{background:#f7f9fc;border:1px solid var(--line)}
+    .callout{background:var(--blue2);border-left:5px solid var(--blue)}
+    .callout.green{background:var(--green2);border-left-color:var(--green)}
+    .callout.amber{background:var(--amber2);border-left-color:var(--amber)}
+    .callout strong:first-child{font-family:"Noto Sans CJK SC","PingFang SC",sans-serif}
+    nav{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:18px 26px;margin:30px 0}
+    nav h3{margin:0 0 10px;color:var(--ink)}
+    nav ol{margin:0;columns:2;column-gap:40px;padding-left:24px}
+    nav li{break-inside:avoid;margin:3px 0}
+    table{border-collapse:collapse;width:100%;margin:18px 0 26px;font-size:14px;line-height:1.55}
+    th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top}
+    th{background:#edf3fa;color:#193b67;font-family:"Noto Sans CJK SC","PingFang SC",sans-serif;font-weight:650}
+    tr:nth-child(even) td{background:#fbfcfe}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .eqnote{text-align:center;color:var(--muted);font-size:14px;margin-top:-4px}
+    .flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:22px 0;font-family:"Noto Sans CJK SC","PingFang SC",sans-serif}
+    .flow span{padding:8px 12px;border:1px solid #b9cae0;border-radius:7px;background:#f5f8fc}
+    .flow b{color:var(--blue);font-size:20px}
+    figure{margin:30px 0 38px;text-align:center;break-inside:avoid}
+    figure img{display:block;max-width:100%;height:auto;margin:0 auto;border:1px solid #e2e6ec;background:white}
+    figure object{display:block;width:100%;height:600px;border:1px solid #e2e6ec;background:#fafafa}
+    figcaption{text-align:justify;color:#3f4b5f;font-size:14px;line-height:1.65;margin:10px 8px 0}
+    .figtitle{display:block;text-align:center;color:var(--ink);font-weight:650;margin-bottom:4px}
+    .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}
+    .kpi{border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:8px;padding:14px;background:#fbfdff;text-align:center}
+    .kpi .value{font:700 22px/1.25 "Noto Sans CJK SC","PingFang SC",sans-serif;color:#163f73}
+    .kpi .label{color:var(--muted);font-size:13px;margin-top:6px}
+    .decision{border:2px solid var(--green);background:#f4fbf8;border-radius:12px;padding:22px 24px;margin:28px 0}
+    .decision h3{margin-top:0;color:var(--green)}
+    .small{font-size:13px;color:var(--muted)}
+    .nowrap{white-space:nowrap}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#f2f4f7;padding:1px 4px;border-radius:4px}
+    ul,ol{padding-left:26px}
+    li{margin:5px 0}
+    .pagebreak{break-before:page}
+    footer{margin-top:58px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}
+    @media(max-width:800px){main{margin:0;padding:32px 22px;box-shadow:none}nav ol{columns:1}.kpi-grid{grid-template-columns:repeat(2,1fr)}figure object{height:460px}}
+    @media print{
+      @page{size:A4;margin:18mm 17mm 18mm}
+      body{background:white;font-size:10.5pt}
+      main{max-width:none;margin:0;padding:0;box-shadow:none}
+      h1{font-size:22pt}h2{font-size:16pt;margin-top:34px}h3{font-size:13pt}
+      nav{display:none}.kpi-grid{grid-template-columns:repeat(4,1fr)}
+      figure object{height:148mm}a{color:inherit}table{font-size:8.5pt}
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>问题二：基于对偶库存价值的因果滚动两阶段 SAA 储能调度模型</h1>
+    <div class="subtitle">Ridge 预测中心 · 完整日残差场景 · 指数加权 SAA · 对偶终端价值 · H1 因果执行</div>
+    <div class="identity">
+      <span class="tag">最终主策略：dual_terminal_g17</span>
+      <span class="tag">回测区间：2025-02-01—2025-12-31</span>
+      <span class="tag">时间粒度：10 min，共 144 时槽/日</span>
+      <span class="tag">有限场景线性规划</span>
+    </div>
+  </header>
+
+  <section class="abstract">
+    <strong>本节摘要。</strong>问题二要求在每日开始前制定购电与储能参考计划，但真实负荷和光伏出力在执行时才逐时显现。为同时处理预测误差、跨时段储能耦合和有限规划窗口的边界偏差，本文先利用 Ridge 分别预测负荷与光伏，再用历史完整日净负荷残差生成保留日内相关性的经验场景；随后建立风险中性的两阶段样本平均近似线性规划，第一阶段统一确定购电、充放电和参考 SOC，第二阶段针对各场景设置紧急购电补救变量。为避免强制日末 SOC 回到人为常数，进一步从参数化线性规划的初始 SOC 对偶变量中构造全局支持切平面，形成按月份、星期更新的分段线性终端库存价值。日前模型只输出购电与参考 SOC，实际执行器每个时槽仅使用当前已观测净负荷和参考 SOC，保证严格因果。最终 334 日回测的实付总费用为 13,636,974.70 元，经双边库存价值校正后为 13,635,767.16 元；全部功率平衡、SOC 递推、因果性和对偶切平面检验通过。
+  </section>
+
+  <nav>
+    <h3>章节目录</h3>
+    <ol>
+      <li><a href="#analysis">问题分析与建模主线</a></li>
+      <li><a href="#data">数据、时间口径与信息集</a></li>
+      <li><a href="#forecast">净负荷预测与模型选择</a></li>
+      <li><a href="#scenario">残差场景及参数学习</a></li>
+      <li><a href="#saa">两阶段 SAA 线性规划</a></li>
+      <li><a href="#dual">对偶终端库存价值</a></li>
+      <li><a href="#execution">逐时因果执行机制</a></li>
+      <li><a href="#evaluation">评价口径与模型检验</a></li>
+      <li><a href="#results">实验结果与方案确定</a></li>
+      <li><a href="#conclusion">结论、创新点与局限</a></li>
+    </ol>
+  </nav>
+
+  <section id="analysis">
+    <h2>1　问题分析与建模主线</h2>
+    <p>问题二的核心并不是单纯追求负荷或光伏预测误差最小，而是在预测不确定性下决定“何时购电、购多少电、何时充放电”，使计划购电费与事后紧急购电费之和尽可能低。其困难来自三层耦合：第一，负荷与光伏共同决定净负荷，二者预测误差会在同一时槽叠加；第二，储能把 144 个时槽连接成一个整体，当前放电会降低后续可用电量；第三，只优化一天而不评价日末库存，会产生人为放空或人为回充的边界效应。</p>
+    <p>据此，本文将“预测—规划—执行—评价”构造成一条因果闭环：</p>
+    <div class="flow" aria-label="模型流程">
+      <span>Ridge 负荷/光伏预测</span><b>→</b>
+      <span>完整日残差场景</span><b>→</b>
+      <span>指数加权两阶段 SAA</span><b>→</b>
+      <span>17 点对偶终端价值</span><b>→</b>
+      <span>H1 逐时因果执行</span><b>→</b>
+      <span>双边库存价值评价</span>
+    </div>
+    <p>该结构中的日前优化仍是线性规划：目标函数、场景功率平衡、SOC 递推、功率边界、容量边界以及终端价值的支持切平面均为线性。因此，HiGHS 求得的是给定有限经验场景下的全局最优解；本文不将这一结论外推为未知真实概率分布下的全局最优。</p>
+
+    <h3>1.1　建模假设</h3>
+    <ol>
+      <li>每日 0:00 前，次日分时电价已知；真实负荷与光伏仅在对应时槽执行时可得。</li>
+      <li>负荷和光伏预测、残差池、模型参数与终端价值函数均只使用决策时刻以前已经结束的日期，不使用附件 3 的未来光伏信息或外部天气。</li>
+      <li>计划购电量没有额外上限；充、放电母线侧功率均不超过 5000 kW，SOC 运行区间为电池标称容量的 10%—90%。</li>
+      <li>紧急购电可弥补实际执行中的剩余缺口，其价格为对应实时电价的 5 倍；多余电量允许弃电。</li>
+      <li>1 月作为历史预热期，2 月 1 日实际初始 SOC 取 6000 kWh。此后实际 SOC 跨日连续，不设置每日末端硬等式。</li>
+    </ol>
+  </section>
+
+  <section id="data">
+    <h2>2　数据、时间口径与信息集</h2>
+    <h3>2.1　统一单位与符号</h3>
+    <p>原始负荷、光伏与净负荷的单位为 kW；每个时槽长度为</p>
+    \[
+      \Delta t=\frac{10}{60}=\frac16\ \mathrm{h}.
+      \tag{1}
+    \]
+    <p>因此，进入功率平衡约束的净用电量为 \(N_{d,t}\Delta t\)，单位为 kWh。所有购电、充电、放电、紧急购电和弃电决策均使用 kWh，SOC 也使用 kWh，电价单位为元/kWh。这一转换保证目标函数每一项均为“元”。</p>
+
+    <table>
+      <thead><tr><th>符号</th><th>含义</th><th>单位/范围</th></tr></thead>
+      <tbody>
+        <tr><td>\(d,t,s\)</td><td>日期、日内时槽、历史残差场景编号</td><td>\(t=1,\ldots,144\)</td></tr>
+        <tr><td>\(L_{d,t},P_{d,t},N_{d,t}\)</td><td>实际负荷、实际光伏、实际净负荷，\(N=L-P\)</td><td>kW</td></tr>
+        <tr><td>\(\widehat L_{d,t},\widehat P_{d,t},\widehat N_{d,t}\)</td><td>负荷、光伏与净负荷预测</td><td>kW</td></tr>
+        <tr><td>\(p_t\)</td><td>时槽购电价格</td><td>元/kWh</td></tr>
+        <tr><td>\(q_t\)</td><td>日前计划购电量</td><td>kWh，\(q_t\ge0\)</td></tr>
+        <tr><td>\(c_t,v_t\)</td><td>参考充电量与参考放电量</td><td>kWh</td></tr>
+        <tr><td>\(E_t\)</td><td>时槽 \(t\) 结束时的参考 SOC</td><td>kWh</td></tr>
+        <tr><td>\(z_{s,t}\)</td><td>场景 \(s\) 下的紧急购电补救量</td><td>kWh，\(z_{s,t}\ge0\)</td></tr>
+        <tr><td>\(\theta\)</td><td>规划期末 SOC 对未来运行成本的近似值</td><td>元</td></tr>
+        <tr><td>\(\eta_c,\eta_d\)</td><td>充电效率、放电效率</td><td>均为 0.9</td></tr>
+      </tbody>
+    </table>
+
+    <h3>2.2　数据清洗与因果边界</h3>
+    <p>数据读取阶段逐项检查：全年日期必须从 2025 年 1 月 1 日连续至 12 月 31 日；每日必须恰有 144 个时槽；负荷、光伏、电价不得出现缺失值、非有限值或负值；时间标签统一解释为右端标签，例如 00:10 对应 00:00—00:10。预测比较采用 1—2 月训练、3 月选参、4—12 月原生预测的滚动划分；2—3 月 59 天统一用 lag-7 冷启动，避免以当日真实值填补预测。</p>
+
+    <h3>2.3　周期性证据</h3>
+    <p>全年日总净负荷的 lag-1 相关系数为 0.4699，而 lag-7 自相关达到 0.9730；对齐 144 点日曲线后，净负荷 lag-1 与 lag-7 的相关系数分别为 0.8806 和 0.9809，lag-14、lag-21、lag-28 的曲线相关仍为 0.9731、0.9648、0.9562。由此可见，七日周期是最强的短期结构，模型特征与残差窗口均应以完整周为基本尺度。</p>
+    <figure>
+      <object data="../figures/problem2_eda_seasonality.pdf" type="application/pdf">
+        <a href="../figures/problem2_eda_seasonality.pdf">打开 Q2 季节性与周期性图</a>
+      </object>
+      <figcaption><span class="figtitle">图 1　全年季节性、典型日、星期差异与净负荷自相关</span>该图从月度电量、典型日曲线、逐星期差异和 ACF 四个角度说明：净负荷同时存在季节变化与显著七日周期。因此，预测端保留同星期历史，场景窗口取 2 个或 3 个完整周，终端价值再按星期分别学习，而不是把全年所有日期视为同分布样本。</figcaption>
+    </figure>
+  </section>
+
+  <section id="forecast" class="pagebreak">
+    <h2>3　负荷—光伏分解预测与模型选择</h2>
+    <h3>3.1　为什么分别预测负荷与光伏</h3>
+    <p>负荷受居民活动和星期周期影响，光伏受日照与季节影响，二者的生成机制不同。因此本文分别建立预测器，再形成净负荷：</p>
+    \[
+      \widehat N_{d,t}=\widehat L_{d,t}-\widehat P_{d,t}.
+      \tag{2}
+    \]
+    <p>代码在原生预测期先将负荷与光伏预测截断为非负数，故式（2）与 \(\max(\widehat L,0)-\max(\widehat P,0)\) 等价。</p>
+
+    <h3>3.2　Ridge 的因果特征与估计式</h3>
+    <p>对任一目标序列 \(y\in\{L,P\}\)，日期 \(d\)、时槽 \(t\) 的特征向量 \(\boldsymbol x_{d,t}\) 只由 \(d\) 日以前数据构成，包括：</p>
+    <ul>
+      <li>同一时槽的 lag-1、2、3、7、14、21、28 值；</li>
+      <li>过去 3、7、14、28 日同一时槽的均值与标准差；</li>
+      <li>最近四个同星期日同一时槽的均值；</li>
+      <li>星期 7 维 one-hot；年内日期的一阶正余弦；时槽的 1—3 阶傅里叶正余弦。</li>
+    </ul>
+    <p>先在训练集上标准化特征，再求解 Ridge 回归：</p>
+    \[
+      \widehat{\boldsymbol\beta}_{y}
+      =\arg\min_{\boldsymbol\beta}
+      \left\{
+      \sum_{(d,t)\in\mathcal T}
+      \bigl(y_{d,t}-\beta_0-\boldsymbol x_{d,t}^{\mathsf T}\boldsymbol\beta\bigr)^2
+      +\lambda_y\lVert\boldsymbol\beta\rVert_2^2
+      \right\}.
+      \tag{3}
+    \]
+    <p>正则项抑制多个滞后和滚动统计之间的共线性。候选值为 \(\{0.1,1,10,100\}\)，仅用 3 月验证 MAE 选择：负荷取 \(\lambda_L=100\)，验证 MAE 为 156.4659 kW；光伏取 \(\lambda_P=10\)，验证 MAE 为 180.0741 kW。4 月起每月首日仅使用此前全部数据重新训练。</p>
+
+    <h3>3.3　为什么最终选择 Ridge</h3>
+    <p>预测器不是按单一误差指标决定，而是在完全相同的后续规划器上比较端到端经济结果。4—12 月公平预测期中，Manual Weekly 的净负荷 MAE、RMSE 分别为 280.1658、399.1767 kW，Ridge 分别为 288.8770、408.3419 kW；Ridge 的点预测误差略高。然而在 5—12 月 245 日公平成本期中，Manual Weekly 的总费用为 11,054,372.74 元，Ridge 为 10,892,123.43 元，降低 162,249.30 元，即 1.4677%；紧急购电费由 804,644.71 元降至 726,724.20 元，紧急购电量由 212,089.69 kWh 降至 191,703.13 kWh。</p>
+    <p>7 日移动块 Bootstrap 显示，Ridge 相对 Manual Weekly 的日成本改善均值为 731.90 元，95% 区间为 [383.21, 1198.77] 元；而日 MAE 改善区间为 [−28.19, 27.70] kW，跨过 0。该结果直接说明：预测误差最低不必然对应调度成本最低，预测模型必须按其对下游决策的作用评价。故最终固定 Ridge 作为预测中心。</p>
+    <figure>
+      <object data="../figures/problem2_ablation_benchmark.pdf" type="application/pdf">
+        <a href="../figures/problem2_ablation_benchmark.pdf">打开预测模型多指标与费用权衡图</a>
+      </object>
+      <figcaption><span class="figtitle">图 2　预测模型多指标比较与“误差—成本”权衡</span>左图给出各预测器在 MAE、RMSE、WAPE、峰段误差、日总电量误差、总费用与紧急购电量等指标上的相对排名；右图将净负荷 MAE 与统一规划口径下的总成本放在同一平面。Ridge 并非横轴最小，却处于成本较低区域，说明模型选择必须以最终经济目标为主、统计误差为辅。图中的费用只用于预测器公平筛选，不与后文最终规划模型的 334 日费用直接相加或比较。</figcaption>
+    </figure>
+  </section>
+
+  <section id="scenario">
+    <h2>4　完整日残差场景构造与统计参数确定</h2>
+    <h3>4.1　场景构造</h3>
+    <p>定义历史日期 \(i\) 的净负荷预测残差为</p>
+    \[
+      \varepsilon_{i,t}=N_{i,t}-\widehat N_{i,t}.
+      \tag{4}
+    \]
+    <p>对待规划日期 \(d\)，将同一历史日的整条 144 点残差曲线平移到当日预测中心，得到场景</p>
+    \[
+      N^{(i)}_{d,t}=\widehat N_{d,t}+\varepsilon_{i,t},
+      \qquad i\in\mathcal I_d.
+      \tag{5}
+    \]
+    <p>这种“完整日重采样”保留了残差在日内各时槽之间的同步结构，例如云层变化导致的连续光伏偏差；若逐时独立抽样，则会破坏这种物理相关性。</p>
+
+    <h3>4.2　指数时间权重</h3>
+    <p>较近残差对当前误差分布通常更有代表性。设历史日龄为 \(a_i=d-i\)，半衰期为 \(h\)，则场景权重定义为</p>
+    \[
+      w_i=\frac{2^{-a_i/h}}{\displaystyle\sum_{j\in\mathcal I_d}2^{-a_j/h}},
+      \qquad \sum_{i\in\mathcal I_d}w_i=1.
+      \tag{6}
+    \]
+    <p>半衰期的含义清晰：相差 \(h\) 天的样本，其未归一化权重恰好减半。2—5 月使用 21 日窗口、14 日半衰期作为预热配置；6 月 1 日依据 42 日搜索、14 日独立验证和 1 日隔离的滚动流程，将配置更新为 14 日窗口、7 日半衰期。该候选在验证期的日节省均值为 467.04 元，7 日块 Bootstrap 95% 区间为 [398.10, 535.99] 元，因下界大于 0 而接受；7—10 月提出的条件相似日、不同执行储备比例或不衰减权重均未通过同一门槛，因此最终保持 14 日/7 日且不混合条件相似日。</p>
+
+    <table>
+      <thead><tr><th>参数</th><th>最终取值</th><th>来源与解释</th></tr></thead>
+      <tbody>
+        <tr><td>日内时槽数 \(T\)</td><td>144</td><td>题目数据每 10 min 一个时槽</td></tr>
+        <tr><td>\(\Delta t\)</td><td>1/6 h</td><td>10 min 到小时的单位换算</td></tr>
+        <tr><td>场景窗口 \(W\)</td><td>2—5 月 21 日；6—12 月 14 日</td><td>分别为 3 周和 2 周；6 月历史验证接受后冻结</td></tr>
+        <tr><td>场景半衰期 \(h\)</td><td>2—5 月 14 日；6—12 月 7 日</td><td>由式（6）解释，6 月历史验证接受</td></tr>
+        <tr><td>执行储备比例 \(\rho\)</td><td>0.5</td><td>验证流程未支持替换，故保留中性参考跟随强度</td></tr>
+        <tr><td>紧急购电倍数</td><td>5</td><td>题目给定经济参数</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="saa" class="pagebreak">
+    <h2>5　两阶段 SAA 线性规划模型</h2>
+    <h3>5.1　决策时序</h3>
+    <p>第一阶段在实际净负荷揭示前统一确定 \(q_t,c_t,v_t,E_t\)；第二阶段仅让紧急购电 \(z_{s,t}\) 随场景变化。终端价值辅助变量 \(\theta\) 由所有支持切平面共同约束。于是模型体现“计划先做、缺口后补”的两阶段逻辑。</p>
+
+    <h3>5.2　目标函数</h3>
+    <p>对日期 \(d\) 的经验场景集 \(\mathcal I_d\)，最终日前问题为</p>
+    \[
+      \min\quad
+      \underbrace{\sum_{t=1}^{T}p_tq_t}_{\text{计划购电费}}
+      +\underbrace{\sum_{i\in\mathcal I_d}w_i\sum_{t=1}^{T}5p_tz_{i,t}}_{\text{期望紧急购电费}}
+      +\underbrace{\theta}_{\text{终端库存价值}}
+      +\underbrace{\epsilon\sum_{t=1}^{T}(c_t+v_t)}_{\text{数值消环项}},
+      \qquad \epsilon=10^{-8}.
+      \tag{7}
+    \]
+    <p>其中 \(\epsilon\) 仅用于在等价最优解中抑制同时充放电，不代表额外业务偏好；最终报告的物理费用不含该项。</p>
+
+    <h3>5.3　场景电量平衡</h3>
+    <p>对每个场景和时槽，计划购电、放电与紧急购电必须覆盖净用电量和充电需求：</p>
+    \[
+      q_t+v_t-c_t+z_{i,t}\ge N^{(i)}_{d,t}\Delta t,
+      \qquad \forall i\in\mathcal I_d,\ t=1,\ldots,T.
+      \tag{8}
+    \]
+    <p>规划模型使用不等式，因而在光伏富余场景中允许隐式弃电；真实回放时再显式记录弃电量并用等式校验母线平衡。</p>
+
+    <h3>5.4　SOC 递推</h3>
+    <p>令 \(E_0\) 为当天实际起始 SOC，则</p>
+    \[
+      E_t=E_{t-1}+\eta_c c_t-\frac{v_t}{\eta_d},
+      \qquad \eta_c=\eta_d=0.9.
+      \tag{9}
+    \]
+    <p>充入母线侧 \(c_t\) kWh 后只有 \(\eta_c c_t\) 进入电池；从母线放出 \(v_t\) kWh 则需消耗 \(v_t/\eta_d\) kWh 库存，因此效率位置不能互换。</p>
+
+    <h3>5.5　容量、功率与非负约束</h3>
+    \[
+      1200\le E_t\le10800,
+      \qquad
+      0\le c_t,v_t\le5000\Delta t=833.3333,
+      \tag{10}
+    \]
+    \[
+      q_t\ge0,\qquad z_{i,t}\ge0.
+      \tag{11}
+    \]
+    <p>标称电池容量为 12000 kWh，运行区间为 10%—90%；5000 kW 功率上限乘以 1/6 h 后得到每时槽最大充、放电量。最终模型不添加 \(E_T=6000\) 或 \(E_T=E_0\) 的硬等式，规划窗口的闭合由下一节的库存价值承担。</p>
+
+    <h3>5.6　线性与全局最优性</h3>
+    <p>式（7）对所有变量线性，式（8）—（11）均为线性等式、不等式或区间约束；分段线性终端价值可通过辅助变量和若干线性切平面表示。因此可行域为凸多面体，目标函数为线性函数。只要问题可行且有界，线性规划基本定理保证求得有限经验场景问题的全局最优解，不需要用遗传算法、粒子群或人为非线性化来近似搜索。</p>
+  </section>
+
+  <section id="dual">
+    <h2>6　由 LP 对偶变量学习终端库存价值</h2>
+    <h3>6.1　硬终端等式的偏差</h3>
+    <p>若每天强制 \(E_T=6000\)，模型会把 6000 kWh 当成无条件正确的日末库存；若完全取消末端项，有限窗口又会把日末剩余电量视为没有价值，从而倾向于放空。更合理的处理是把日末 SOC 对未来运行的影响转化为数据驱动的价值函数 \(V_u(E_T)\)，其中 \(u\) 表示下一日星期。</p>
+
+    <h3>6.2　相对价值递推</h3>
+    <p>对每月月初的历史信息和星期 \(u\in\{0,\ldots,6\}\)，从过去 84 天窗口中剔除紧邻决策点的 1 天，并筛选同星期完整日；样本按 28 日半衰期加权。设下一星期的近似价值为 \(\widehat V_{u+1}\)，则给定初始 SOC \(e\) 的参数化 LP 最优值为</p>
+    \[
+      Q_u(e)=\min_{x\in\mathcal X(e)}
+      \left\{
+      \mathbb E_{\widehat{\mathbb P}_u}[C_u(x,N)]
+      +\widehat V_{u+1}(E_T)
+      \right\}.
+      \tag{12}
+    \]
+    <p>相对价值只在差值意义下决定策略，因此以 6000 kWh 作为加法归一化参考：</p>
+    \[
+      \widehat V_u(e)=Q_u(e)-Q_u(6000).
+      \tag{13}
+    \]
+    <div class="callout green"><strong>关键辨析：</strong>式（13）只规定 \(V_u(6000)=0\)，用于消除价值函数任意的加法常数；它不要求实际或参考日末 SOC 等于 6000 kWh。最终策略全年实际末端 SOC 为 8544.19 kWh，正说明 6000 不是硬目标。</div>
+
+    <h3>6.3　对偶变量如何产生支持切平面</h3>
+    <p>在式（9）的首个 SOC 方程中，初始能量 \(e\) 作为右端项进入线性规划。在线性规划最优值函数关于右端参数为凸分段线性函数。令 \(e_j\) 为 SOC 网格点，\(Q_u(e_j)\) 为该点的最优目标值，\(\pi_j\) 为对应初始 SOC 等式的对偶边际，则 \(\pi_j\in\partial Q_u(e_j)\)，从而对任意可行 \(e\) 有次梯度不等式</p>
+    \[
+      Q_u(e)\ge Q_u(e_j)+\pi_j(e-e_j).
+      \tag{14}
+    \]
+    <p>于是每个网格点给出一条真实的全局下支持线</p>
+    \[
+      \ell_j(e)=Q_u(e_j)+\pi_j(e-e_j)
+      =\pi_j e+\bigl[Q_u(e_j)-\pi_j e_j\bigr].
+      \tag{15}
+    \]
+    <p>取所有支持线的上包络，并按 6000 kWh 平移归一化：</p>
+    \[
+      \widehat V_u(e)=
+      \max_j\ell_j(e)-\max_j\ell_j(6000).
+      \tag{16}
+    \]
+    <p>最终使用 17 个等距网格点覆盖 ([1200,10800]) kWh，间距为 600 kWh；9 点网格间距为 1200 kWh，仅用于收敛消融。价值迭代的停止容差为 (10^{-6}) 元，最多 50 次仅作为数值保护。两种网格、11 个月份和 7 个星期组合均实际收敛。</p>
+
+    <h3>6.4　把价值函数放回日前 LP</h3>
+    <p>若下一日星期为 \(u^+\)，将式（16）的切平面写成 \(\ell_j(E)=a_jE+b_j\)，引入变量 \(\theta\) 并加入</p>
+    \[
+      \theta\ge a_jE_T+b_j,\qquad \forall j.
+      \tag{17}
+    \]
+    <p>由于目标函数最小化 \(\theta\)，最优时必有 \(\theta=\max_j(a_jE_T+b_j)=\widehat V_{u^+}(E_T)\)。这就用纯线性约束把跨日未来价值嵌入单日 SAA，而没有人为指定日末 SOC。</p>
+
+    <figure>
+      <img src="../figures/q2_v31_terminal_ablation/03_grid_value_comparison.png" alt="9点与17点终端价值网格比较">
+      <figcaption><span class="figtitle">图 3　9 点与 17 点 SOC 网格学习到的相对未来运行成本</span>图示为 10 月星期一的价值曲线，虚线处 6000 kWh 仅是零点参考。价值随 SOC 增加而下降，表示额外库存可降低未来购电成本；9 点与 17 点曲线几乎完全重合。77 个月份—星期组合上，最大绝对曲线差不超过 14.7398 元，最大相对差不超过 0.643%，证明价值函数离散化已稳定。</figcaption>
+    </figure>
+  </section>
+
+  <section id="execution" class="pagebreak">
+    <h2>7　H1 逐时因果执行机制</h2>
+    <p>日前 SAA 给出计划购电 \(q_t\) 和参考 SOC 路径 \(E_t^{\rm ref}\)。实际执行时，不直接照搬在不确定场景下得到的参考充放电量，而在每个时槽观察当期实际净用电 \(n_t^{\rm act}=N_{d,t}\Delta t\)，仅依靠当前状态作出动作。</p>
+
+    <h3>7.1　购电富余时</h3>
+    <p>定义母线余量 \(r_t=q_t-n_t^{\rm act}\)。若 \(r_t\ge0\)，优先充电：</p>
+    \[
+      c_t^{\rm act}=\min\left\{r_t,\ 833.3333,\ \frac{10800-E_{t-1}^{\rm act}}{\eta_c}\right\},
+      \tag{18}
+    \]
+    \[
+      v_t^{\rm act}=z_t^{\rm act}=0,
+      \qquad s_t^{\rm act}=r_t-c_t^{\rm act},
+      \tag{19}
+    \]
+    <p>其中 \(s_t^{\rm act}\) 为弃电量。</p>
+
+    <h3>7.2　购电不足时</h3>
+    <p>若 \(r_t&lt;0\)，先依据参考路径设置动态储备线</p>
+    \[
+      R_t=1200+\rho\bigl(E_t^{\rm ref}-1200\bigr),
+      \qquad \rho=0.5,
+      \tag{20}
+    \]
+    <p>再在不跌破该储备线的前提下放电：</p>
+    \[
+      v_t^{\rm act}=\min\left\{-r_t,\ 833.3333,\ \eta_d\max(E_{t-1}^{\rm act}-R_t,0)\right\},
+      \tag{21}
+    \]
+    \[
+      z_t^{\rm act}=-r_t-v_t^{\rm act},
+      \qquad c_t^{\rm act}=s_t^{\rm act}=0.
+      \tag{22}
+    \]
+    <p>实际 SOC 按</p>
+    \[
+      E_t^{\rm act}=E_{t-1}^{\rm act}+\eta_c c_t^{\rm act}-\frac{v_t^{\rm act}}{\eta_d}
+      \tag{23}
+    \]
+    <p>递推，并将当日最后一个 SOC 原样传给次日。实际母线等式为
+      \(q_t+z_t^{\rm act}+v_t^{\rm act}-c_t^{\rm act}-s_t^{\rm act}=n_t^{\rm act}\)。
+      式（18）—（23）只访问当前时槽实际值，不访问未来真实负荷或光伏，因此执行回放不存在信息泄漏。</p>
+  </section>
+
+  <section id="evaluation">
+    <h2>8　评价口径、双边库存修正与模型检验</h2>
+    <h3>8.1　原始实付费用</h3>
+    <p>对评价区间 ([a,b])，原始实付费用为</p>
+    \[
+      C^{\rm raw}_{[a,b]}
+      =\sum_{d=a}^{b}\sum_{t=1}^{T}
+      \left(p_tq_{d,t}+5p_tz^{\rm act}_{d,t}\right).
+      \tag{24}
+    \]
+    <p>该费用对应真实账单，但若两个策略在区间起点或终点保有不同电量，直接比较会把库存转移误当成节省。</p>
+
+    <h3>8.2　双边库存价值修正</h3>
+    <p>为同时修正评价区间的起点与终点，所有策略统一使用 17 点价值函数：</p>
+    \[
+      C^{\rm adj}_{[a,b]}
+      =C^{\rm raw}_{[a,b]}
+      +V_{b+1}\!\left(E_b^{\rm act}\right)
+      -V_a\!\left(E_{a-1}^{\rm act}\right).
+      \tag{25}
+    \]
+    <p>该式可以由“现金费用 + 期末资产价值变化”推得：若期末 SOC 更高，未来成本价值 \(V\) 通常更低，因而相应减少调整后费用；若策略通过耗尽电池降低当期账单，则较高的期末未来成本会被加回。采用双边而非单边修正，保证对 6—10 月、11—12 月等分段评价时，起始库存差异也得到公平处理。</p>
+
+    <h3>8.3　约束与数值验收</h3>
+    <table>
+      <thead><tr><th>检验</th><th>最大误差</th><th>容差</th><th>结论</th></tr></thead>
+      <tbody>
+        <tr><td>历史信息因果性</td><td class="num">0</td><td class="num">0</td><td>通过</td></tr>
+        <tr><td>实际功率平衡残差</td><td class="num">1.7053×10<sup>−13</sup></td><td class="num">10<sup>−7</sup></td><td>通过</td></tr>
+        <tr><td>实际 SOC 递推残差</td><td class="num">9.0949×10<sup>−13</sup></td><td class="num">10<sup>−7</sup></td><td>通过</td></tr>
+        <tr><td>LP 等式残差</td><td class="num">3.3879×10<sup>−11</sup></td><td class="num">10<sup>−5</sup></td><td>通过</td></tr>
+        <tr><td>LP 不等式违反量</td><td class="num">1.1369×10<sup>−11</sup></td><td class="num">10<sup>−5</sup></td><td>通过</td></tr>
+        <tr><td>对偶支持线违反量</td><td class="num">3.6380×10<sup>−11</sup></td><td class="num">10<sup>−5</sup></td><td>通过</td></tr>
+        <tr><td>切平面自点相切误差</td><td class="num">7.2760×10<sup>−12</sup></td><td class="num">10<sup>−5</sup></td><td>通过</td></tr>
+        <tr><td>所有策略跨日 SOC 连续性</td><td class="num">0</td><td class="num">10<sup>−7</sup></td><td>通过</td></tr>
+      </tbody>
+    </table>
+    <p>完整实验共求解 5674 个 LP，纯求解时间 164.25 s，总耗时 189.73 s。所有 9 点与 17 点价值迭代均达到规定数值容差。</p>
+
+    <h3>8.4　不确定性检验</h3>
+    <p>费用差按“参考策略日费用 − 最终策略日费用”定义正值为最终策略更省。为保留连续天气与负荷误差，采用 7 日移动块 Bootstrap，重采样 2000 次，随机种子为 20260912，并报告 95% 区间。该方法不把 144 个时槽错误地视为相互独立样本。</p>
+  </section>
+
+  <section id="results" class="pagebreak">
+    <h2>9　实验结果与最终方案确定</h2>
+    <h3>9.1　最终策略的全年经济结果</h3>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="value">1363.58 万</div><div class="label">调整后总费用 / 元</div></div>
+      <div class="kpi"><div class="value">34.52 万</div><div class="label">紧急购电费 / 元</div></div>
+      <div class="kpi"><div class="value">5.61 万</div><div class="label">紧急购电量 / kWh</div></div>
+      <div class="kpi"><div class="value">36.23%</div><div class="label">发生紧急购电的日期频率</div></div>
+    </div>
+    <table>
+      <thead><tr><th>评价量</th><th>dual_terminal_g17 全年 334 日结果</th></tr></thead>
+      <tbody>
+        <tr><td>计划购电费</td><td class="num">13,291,788.88 元</td></tr>
+        <tr><td>紧急购电费</td><td class="num">345,185.82 元</td></tr>
+        <tr><td>原始实付总费用</td><td class="num">13,636,974.70 元</td></tr>
+        <tr><td>起点库存价值</td><td class="num">约 0 元</td></tr>
+        <tr><td>终点库存价值</td><td class="num">−1,207.54 元</td></tr>
+        <tr><td>双边库存价值调整</td><td class="num">−1,207.54 元</td></tr>
+        <tr><td><strong>调整后总费用</strong></td><td class="num"><strong>13,635,767.16 元</strong></td></tr>
+        <tr><td>计划购电量</td><td class="num">21,776,662.79 kWh</td></tr>
+        <tr><td>紧急购电量</td><td class="num">56,089.74 kWh</td></tr>
+        <tr><td>弃电量</td><td class="num">2,663,267.94 kWh</td></tr>
+        <tr><td>紧急购电时槽数</td><td class="num">527</td></tr>
+        <tr><td>发生紧急购电的日期频率</td><td class="num">36.2275%</td></tr>
+        <tr><td>最大单日费用</td><td class="num">84,176.11 元</td></tr>
+        <tr><td>期初 / 期末实际 SOC</td><td class="num">6000.00 / 8544.19 kWh</td></tr>
+      </tbody>
+    </table>
+
+    <h3>9.2　终端机制消融</h3>
+    <table>
+      <thead><tr><th>终端处理</th><th>调整后总费用 / 元</th><th>紧急购电量 / kWh</th><th>紧急时槽</th><th>年末 SOC / kWh</th><th>作用</th></tr></thead>
+      <tbody>
+        <tr><td>无终端价值</td><td class="num">13,620,887.74</td><td class="num">60,121.35</td><td class="num">640</td><td class="num">1413.00</td><td>检验有限窗口末端近视</td></tr>
+        <tr><td>硬终端 6000</td><td class="num">13,631,276.57</td><td class="num">55,958.21</td><td class="num">525</td><td class="num">6046.08</td><td>传统固定库存基准</td></tr>
+        <tr><td>参考日末等于当日起点</td><td class="num">13,766,005.26</td><td class="num">56,230.51</td><td class="num">527</td><td class="num">10,796.52</td><td>检验逐日能量闭合偏差</td></tr>
+        <tr><td>对偶价值—9 点</td><td class="num">13,636,224.56</td><td class="num">56,093.53</td><td class="num">528</td><td class="num">8637.94</td><td>网格收敛基准</td></tr>
+        <tr><td><strong>对偶价值—17 点</strong></td><td class="num"><strong>13,635,767.16</strong></td><td class="num"><strong>56,089.74</strong></td><td class="num"><strong>527</strong></td><td class="num"><strong>8544.19</strong></td><td><strong>最终主策略</strong></td></tr>
+      </tbody>
+    </table>
+    <figure>
+      <img src="../figures/q2_v31_terminal_ablation/01_adjusted_cost_delta.png" alt="各终端策略相对最低费用差">
+      <figcaption><span class="figtitle">图 4　五种终端处理相对样本内最低费用的差额</span>无终端价值的样本内费用最低，但其年末 SOC 仅 1413.00 kWh，接近下界，并产生更多紧急购电量与紧急时槽，体现明显的有限窗口近视，因此不作为持续运营策略。对偶价值方案不以“样本内费用绝对最低”为唯一标准，而是在取消人为硬终端等式的同时显式计入未来库存机会成本。</figcaption>
+    </figure>
+
+    <h3>9.3　为什么 17 点对偶价值是最终方案</h3>
+    <p>第一，与硬终端 6000 相比，17 点对偶策略的调整后全年费用仅高 4490.58 元，相对差 0.0329%。按日配对后，对偶策略相对硬终端的调整后日节省均值为 −13.44 元，95% 区间为 [−30.32, 3.26] 元，跨过 0，说明二者经济表现没有稳定显著差异；但对偶方案消除了“每天必须回到人为常数”的结构性假设。</p>
+    <p>第二，无终端价值虽然比对偶策略少 14,879.42 元，却把年末库存压到 1413.00 kWh，并将紧急购电量提高到 60,121.35 kWh、紧急时槽增加到 640 个。它适合作为揭示末端近视的弱基准，不适合作为持续运营的最终模型。</p>
+    <p>第三，强制日末回到当日起点的方案费用高达 13,766,005.26 元；对偶策略较其减少 130,238.11 元。日成本节省均值为 389.93 元，95% 区间 [338.38, 441.35] 元，显示逐日能量闭合会造成显著保守偏差。</p>
+    <p>第四，17 点相对 9 点仅再降低 457.40 元，差异占最终费用的 0.003354%，两条价值曲线几乎重合。17 点在计算量仍很小的前提下具有更细的 600 kWh 分辨率，因此作为最终离散化。</p>
+    <div class="decision">
+      <h3>最终模型判定</h3>
+      <p><strong>最终采用：</strong>Ridge 负荷/光伏预测 + 完整日残差指数加权两阶段 SAA + 17 点 LP 对偶终端价值 + H1 因果执行 + 双边库存价值评价。</p>
+      <p>该选择不是宣称其样本内费用在所有消融中绝对最小，而是综合满足：终端条件有经济含义、不依赖人为硬等式；与传统硬终端基准的成本差异不显著；网格已收敛；跨日 SOC 连续；有限场景 LP 可获得全局最优；实际执行严格因果。</p>
+    </div>
+
+    <figure>
+      <img src="../figures/q2_v31_terminal_ablation/02_monthly_cost_delta.png" alt="各终端策略月度费用相对硬终端6000的差额">
+      <figcaption><span class="figtitle">图 5　各终端机制相对硬终端 6000 的月度费用差</span>9 点和 17 点对偶价值曲线在各月几乎重合，并围绕硬终端基准小幅波动；逐日能量闭合在所有月份均明显更贵。该图说明最终结论并非由个别月份偶然驱动，同时也提醒：对偶价值的主要贡献是改善终端机制的理论一致性，而不是制造夸大的成本优势。</figcaption>
+    </figure>
+
+    <figure>
+      <img src="../figures/q2_v31_terminal_ablation/04_soc_distribution.png" alt="五种终端策略的每日实际期末SOC分布">
+      <figcaption><span class="figtitle">图 6　不同终端机制下每日实际期末 SOC 分布</span>无终端价值使 SOC 长期靠近下部区间，显示模型把未来库存价值忽略后倾向于过度放电；逐日能量闭合则把 SOC 推到上界附近。对偶价值方案让 SOC 由未来边际价值决定，既不强迫回到 6000，也不允许有限窗口无代价地耗尽库存。图中所有 SOC 均在 1200—10800 kWh 物理范围内。</figcaption>
+    </figure>
+
+    <h3>9.4　分期稳定性</h3>
+    <table>
+      <thead><tr><th>期间</th><th>天数</th><th>计划费 / 元</th><th>紧急费 / 元</th><th>原始总费用 / 元</th><th>库存调整 / 元</th><th>调整后费用 / 元</th></tr></thead>
+      <tbody>
+        <tr><td>6—10 月开发期</td><td class="num">153</td><td class="num">6,194,900.98</td><td class="num">194,938.95</td><td class="num">6,389,839.93</td><td class="num">2,014.38</td><td class="num">6,391,854.30</td></tr>
+        <tr><td>11—12 月后期验证</td><td class="num">61</td><td class="num">2,904,083.36</td><td class="num">22,882.15</td><td class="num">2,926,965.51</td><td class="num">−1,411.97</td><td class="num">2,925,553.54</td></tr>
+      </tbody>
+    </table>
+    <p>后期 61 日沿用 10 月前已确定的 14 日窗口、7 日半衰期和 (ho=0.5)，未根据 11—12 月再次调参。由于后期数据已经在整个研究过程中被查看，本文谨慎称其为“后期验证”，不称全新盲测。</p>
+  </section>
+
+  <section id="conclusion">
+    <h2>10　结论、创新点与模型局限</h2>
+    <h3>10.1　可直接写入论文的结论</h3>
+    <p>本文针对日前购电与储能调度问题，建立了基于对偶库存价值的因果滚动两阶段 SAA 模型。预测端分别使用 Ridge 估计负荷和光伏，以端到端购电成本而非单一预测误差确定预测中心；规划端利用历史完整日残差构造场景并按时间半衰期加权，在有限场景线性规划中同时优化计划购电、参考充放电与紧急补购。针对单日规划中最容易被忽略的末端库存偏差，本文不设置固定终端 SOC，而是通过参数化 LP 的初始 SOC 对偶变量生成支持切平面，学习按月份、星期变化的分段线性未来成本函数。最终 17 点对偶价值方案在 334 日回测中实现调整后总费用 13,635,767.16 元，且全部物理、因果、对偶和数值检验通过。</p>
+
+    <h3>10.2　模型创新点</h3>
+    <ol>
+      <li><strong>评价目标与决策目标一致。</strong>预测器按统一规划器上的最终成本选择，实证证明 MAE 更低不等于购电成本更低。</li>
+      <li><strong>完整日残差保持相关性。</strong>场景生成保留 144 时槽误差的日内联合结构，场景窗口和时间衰减具有完整周与半衰期的明确解释。</li>
+      <li><strong>真实对偶切平面替代硬终端 SOC。</strong>每条切线由参数化 LP 的最优值和对偶边际共同生成，满足全局支持性质，而非人工拟合终端惩罚系数。</li>
+      <li><strong>规划与执行严格分离。</strong>日前 SAA 提供计划购电与参考轨迹，H1 执行器仅利用当前观测，实际 SOC 跨日连续，从机制上避免回测泄漏。</li>
+      <li><strong>双边库存价值保证分段可比。</strong>不仅修正评价期末，也修正评价期初，防止策略通过起止库存转移获得虚假费用优势。</li>
+    </ol>
+
+    <h3>10.3　局限性</h3>
+    <p>模型的概率信息来自有限历史残差经验分布，极端新型天气和结构突变仍可能超出样本支持；终端价值按月份与星期分组，尚未显式使用天气状态；H1 执行规则虽严格因果且可解释，但不是把未来所有新观测再次纳入优化的全日内重规划。上述限制不影响本题既定信息集下的模型闭环，但在实际部署中可随着新增历史数据定期更新预测器、场景池与价值函数。</p>
+  </section>
+
+  <footer>
+    <p><strong>结果口径说明：</strong>正文中的最终规划数字来自同一次完整运行；预测筛选费用只用于选择 Ridge，未与最终终端价值实验混合。最终运行记录为 fresh run，共 5674 次 LP 求解，所有验收项通过。</p>
+    <p><strong>本地证据：</strong>
+      <a href="../code/problem2_v31_terminal_ablation_output.ipynb">已执行 Notebook</a> ·
+      <a href="Q2_V31_TERMINAL_ABLATION_RESULTS.md">自动结果报告</a> ·
+      <a href="../results/q2_v31_terminal_ablation/summary.csv">费用汇总</a> ·
+      <a href="../results/q2_v31_terminal_ablation/verification.json">验证清单</a> ·
+      <a href="../results/q2_v31_terminal_ablation/run_manifest.json">运行清单</a>
+    </p>
+  </footer>
+</main>
+</body>
+</html>

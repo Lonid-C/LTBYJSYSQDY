@@ -1,0 +1,72 @@
+{
+  "all_pass": true,
+  "tests": [
+    {
+      "test": "causality",
+      "value": 0.0,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "test": "balance",
+      "value": 1.7053025658242404e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "soc_recursion",
+      "value": 9.094947017729282e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "lp_eq",
+      "value": 8.185452315956354e-11,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "test": "lp_ineq",
+      "value": 6.991740519879386e-12,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "test": "soc_continuity_hard6000",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "soc_continuity_ridge_fixed_saa_h1",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "soc_continuity_v3_dual_terminal",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "test": "VSS_nonnegative",
+      "value": 0.0,
+      "tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "test": "EVPI_nonnegative",
+      "value": 0.0,
+      "tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "test": "ridge_baseline_regression",
+      "value": 0.0,
+      "tolerance": 0.001,
+      "passed": true
+    }
+  ],
+  "solve_calls": 0
+}
