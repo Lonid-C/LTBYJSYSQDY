@@ -150,7 +150,10 @@ def build_team_a_forecast(load, pv, dates):
 def smooth_margin(margin, width):
     if width == 0:
         return np.asarray(margin, float)
-    kernel = np.ones(int(width), float) / int(width)
+    # 3 槽沿用队友方案的三角核；5 槽使用其自然二项式扩展。
+    # 两者均对称、权重和为 1，不会引入相位移动或改变日总残差均值。
+    kernel = {3: np.array([1., 2., 1.]) / 4,
+              5: np.array([1., 4., 6., 4., 1.]) / 16}[int(width)]
     pad_left = width // 2
     pad_right = width - 1 - pad_left
     return np.convolve(np.pad(margin, (pad_left, pad_right), mode="edge"), kernel, mode="valid")
