@@ -1,5 +1,5 @@
 {
-  "seconds": 17.70855901999994,
+  "seconds": 18.015257650999956,
   "recomputed_planning": true,
   "reused_v1_daily_results": false,
   "prediction_artifact": "results/problem2_forecast_ablation_predictions.csv.gz",

@@ -1,0 +1,38 @@
+{
+  "fresh_run": true,
+  "complete": true,
+  "created_utc": "2026-09-11T14:23:54.377772+00:00",
+  "seconds": 1164.4740679264069,
+  "source_sha256": "1f6ac30d417b3d79b68435e14a42dbba2cc94d58270ab0791d9238cb4fdcbd97",
+  "q2_planning_sha256": "3949ad7186ce0990570e262c87f039d1d0ac8139b40a0dfa9799f917e91db7bc",
+  "raw_input_sha256": {
+    "附件4.xlsx": "20e9c93aeab5e8e21ae4dd15587f9e190f7408692504c1319598461cd654fe71",
+    "附件3.xlsx": "8a61b06c52bd0d639a1cc37c61a7d9f5b75edcbca718f64c1bd3498ec9f9d843",
+    "附件2.xlsx": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72",
+    "附件1.xlsx": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377",
+    "._附件4.xlsx": "6082863eeb288fedefeda5c052fdf64302e589c9938e4446c7a4562ee2ddc0b3",
+    "._附件3.xlsx": "6082863eeb288fedefeda5c052fdf64302e589c9938e4446c7a4562ee2ddc0b3",
+    "._附件2.xlsx": "6082863eeb288fedefeda5c052fdf64302e589c9938e4446c7a4562ee2ddc0b3",
+    "._附件1.xlsx": "6082863eeb288fedefeda5c052fdf64302e589c9938e4446c7a4562ee2ddc0b3"
+  },
+  "evaluation_period": "2025-06-01--2025-12-31 for CVaR/VSS; 2025-02-01--2025-12-31 for H2/H3",
+  "betas": [
+    0.9,
+    0.95
+  ],
+  "budget_fractions": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "far_targets": [
+    1200.0,
+    6000.0,
+    10800.0
+  ],
+  "scenario_rule": "V2 global/conditional residual mixture; full consecutive paths; causal only",
+  "planning_solver": "finite-scenario sparse LP via HiGHS",
+  "verification_count": 14
+}

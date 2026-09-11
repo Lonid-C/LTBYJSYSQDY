@@ -1,0 +1,18 @@
+[
+  {
+    "figure": "08_vss_evpi_monthly",
+    "meaning": "按月展示同场景分布上的随机规划价值与完美信息价值；不是实际回测费用差。"
+  },
+  {
+    "figure": "09_cvar_frontier",
+    "meaning": "左图是优化空间的期望—尾部风险前沿，右图是相同计划在真实观测下的费用代价。"
+  },
+  {
+    "figure": "10_dual_risk_price",
+    "meaning": "对偶乘子表示CVaR预算再收紧一元对目标的局部边际代价，不代表用户风险偏好。"
+  },
+  {
+    "figure": "11_rolling_horizon",
+    "meaning": "比较2/3日滚动规划及远端SOC边界，检验跨日联动是否带来稳定经济价值。"
+  }
+]
