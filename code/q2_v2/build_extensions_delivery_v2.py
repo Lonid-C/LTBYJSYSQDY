@@ -70,7 +70,7 @@ V2残差路径构造，条件场景与全局场景按当月已验收的blend混�
 
 {table(pd.concat([info,isall],ignore_index=True),2)}
 
-这里 $VSS=EEV-RP$、$EVPI=RP-WS$，且逐日检查 $WS\le RP\le EEV$。
+这里 $VSS=EEV-RP$、$EVPI=RP-WS$，且逐日检查 $WS\\le RP\\le EEV$。
 它们是同一经验场景分布内的理论经济量，不能与真实观测下的策略费用差混用。
 
 ## CVaR风险前沿与对偶风险价格
