@@ -1,0 +1,18 @@
+[
+  {
+    "step": 0,
+    "grid_alpha0": [
+      0.45,
+      0.9
+    ],
+    "grid_alpha_update": [
+      0.5,
+      0.8
+    ],
+    "n_candidates": 70,
+    "best_alpha0": 0.6,
+    "best_alpha_update": 0.55,
+    "best_adjusted_cost": 850475.218886163,
+    "at_edge": []
+  }
+]

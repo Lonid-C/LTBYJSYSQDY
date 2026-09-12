@@ -1,0 +1,12 @@
+{
+  "variant": "fusion",
+  "alpha0": 0.6,
+  "alpha_update": 0.6,
+  "initial_feb1": 8680.5,
+  "note": "α 由 rolling/expanding 多窗口验证选出（Colab 运行日志）；与原版同协议",
+  "value_banks_source": "results/q2_v32_final/value_banks.json",
+  "load_forecast": "Q2 冻结 Ridge（Study.fc[Ridge]，前 90 天 legacy 因果冷启动）",
+  "terminal": "Q2 17 点对偶切平面（按视野末端次日月份/星期取）",
+  "settlement": "net_refund",
+  "protocol": "core（与原版重跑同协议；stability/sensitivity 略）"
+}
