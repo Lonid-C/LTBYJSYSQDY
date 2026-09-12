@@ -23,10 +23,22 @@
 | --- | --- | --- | --- |
 | 问题 1 | ✅ 完成 | `result1.xlsx` | `code/problem1.ipynb` |
 | 问题 2 | ✅ 完成 | `result2.xlsx` | `code/q2_v32/q2_final.py` → `code/problem2_v32_final_output.ipynb` |
-| 问题 3 | 🔶 对齐版已出数 | `result3.xlsx`（已生成，见下注） | `code/q3_v2/q3_aligned.py` |
+| 问题 3 | ✅ HYBRID 主版本已验证 | `result3.xlsx` | `code/q3_joint_v1/run_delivery.py` |
 | 问题 4 | ⬜ 未开始 | `result4-2.xlsx`、`result4-3.xlsx`（待生成） | 见第五节 |
 
 ---
+
+## 第三问当前主版本（HYBRID 工程完善版）
+
+- **入口**：[`code/q3_joint_v1/run_delivery.py`](code/q3_joint_v1/run_delivery.py)。第二版 HYBRID 为主模型，联合情景为可选研究对照；不以评价期结果重新调参。
+- **完整执行记录**：[`problem3_joint_output.ipynb`](code/q3_joint_v1/code/problem3_joint_output.ipynb)，Colab 四个代码单元均已执行、无错误输出。
+- **结果**：现金费用 13,310,698.98 元；库存校正费用 **13,307,895.35 元**；紧急购电 54,734.18 kWh（2025-02-01 至 12-31，共334天）。
+- **提交文件**：根目录 `result3.xlsx` 对应主模型；`code/q3_joint_v1/result3_joint.xlsx` 对应联合情景对照，不得混用。
+- **复现资产**：该目录 `assets/` 保存选定参数与8段终端价值，`cache/` 保存预测、配对残差及情景。完全匹配数据、代码和环境时无需重新拟合预测器；跨Colab会话需恢复缓存。
+- **口径**：交付时段电价、相对午夜计划净额结算、滚动两阶段补救近似；CVaR仅作为评价指标。Q3表头使用自然日00:00—24:00，数据按位置对应，不平移。Q1/Q2模板约定保持原样。
+- **证据与限制**：见[交付报告](code/q3_joint_v1/reports/DELIVERY_REPORT.md)。原无更新A4消融未重新验收，不用于新信息价值结论。
+
+原 `code/q3_v2/` 对齐版及 `队友版本_第三问_量化建模_改进版/` 作为历史研究保留，不再是当前Q3交付入口。下文Q2版本与数值锚点保持有效。
 
 ## 二、版本地图：哪些是最终版
 
@@ -105,7 +117,7 @@
 
 ---
 
-## 五、问题 3 应该基于什么来做
+## 五、问题 3 初期设计参考（历史记录；当前入口见上文）
 
 ### 5.1 结论：基于 `code/q2_v32/q2_final.py`
 

@@ -1,0 +1,55 @@
+{
+  "sources": {
+    "附件2.xlsx": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72",
+    "附件3.xlsx": "8a61b06c52bd0d639a1cc37c61a7d9f5b75edcbca718f64c1bd3498ec9f9d843",
+    "附件1.xlsx": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377"
+  },
+  "arrays": {
+    "load": {
+      "shape": [
+        365,
+        144
+      ],
+      "min": 1995.7176,
+      "max": 7978.8849,
+      "missing": 0
+    },
+    "pv": {
+      "shape": [
+        365,
+        144
+      ],
+      "min": 0.0,
+      "max": 10216.2,
+      "missing": 0
+    },
+    "forecast": {
+      "shape": [
+        365,
+        4,
+        24
+      ],
+      "min": 0.0,
+      "max": 9995.8875,
+      "missing": 0
+    },
+    "price": {
+      "shape": [
+        144
+      ],
+      "min": 0.3713,
+      "max": 1.3952,
+      "missing": 0
+    }
+  },
+  "price_min": 0.3713,
+  "price_max": 1.3952,
+  "price_unique": 137,
+  "terminal_inventory_value_vE": 0.41255555555555556,
+  "forecast_horizon_hours": 24,
+  "forecast_horizon_note": "附件3 每个发布时刻给出其后 24 小时的逐时光伏预报，因此跨午夜 24 小时滚动视野可直接使用当前已发布的次日预测部分实现",
+  "dates_checked": 365,
+  "forecast_issue_rows_checked": 1460,
+  "time_convention": "10 minute interval ending at source timestamp; interpolation at right endpoint",
+  "template_correction": "B:EO relabeled 00:00-00:10 through 23:50-24:00; original template retained"
+}

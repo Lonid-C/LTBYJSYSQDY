@@ -6,6 +6,12 @@
 
 ---
 
+## 当前第三问入口
+
+`q3_joint_v1/run_delivery.py` 为 HYBRID 工程完善版入口；详见[目录说明](q3_joint_v1/README.md)。源 notebook 和已执行 notebook 位于该目录的 `code/`；结果、冻结资产和缓存也在该目录自包含保存。主模型为第二版HYBRID，联合情景为对照；完整执行入口最终导出的 `result3.xlsx` 对应主模型。
+
+该版本改变了Q3的预测实现及终端价值形式，不能照抄Q2的17点价值库、执行储备系数或旧Q3结果。上述旧Q3入口只保留作历史研究。
+
 ## 一、三层分级
 
 ### ★ 最终版（论文与交付件的唯一口径）
@@ -17,8 +23,8 @@
 | `problem2_v32_final.ipynb` | 上述模型的 Colab 源 notebook（由 `build_q2_v32_notebook.py` 生成，自包含）。 |
 | `problem2_v32_final_output.ipynb` | 上述 notebook 的 **Colab 执行版**，含完整输出。论文取证看这个。 |
 | `build_q2_v32_notebook.py` | 生成 `problem2_v32_final.ipynb`。 |
-| `q3_v2/q3_aligned.py` | **问题 3 对齐版**：0:00 契约计划在 Q3 结算规则下重优化（调整 1.5p/0.5p 作为场景补救），6/12/18 部分补救按净额结算，产出 `result3.xlsx`。 |
-| `problem3_v2_aligned_output.ipynb` | 问题 3 对齐版的 Colab 执行版。 |
+| `q3_v2/q3_aligned.py` | **历史问题 3 对齐版，已被 HYBRID 主版本替代**：0:00 契约计划在 Q3 结算规则下重优化（调整 1.5p/0.5p 作为场景补救），6/12/18 部分补救按净额结算，产出 `result3.xlsx`。 |
+| `problem3_v2_aligned_output.ipynb` | 历史问题 3 对齐版的 Colab 执行记录。 |
 | `build_q3_v2_notebook.py`、`q3_v2/colab_*.py` | 问题 3 对齐版的 notebook 生成与 Colab 驱动。 |
 | `q2_v32/colab_pack_v32.py` | 打包 Colab 上传所需的输入（附件、模型、notebook、预测文件）。 |
 | `q2_v32/colab_prepare_v32.py` | 在 Colab 上解包并安装运行环境。 |

@@ -1,0 +1,29 @@
+{
+  "source": "第三问_分层融合算法_HYBRID_交付.zip",
+  "upstream_sha256": {
+    "code/method_report.py": "d2fa7ae76d3bc42d40b01b2080ea2bfe07f4386de4924dbd680fba957dd9cbe9",
+    "code/hybrid_core.py": "ccb43e124d41c5730fb2c4de8579545fdc0a1c4d7711b8c14d9d4c07a3faeae4",
+    "code/hybrid_search.py": "6de54d6fb377523f07ee7f3ff39ad6c724c2c9bf8de0e6ce5a94b3207f9d6214",
+    "code/hybrid_stoch.py": "7f8cbcd35be2dcb162d1cf2adbe211195c28f56911fbe87f4f55a505e8de6f85",
+    "code/run_hybrid_experiment.py": "c15f6306ecf4f39a8f3a82bc481ca8511446f4abddd15f2471e7356f8e046ea9",
+    "code/hybrid_verify.py": "fc70622e1ac9a5e555b05261c2e08ef1835b4aa26ca56b32d9e48e21e9d1261d",
+    "code/export_xlsx.py": "b7d35d2c8867e6315ebb3b79197094a0669578ef4e40345cb8b247a8541203d1",
+    "code/pure_release.py": "a6afcc25dedd880e75c61d70d9d95fed68cd173aff0f759e9cd61a2087087dc2",
+    "code/hybrid_report.py": "b40019c41cac1450d0f72faf674262edbb8a6ef5759cd531606c2923a1675026",
+    "code/hybrid_writeup.py": "80e0d0ff10f0592e6021f57954765e697bbf61bc49725e40b3231700e0c5a403",
+    "code/compare_versions.py": "623c5e73efa22b3f553943545ba4ab8f1f62153085b940302768af0f1e8c4a24",
+    "code/q3.py": "76e4e2738c02641e1eb40c49ce4f11def33bdd42b6cf281e224886c4b455913d",
+    "code/verify.py": "40c002f9fb3a02811311be2743ad43949a10268048990b7b982b0a018a824298",
+    "code/extra_sensitivity.py": "e57ae3fed04fa96707011df1cf6dea2bd828d432b0bc5b37403fb779400bfd43",
+    "code/method_comparison.py": "17ba3379187a3ee72d2ec4425fd5b257e694358134c33522bc66aaecda5ed6bb",
+    "code/deliver.py": "eb88c0256497a060d1a932968e10a45a7f66b22c3385c930285101b5ce96b6b0",
+    "code/hybrid_policy.py": "09155abe23f95a75533569516d664a40535005302e44208fb762b2fe6daeeaa7",
+    "results/hybrid_selected_policy.json": "a2186da34770dd0cf4da919277ccf5e6fdf47ac7642e01455e176a7b6624de94",
+    "results/hybrid_terminal_value_segments.csv": "05f88112b4856113fefbd44bf7d34213df6849f83b0be64824d9cab27388799b"
+  },
+  "changes": [
+    "code/hybrid_policy.py scenario_provider + next release lock",
+    "code/run_joint.py new production entry"
+  ],
+  "inherited_results_are_not_new_results": true
+}

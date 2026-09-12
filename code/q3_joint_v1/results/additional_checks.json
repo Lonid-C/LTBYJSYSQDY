@@ -1,0 +1,6 @@
+{
+  "cache_load_without_training": true,
+  "lock_schedule_checks": true,
+  "workbook_charge_discharge_soc": true,
+  "workbook_daily_emergency": true
+}

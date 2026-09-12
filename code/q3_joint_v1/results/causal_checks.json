@@ -1,0 +1,26 @@
+[
+  {
+    "day": 200,
+    "issue_hour": 0,
+    "scenario_max_difference": 0.0,
+    "plan_max_difference": 0.0
+  },
+  {
+    "day": 200,
+    "issue_hour": 6,
+    "scenario_max_difference": 0.0,
+    "plan_max_difference": 0.0
+  },
+  {
+    "day": 200,
+    "issue_hour": 12,
+    "scenario_max_difference": 0.0,
+    "plan_max_difference": 0.0
+  },
+  {
+    "day": 200,
+    "issue_hour": 18,
+    "scenario_max_difference": 0.0,
+    "plan_max_difference": 0.0
+  }
+]
