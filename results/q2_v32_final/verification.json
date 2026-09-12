@@ -8,6 +8,24 @@
       "passed": true
     },
     {
+      "test": "january_warmup_causality",
+      "value": 0.0,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "test": "january_initial_soc",
+      "value": 0.0,
+      "tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "test": "february_inherits_january_soc",
+      "value": 0.0,
+      "tolerance": 1e-09,
+      "passed": true
+    },
+    {
       "test": "balance",
       "value": 1.7053025658242404e-13,
       "tolerance": 1e-07,
@@ -50,12 +68,18 @@
       "passed": true
     },
     {
+      "test": "january_soc_continuity",
+      "value": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
       "test": "soc_continuity_dual_terminal_g17",
       "value": 0.0,
       "tolerance": 1e-07,
       "passed": true
     }
   ],
-  "solve_calls": 2952,
-  "solve_seconds": 114.30644796400077
+  "solve_calls": 2983,
+  "solve_seconds": 123.54745136200359
 }

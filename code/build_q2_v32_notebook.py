@@ -68,7 +68,12 @@ N_{d,t}^{(i)}=\widehat N_{d,t}+\varepsilon_{i,t}.
 w_{d,i}=\frac{2^{-(d-i)/\tau}}{\sum_j 2^{-(d-j)/\tau}}.
 \]
 
-执行储备系数保持已验证的 \(\rho=0.5\)，本版不重新搜索其他规划参数。1 月作为历史预热期，2025-02-01 0:00 实际 SOC 取 6000 kWh（题设）。
+执行储备系数保持已验证的 \(\rho=0.5\)，本版不重新搜索其他规划参数。储能从题面规定的
+2025-01-01 0:00 初始 SOC 6000 kWh 开始连续运行，一月作为状态预热期，1 月 31 日的期末
+SOC 由 2 月 1 日继承。冻结 Ridge 在 1 月 1--7 日没有输出，故以附件 1 提供的典型日负荷与
+光伏预测作为因果冷启动中心；1 月 2--8 日仅叠加已经完整发生的历史日残差，1 月 9 日起
+恢复上述 SAA 规则。一月使用
+最低电价折算的常数终端库存价值；正式提交仍只包含 2 月 1 日至 12 月 31 日。
 ''')
 
 code(r'''
@@ -80,7 +85,8 @@ audit=pd.DataFrame({
           np.isfinite(preview.study.pv).all(),preview.dates.is_unique,preview.dates.is_monotonic_increasing,
           M.sha(PROJECT/'results/problem2_forecast_ablation_predictions.csv.gz')]})
 display(audit)
-print('决策日区间:',preview.dates[31].date(),'→',preview.dates[364].date(),'共',364-31+1,'天')
+print('状态运行区间:',preview.dates[0].date(),'→',preview.dates[364].date())
+print('提交日区间:',preview.dates[31].date(),'→',preview.dates[364].date(),'共',364-31+1,'天')
 ''')
 
 md(r'''

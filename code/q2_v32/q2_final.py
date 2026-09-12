@@ -61,6 +61,7 @@ BLOCK_LABELS = ['0:00-4:00', '4:00-8:00', '8:00-12:00',
 
 EMERGENCY_FLOOR = 1e-8        # slot emergency below this is written as zero
 EMERGENCY_ACTIVE = 1e-7       # slot counts as an event above this
+WARMUP_START, DELIVERY_START, END_DAY = 0, 31, 365
 
 
 def atom(path, obj):
@@ -142,6 +143,29 @@ class Experiment:
         scenarios = self.netfc[day][None, :] + residual  # kW
         if ids.max() >= day or not np.isfinite(scenarios).all():
             raise AssertionError('non-causal or non-finite scenario')
+        return scenarios, weights, ids, cfg
+
+    def warmup_scenarios(self, day):
+        """Build causal January scenarios until the deployed rule is available."""
+        if day >= 8:
+            return self.scenarios(day)
+        cfg = self.config(day)
+        ids = np.arange(0, day, dtype=int)
+        target = self.netfc[day]
+        if not np.isfinite(target).all():
+            target = self.study.ref[0] - self.study.ref[1]
+        if len(ids) == 0:
+            scenarios = target[None, :]
+            weights = np.ones(1)
+        else:
+            weights = weights_for(len(ids), cfg.half_life)
+            historical_forecast = self.netfc[ids].copy()
+            missing = ~np.isfinite(historical_forecast).all(axis=1)
+            historical_forecast[missing] = self.study.ref[0] - self.study.ref[1]
+            residual = self.net[ids] - historical_forecast
+            scenarios = target[None, :] + residual
+        if (len(ids) and ids.max() >= day) or not np.isfinite(scenarios).all():
+            raise AssertionError('non-causal or non-finite warmup scenario')
         return scenarios, weights, ids, cfg
 
     def weekday_distribution(self, origin, weekday):
@@ -308,7 +332,8 @@ def actual_row(exp, day, state, solution, ids, cfg):
         lp_objective=float(solution['objective']), solve_seconds=float(solution['solve_seconds']),
         lp_eq_residual=solution['eq_residual'], lp_ineq_violation=solution['ineq_violation'],
         balance_residual=audit['balance_max_abs'], soc_residual=audit['soc_equation_max_abs'],
-        history_min_day=int(ids.min()), history_max_day=int(ids.max()), **asdict(cfg))
+        history_min_day=int(ids.min()) if len(ids) else -1,
+        history_max_day=int(ids.max()) if len(ids) else -1, **asdict(cfg))
     slots = pd.DataFrame(dict(policy=POLICY, date=row['date'], slot=np.arange(T), interval=INTERVALS,
         price=exp.price, net_actual=exp.net[day]*DT, purchase=solution['q'],
         charge=executed['charge'], discharge=executed['discharge'], emergency=z,
@@ -317,10 +342,31 @@ def actual_row(exp, day, state, solution, ids, cfg):
     return row, slots, float(executed['soc'][-1])
 
 
+def january_warmup(exp):
+    """Run Jan 1--31 from the stated 6000 kWh and return the Feb 1 SOC."""
+    rows=[]; state=INITIAL
+    # Q3 uses the same causal cold-start boundary: value stored energy at the
+    # cheapest replacement energy price, without using future January data.
+    salvage = float(exp.price.min() / BATTERY.eta_d)
+    cold_cuts = [(-salvage, salvage * INITIAL)]
+    for day in range(WARMUP_START, DELIVERY_START):
+        scenarios, weights, ids, cfg = exp.warmup_scenarios(day)
+        solution = exp.solve(scenarios, weights, state, cuts=cold_cuts)
+        row, _, state = actual_row(exp, day, state, solution, ids, cfg)
+        row['warmup_scenario_days'] = int(len(ids))
+        row['warmup_mode'] = ('attachment1_typical_day' if len(ids) == 0 else
+                              'causal_residual_cold_start' if day < 8 else 'deployed_saa')
+        rows.append(row)
+    warmup = pd.DataFrame(rows)
+    warmup.to_csv(OUT/'january_warmup_daily.csv', index=False)
+    return warmup, float(state), salvage
+
+
 def run_final(exp, banks):
-    """Roll the adopted policy over 2025-02-01 .. 2025-12-31 with causal execution."""
-    rows=[]; slots=[]; state = INITIAL
-    for day in range(31, 365):
+    """Warm up January, then record the Feb 1--Dec 31 delivery period."""
+    warmup, state, salvage = january_warmup(exp)
+    rows=[]; slots=[]
+    for day in range(DELIVERY_START, END_DAY):
         scenarios, weights, ids, cfg = exp.scenarios(day)
         cuts = bank_for_date(exp, banks, exp.dates[day]+pd.Timedelta(days=1))
         solution = exp.solve(scenarios, weights, state, cuts=cuts)
@@ -330,7 +376,7 @@ def run_final(exp, banks):
     daily.to_csv(OUT/'daily.csv', index=False)
     slots.to_csv(OUT/'slots.csv.gz', index=False, compression='gzip')
     print('policy', POLICY, 'completed', len(daily), 'days', flush=True)
-    return daily, slots
+    return warmup, daily, slots, salvage
 
 
 def inventory_boundary(exp, banks, first_date, first_soc, last_date, last_soc):
@@ -361,13 +407,19 @@ def summarize(exp, daily, banks):
     return summary
 
 
-def verify(exp,daily):
+def verify(exp,warmup,daily):
     dual_checks=pd.read_csv(OUT/'dual_cut_checks.csv');vi=pd.read_csv(OUT/'value_iteration.csv')
     tests=[]
     def add(name,value,tolerance):
         passed=bool(value<=tolerance);tests.append(dict(test=name,value=float(value),tolerance=float(tolerance),passed=passed))
         if not passed:raise AssertionError((name,value,tolerance))
     add('causality',max(0,float((daily.history_max_day-daily.day+1).max())),0)
+    observed_warmup = warmup[warmup.warmup_scenario_days > 0]
+    add('january_warmup_causality',
+        max(0, float((observed_warmup.history_max_day-observed_warmup.day+1).max())), 0)
+    add('january_initial_soc', abs(float(warmup.iloc[0].initial_soc)-INITIAL), 1e-9)
+    add('february_inherits_january_soc',
+        abs(float(daily.iloc[0].initial_soc)-float(warmup.iloc[-1].terminal_soc)), 1e-9)
     add('balance',float(daily.balance_residual.max()),1e-7)
     add('soc_recursion',float(daily.soc_residual.max()),1e-7)
     add('lp_eq',float(daily.lp_eq_residual.max()),1e-5)
@@ -375,6 +427,9 @@ def verify(exp,daily):
     add('dual_support',max(0,float(dual_checks.support_violation.max())),1e-5)
     add('dual_own_cut',float(dual_checks.own_cut_error.max()),1e-5)
     add('value_iteration_convergence',float((~vi.groupby('origin').tail(1).converged).sum()),0)
+    add('january_soc_continuity',
+        float(np.max(np.abs(warmup.initial_soc.iloc[1:].to_numpy()
+                            -warmup.terminal_soc.iloc[:-1].to_numpy()))),1e-7)
     add('soc_continuity_'+POLICY,
         float(np.max(np.abs(daily.initial_soc.iloc[1:].to_numpy()-daily.terminal_soc.iloc[:-1].to_numpy()))),1e-7)
     result={'all_pass':all(x['passed'] for x in tests),'tests':tests,
@@ -577,9 +632,9 @@ def full():
     started = time.time()
     exp = Experiment()
     banks = build_value_banks(exp)
-    daily, slots = run_final(exp, banks)
+    warmup, daily, slots, warmup_salvage = run_final(exp, banks)
     summary = summarize(exp, daily, banks)
-    verification = verify(exp, daily)
+    verification = verify(exp, warmup, daily)
     export = write_result2(slots)
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text('# Q2 V3.2 最终版运行结果\n\n本报告由本次 Colab 输出自动生成。\n\n'
@@ -595,6 +650,12 @@ def full():
         source_sha256=sha(__file__),
         prediction_sha256=sha(ROOT/'results/problem2_forecast_ablation_predictions.csv.gz'),
         grid_size=GRID_SIZE, policy=POLICY, result2=str(RESULT2),
+        initial_jan1_kwh=INITIAL, initial_feb1_kwh=float(daily.iloc[0].initial_soc),
+        january_warmup_days=len(warmup),
+        january_cold_start=('Attachment 1 typical-day forecast while frozen Ridge is unavailable; '
+                            'causal completed-day residuals on Jan 2-8; deployed SAA from Jan 9'),
+        january_terminal_inventory_value_yuan_per_kwh=warmup_salvage,
+        delivery_period='2025-02-01/2025-12-31',
         all_checks_pass=bool(verification['all_pass'] and export['passed']), fresh_run=True)
     atom(OUT/'run_manifest.json', manifest)
     print(json.dumps(manifest, ensure_ascii=False, indent=2), flush=True)

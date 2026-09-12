@@ -10,7 +10,7 @@
 
 `q3_joint_v1/run_delivery.py` 为 HYBRID 工程完善版入口；详见[目录说明](q3_joint_v1/README.md)。源 notebook 和已执行 notebook 位于该目录的 `code/`；结果、冻结资产和缓存也在该目录自包含保存。主模型为第二版HYBRID，联合情景为对照；完整执行入口最终导出的 `result3.xlsx` 对应主模型。
 
-该版本改变了Q3的预测实现及终端价值形式，不能照抄Q2的17点价值库、执行储备系数或旧Q3结果。上述旧Q3入口只保留作历史研究。
+该版本改变了Q3的预测实现及终端价值形式，不能照抄Q2的17点价值库、执行储备系数或旧Q3结果。旧Q3入口只保留作历史研究。
 
 ## 一、三层分级
 
@@ -23,9 +23,9 @@
 | `problem2_v32_final.ipynb` | 上述模型的 Colab 源 notebook（由 `build_q2_v32_notebook.py` 生成，自包含）。 |
 | `problem2_v32_final_output.ipynb` | 上述 notebook 的 **Colab 执行版**，含完整输出。论文取证看这个。 |
 | `build_q2_v32_notebook.py` | 生成 `problem2_v32_final.ipynb`。 |
-| `q3_v2/q3_aligned.py` | **历史问题 3 对齐版，已被 HYBRID 主版本替代**：0:00 契约计划在 Q3 结算规则下重优化（调整 1.5p/0.5p 作为场景补救），6/12/18 部分补救按净额结算，产出 `result3.xlsx`。 |
-| `problem3_v2_aligned_output.ipynb` | 历史问题 3 对齐版的 Colab 执行记录。 |
-| `build_q3_v2_notebook.py`、`q3_v2/colab_*.py` | 问题 3 对齐版的 notebook 生成与 Colab 驱动。 |
+| `q3_joint_v1/run_delivery.py` | **问题 3 当前 HYBRID 主版入口**，运行主版与联合情景对照，默认交付主版。 |
+| `q3_joint_v1/code/problem3_joint_output.ipynb` | 问题 3 的 Colab 执行证据，4 个代码单元均已执行、无错误输出。 |
+| `q3_joint_v1/assets/`、`q3_joint_v1/cache/` | 冻结参数、终端价值及预测和情景缓存；匹配时优先复用。 |
 | `q2_v32/colab_pack_v32.py` | 打包 Colab 上传所需的输入（附件、模型、notebook、预测文件）。 |
 | `q2_v32/colab_prepare_v32.py` | 在 Colab 上解包并安装运行环境。 |
 | `q2_v32/colab_launch_v32.py` | 在 Colab 上后台执行 notebook 并打包产物。 |
@@ -42,6 +42,7 @@
 
 | 文件 / 目录 | 角色 | 为何不归档 |
 | --- | --- | --- |
+| `q3_v2/`、`problem3_v2_aligned_output.ipynb`、`build_q3_v2_notebook.py` | 历史 Q3 对齐模型、执行记录与驱动 | 保留取证，不作为当前入口 |
 | `archive/` | 已归档的研究代码（q2_v3、q2_v31 及其 builder） | 见 `archive/README.md` |
 | `q2_hybrid.py` | 早期「预测 × 策略」融合消融（H0–H4） | 被 9 处引用，且是预测端筛选证据 |
 | `q2_hybrid_colab_pilot.py`、`q2_hybrid_colab_supervisor.py` | 上述实验的 Colab 驱动 | 与 notebook 路径耦合 |
@@ -87,12 +88,12 @@ archive/q2_v31/q2_terminal_ablation.py ┘ 同样依赖上面三个共享模块
 ## 四、改动前的三条约束
 
 1. **不要移动 `q2_v2/dispatch.py` 与 `q2_v2/utils.py`**。最终版用 `sys.path.insert(ROOT/'code/q2_v2')` 硬编码定位它们，挪走会让最终版直接 import 失败。
-2. **不要改 `q2_planning.py` 的 `Study`/`weights_for` 语义**。后果是整个 Q2 的费用数字全体漂移。改动后请用 README 里的强回归锚点验证：`q2_final.py` 的重跑必须与 `results/q2_v31_terminal_ablation/` 中 `dual_terminal_g17` 的记录逐位一致。
+2. **不要改 `q2_planning.py` 的 `Study`/`weights_for` 语义**。后果是整个 Q2 的费用数字全体漂移。当前 Q2 增加了一月状态预热，因此不再要求与旧消融的 2 月 1 日初始化逐位一致；应使用根 README 的新回归锚点，检查 1 月 1 日初态、跨月继承、因果性及 2 月 1 日期末以后的稳定结果。
 3. **不要改动已执行 notebook 的源码单元**。它们是 Colab 运行证据，改源码会让输出与代码的对应关系失真。
 
 ---
 
-## 五、新增实验（如问题 3）怎么放
+## 五、新增实验怎么放
 
 参照 v3.2 的做法，为每一轮独立的建模思路建一个 `q2_vNN/` 目录，内含：
 
@@ -108,4 +109,4 @@ q2_vNN/
 外加 `code/build_q2_vNN_notebook.py` 与生成出的 `code/problem2_vNN_*.ipynb`。
 产物落到 `results/q2_vNN_*/`、`figures/q2_vNN_*/`，报告写 `reports/`。
 
-问题 3 的起手点：复制 `q2_v32/q2_final.py`，把 `write_result2` 改成 `write_result3`（多一张「调整购电量」表），并接入附件 3 的整点预报降尺度。详见根目录 `README.md` 第五节。
+后续 Q3 维护从 `q3_joint_v1/run_delivery.py` 及其依赖开始；根目录 `README.md` 第五节仅为历史设计记录。Q4 应独立建目录，分别复用当前 Q2/Q3 机制，先明确波动电价的信息可用时刻，并统一对照边界。Q2/Q3 均已从 1 月 1 日 6000 kWh 连续运行，但不同模型产生不同的 2 月 1 日 SOC，详见 [`../reports/BASELINE_AUDIT_2026-09-13.md`](../reports/BASELINE_AUDIT_2026-09-13.md)。
