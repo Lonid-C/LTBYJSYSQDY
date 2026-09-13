@@ -8,9 +8,9 @@
 
 ## 当前第三问入口
 
-`q3_joint_v1/run_delivery.py` 为 HYBRID 工程完善版入口；详见[目录说明](q3_joint_v1/README.md)。源 notebook 和已执行 notebook 位于该目录的 `code/`；结果、冻结资产和缓存也在该目录自包含保存。主模型为第二版HYBRID，联合情景为对照；完整执行入口最终导出的 `result3.xlsx` 对应主模型。
+2026-09-13用户确认：正式Q3采用现金费用 **13,386,086.28元** 的分位法LP-MPC。入口为项目根目录下 `第三问_量化建模_改进版+分层融合/code/q3.py`，正式工作簿为该包的 `result3.xlsx`。结果证据为该包 `results/strategy_comparison.csv` 的 `6+12+18` 行。
 
-该版本改变了Q3的预测实现及终端价值形式，不能照抄Q2的17点价值库、执行储备系数或旧Q3结果。旧Q3入口只保留作历史研究。
+`q3_joint_v1/`对应13,310,698.98元HYBRID版本，用户已明确否定，不再列为最终入口。根目录 `result3.xlsx`已替换为正式版工作簿（2026-09-13，费用合计13,386,086.28元）。历史目录自述不得覆盖项目根README的版本决定。
 
 ## 一、三层分级
 
@@ -23,9 +23,8 @@
 | `problem2_v32_final.ipynb` | 上述模型的 Colab 源 notebook（由 `build_q2_v32_notebook.py` 生成，自包含）。 |
 | `problem2_v32_final_output.ipynb` | 上述 notebook 的 **Colab 执行版**，含完整输出。论文取证看这个。 |
 | `build_q2_v32_notebook.py` | 生成 `problem2_v32_final.ipynb`。 |
-| `q3_joint_v1/run_delivery.py` | **问题 3 当前 HYBRID 主版入口**，运行主版与联合情景对照，默认交付主版。 |
-| `q3_joint_v1/code/problem3_joint_output.ipynb` | 问题 3 的 Colab 执行证据，4 个代码单元均已执行、无错误输出。 |
-| `q3_joint_v1/assets/`、`q3_joint_v1/cache/` | 冻结参数、终端价值及预测和情景缓存；匹配时优先复用。 |
+| `../第三问_量化建模_改进版+分层融合/code/q3.py` | **问题3正式分位法LP-MPC入口**，现金费用13,386,086.28元。 |
+| `../第三问_量化建模_改进版+分层融合/results/strategy_comparison.csv` | Q3正式数值来源：`6+12+18`行。 |
 | `q2_v32/colab_pack_v32.py` | 打包 Colab 上传所需的输入（附件、模型、notebook、预测文件）。 |
 | `q2_v32/colab_prepare_v32.py` | 在 Colab 上解包并安装运行环境。 |
 | `q2_v32/colab_launch_v32.py` | 在 Colab 上后台执行 notebook 并打包产物。 |

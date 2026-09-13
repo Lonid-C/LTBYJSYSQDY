@@ -1,0 +1,18 @@
+{
+  "nesting_max_daily_cost_diff_yuan": 0.0,
+  "nesting_pass": true,
+  "independent_recompute": {
+    "cost": 1.0429946996737272e-05,
+    "balance": 1.3333335004972469e-06,
+    "soc": 1.4444452105522032e-06,
+    "power": 0.0
+  },
+  "recompute_pass": true,
+  "causality_max_plan_diff_kwh": 0.0,
+  "causality_pass": true,
+  "daily_max_balance_error": 0.0,
+  "daily_max_dynamics_error": 0.0,
+  "soc_bounds_ok": true,
+  "days": 334,
+  "all_pass": true
+}

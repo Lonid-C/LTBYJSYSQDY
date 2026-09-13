@@ -5,12 +5,12 @@
   ],
   "min": 0.0076,
   "max": 1.7936,
-  "mean": 0.7661976046423136,
+  "mean": 0.7661976046423135,
   "std": 0.3406700960727655,
   "daily_mean_min": 0.5378048611111111,
   "daily_mean_max": 0.9289923611111112,
   "ratio_to_tou_std": 0.17981939686878326,
-  "autocorr_daily_multiplier_lag1": 0.48760886363582084,
-  "autocorr_daily_multiplier_lag7": 0.9638943380851412,
+  "autocorr_daily_multiplier_lag1": 0.48760886363582073,
+  "autocorr_daily_multiplier_lag7": 0.9638943380851406,
   "sha256": "20e9c93aeab5e8e21ae4dd15587f9e190f7408692504c1319598461cd654fe71"
 }

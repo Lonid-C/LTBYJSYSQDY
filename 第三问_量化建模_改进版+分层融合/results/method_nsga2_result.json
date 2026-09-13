@@ -1,0 +1,12 @@
+{
+  "front_size": 11,
+  "seconds": 6.960263967514038,
+  "population": 20,
+  "generations": 15,
+  "evaluations": 300,
+  "objectives": [
+    "adjusted_cost (元)",
+    "equivalent_cycles (次)"
+  ],
+  "window": "2025-01-08/2025-01-31"
+}

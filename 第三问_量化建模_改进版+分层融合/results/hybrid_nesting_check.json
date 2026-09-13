@@ -1,0 +1,5 @@
+{
+  "window": "2025-02-01/2025-03-02",
+  "max_daily_total_cost_diff_yuan": 0.0,
+  "note": "HYBRID 框架取 Theta(全部分位=0.60) 与常数终端价值时应逐位复现改进版主模型"
+}
