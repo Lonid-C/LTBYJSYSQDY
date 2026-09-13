@@ -1,0 +1,804 @@
+<title>第四问 波动电价建模</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --ground:#FBFBFC; --panel:#F2F4F8; --panel2:#E9EDF3;
+  --ink:#171C26; --body:#28303D; --slate:#5C6678; --faint:#8A93A3;
+  --rule:#DDE2E9; --rule2:#C8D0DC;
+  --accent:#2F5D9E; --accent-soft:#E4ECF7; --warn:#B5502F; --warn-soft:#F7E9E3;
+  --good:#2F6B4F;
+  --sans:"Noto Sans SC",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"Noto Serif SC",Georgia,"Songti SC","SimSun",serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --measure:44rem;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#10141C; --panel:#181E28; --panel2:#212936;
+    --ink:#E7EBF2; --body:#C9D1DD; --slate:#97A1B2; --faint:#6F798A;
+    --rule:#28313F; --rule2:#3A4556;
+    --accent:#7FA9DF; --accent-soft:#1B2738; --warn:#DD8A6C; --warn-soft:#2E2119;
+    --good:#6FAE8C;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#10141C; --panel:#181E28; --panel2:#212936;
+  --ink:#E7EBF2; --body:#C9D1DD; --slate:#97A1B2; --faint:#6F798A;
+  --rule:#28313F; --rule2:#3A4556;
+  --accent:#7FA9DF; --accent-soft:#1B2738; --warn:#DD8A6C; --warn-soft:#2E2119;
+  --good:#6FAE8C;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--body);font-family:var(--serif);
+  font-size:16px;line-height:1.85;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px;padding-block:0 72px}
+
+/* ---------- 抬头 ---------- */
+header.top{border-bottom:1px solid var(--rule);margin-bottom:0}
+.eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);font-weight:700;margin:44px 0 10px}
+h1.doc{font-family:var(--sans);font-weight:700;font-size:clamp(1.7rem,4.4vw,2.5rem);
+  line-height:1.25;color:var(--ink);margin:0 0 12px;text-wrap:balance;letter-spacing:-.01em}
+.sub{font-size:1rem;color:var(--slate);max-width:var(--measure);margin:0 0 26px}
+.handoff{display:flex;gap:14px;align-items:flex-start;background:var(--accent-soft);
+  border-left:3px solid var(--accent);padding:14px 18px;margin:0 0 28px;max-width:var(--measure);
+  font-family:var(--sans);font-size:.9rem;line-height:1.7;color:var(--body);border-radius:0 4px 4px 0}
+.handoff b{color:var(--ink)}
+
+/* ---------- 口径条：本文全部数字的前提 ---------- */
+.conv{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(146px,1fr));gap:0;margin-bottom:0}
+.conv div{padding:13px 16px 14px;border-right:1px solid var(--rule)}
+.conv div:last-child{border-right:0}
+.conv dt{font-family:var(--sans);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:0 0 4px;font-weight:700}
+.conv dd{margin:0;font-family:var(--mono);font-size:.82rem;color:var(--ink);
+  font-variant-numeric:tabular-nums;line-height:1.5}
+
+/* ---------- 布局 ---------- */
+.cols{display:grid;grid-template-columns:232px minmax(0,1fr);gap:52px;align-items:start;margin-top:40px}
+nav.toc{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;
+  font-family:var(--sans);font-size:.83rem;line-height:1.55;padding-right:8px}
+nav.toc .tl{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;padding:0 0 10px;border-bottom:1px solid var(--rule);margin-bottom:10px}
+nav.toc a{display:block;color:var(--slate);text-decoration:none;padding:4px 0 4px 10px;
+  border-left:2px solid transparent}
+nav.toc a:hover{color:var(--accent);border-left-color:var(--rule2)}
+nav.toc a.t2{font-weight:700;color:var(--ink);margin-top:9px}
+nav.toc a.t3{padding-left:20px;font-size:.79rem}
+nav.toc a.on{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft)}
+main{min-width:0;max-width:var(--measure)}
+
+/* ---------- 正文排版 ---------- */
+main h1,main h2,main h3,main h4{font-family:var(--sans);color:var(--ink);text-wrap:balance;
+  line-height:1.35;position:relative}
+main h1{font-size:1.62rem;font-weight:700;margin:56px 0 18px;padding-bottom:11px;border-bottom:2px solid var(--ink)}
+main h2{font-size:1.28rem;font-weight:700;margin:48px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+main h3{font-size:1.05rem;font-weight:700;margin:34px 0 10px;color:var(--accent)}
+main h4{font-size:.95rem;font-weight:700;margin:24px 0 8px;color:var(--slate)}
+.hlink{position:absolute;left:-1.05em;color:var(--rule2);text-decoration:none;font-weight:400;
+  opacity:0;transition:opacity .12s}
+h1:hover .hlink,h2:hover .hlink,h3:hover .hlink,h4:hover .hlink{opacity:1}
+main p{margin:0 0 1.15em}
+main strong{color:var(--ink);font-weight:600}
+main ul,main ol{margin:0 0 1.2em;padding-left:1.35em}
+main li{margin-bottom:.45em}
+main li::marker{color:var(--accent)}
+main a{color:var(--accent)}
+main code{font-family:var(--mono);font-size:.85em;background:var(--panel);
+  padding:.1em .38em;border-radius:3px;color:var(--ink);border:1px solid var(--rule)}
+main pre{background:var(--panel);border:1px solid var(--rule);border-radius:4px;
+  padding:14px 16px;overflow-x:auto;font-size:.85rem;line-height:1.6}
+main pre code{background:none;border:0;padding:0}
+blockquote{margin:1.4em 0;padding:2px 0 2px 18px;border-left:3px solid var(--rule2);
+  color:var(--slate);font-style:normal}
+
+/* ---------- 表 ---------- */
+.tw{overflow-x:auto;margin:1.5em 0;border:1px solid var(--rule);border-radius:4px;
+  max-width:min(100%,54rem)}
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:.855rem;
+  font-variant-numeric:tabular-nums;background:var(--ground)}
+th{background:var(--panel2);color:var(--ink);font-weight:700;text-align:left;
+  padding:10px 13px;border-bottom:1px solid var(--rule2);white-space:nowrap;font-size:.8rem}
+td{padding:9px 13px;border-bottom:1px solid var(--rule);color:var(--body);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--panel)}
+td:not(:first-child),th:not(:first-child){text-align:right}
+th:first-child,td:first-child{white-space:nowrap}
+
+/* ---------- 图 ---------- */
+.fig{margin:2.1em 0;max-width:min(100%,54rem)}
+.fig img{width:100%;max-width:100%;display:block;border:1px solid var(--rule);
+  border-radius:4px;background:#fff}
+.fig figcaption{font-family:var(--sans);font-size:.81rem;color:var(--slate);
+  margin-top:9px;line-height:1.6;display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
+.fig-n{font-weight:700;color:var(--ink);white-space:nowrap}
+.fig-src{margin-left:auto;color:var(--accent);text-decoration:none;font-size:.76rem;white-space:nowrap}
+.fig-src:hover{text-decoration:underline}
+.fig-missing{font-family:var(--mono);font-size:.8rem;color:var(--warn);
+  background:var(--warn-soft);padding:10px 14px;border-radius:4px;margin:1.6em 0}
+
+/* ---------- 数学 ---------- */
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:6px 0;margin:1.3em 0!important}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:64px;padding-top:26px;border-top:1px solid var(--rule);
+  font-family:var(--sans);font-size:.83rem;color:var(--slate);max-width:var(--measure)}
+footer h4{font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);font-weight:700;margin:0 0 10px}
+footer ul{columns:2;column-gap:26px;padding-left:1.1em;margin:0 0 20px}
+footer li{margin-bottom:3px;font-size:.79rem}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.vid{font-family:var(--mono);font-size:.78rem;color:var(--ink);background:var(--panel);
+  padding:.15em .45em;border-radius:3px;border:1px solid var(--rule)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:900px){
+  .cols{grid-template-columns:1fr;gap:0}
+  nav.toc{position:static;max-height:none;border:1px solid var(--rule);border-radius:4px;
+    padding:14px 16px;margin-bottom:32px;max-height:280px;overflow-y:auto}
+  main{max-width:100%}
+  .hlink{display:none}
+  footer ul{columns:1}
+}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">CUMCM C 题 · 第四问 · 交付论文手的工作稿</div>
+  <h1 class="doc">波动电价下的微电网购电与储能调度</h1>
+  <p class="sub">两阶段联合情景随机规划与分层融合求解。本稿为可直接改写的论文正文底稿——结构、推导、图表位置与数字均已就位。</p>
+  <div class="handoff">
+    <div><b>给论文手：</b>正文里的<b>每一个数字都已核验并锁定</b>，来自交付包 <code>results4/</code>，改写时请勿自行调整数值或补算。文字、语气、章节顺序都可以改；表格与图的位置可以挪。<b>但 4.6.5「模型解释边界与稳健性说明」的六条不能删</b>——参数标定与泛化边界、复杂策略的适用边界、Q4-2 的补救决策结构、信息价值指标的命名边界、结算口径敏感性、因果性与统计检验边界。这些是本稿相对其他队伍的加分项，删掉就白做了。</div>
+  </div>
+  <p class="sub">本页由 <code>code/q4_build_paper_html.py</code> 从 <code>第四问_论文正文.md</code> 自动生成，请勿直接改 HTML。</p>
+</header>
+
+<dl class="conv">
+  <div><dt>结算口径</dt><dd>交付时段电价<br>日末净额退款</dd></div>
+  <div><dt>惩罚倍率</dt><dd>增购 1.5×<br>违约 0.5×　应急 5×</dd></div>
+  <div><dt>评价期</dt><dd>2025-02-01 → 12-31<br>334 天 / 48,096 段</dd></div>
+  <div><dt>选参窗口</dt><dd>仅 2025 年 1 月<br>三块滚动验证</dd></div>
+  <div><dt>储能</dt><dd>12,000 kWh / 5,000 kW<br>η = 0.9</dd></div>
+  <div><dt>版本</dt><dd>Q4-e2549ddb99</dd></div>
+</dl>
+
+<div class="cols">
+  <nav class="toc"><div class="tl">目录</div>
+<a class="t1" href="#s0">4 第四问：电价波动条件下的购电与储能优化调度</a>
+<a class="t2" href="#s1">4.1 问题分析</a>
+<a class="t2" href="#s2">4.2 模型假设</a>
+<a class="t2" href="#s3">4.3 符号说明</a>
+<a class="t2" href="#s4">4.4 模型建立</a>
+<a class="t3" href="#s5">4.4.1 决策时序与信息集</a>
+<a class="t3" href="#s6">4.4.2 费用函数</a>
+<a class="t3" href="#s7">4.4.3 两阶段情景随机线性规划</a>
+<a class="t3" href="#s8">4.4.4 联合情景生成与 k-medoids 带权削减</a>
+<a class="t3" href="#s9">4.4.5 分段线性凹终端库存价值 V(E) 的 Bellman 回代拟合</a>
+<a class="t3" href="#s10">4.4.6 参数搜索层（模因算法：GA/DE/SA + Nelder-Mead）</a>
+<a class="t2" href="#s11">4.5 模型求解</a>
+<a class="t2" href="#s12">4.6 结果与分析</a>
+<a class="t3" href="#s13">4.6.1 样本外结果总览</a>
+<a class="t3" href="#s14">4.6.2 关键增益</a>
+<a class="t3" href="#s15">4.6.3 与真下界的差距</a>
+<a class="t3" href="#s16">4.6.4 风险统计</a>
+<a class="t3" href="#s17">4.6.5 模型解释边界与稳健性说明</a>
+<a class="t2" href="#s18">4.7 模型检验</a>
+<a class="t3" href="#s19">4.7.1 因果性检验</a>
+<a class="t3" href="#s20">4.7.2 账单重算与储能动态校验</a>
+<a class="t3" href="#s21">4.7.3 消融与敏感性</a>
+<a class="t3" href="#s22">4.7.4 Bootstrap 不确定性</a>
+<a class="t3" href="#s23">4.7.5 泛化失败的两次事后诊断</a>
+<a class="t2" href="#s24">4.8 模型的优点与不足</a></nav>
+  <main>
+<h1 id="s0"><a class="hlink" href="#s0" aria-label="本节链接">§</a>4 第四问：电价波动条件下的购电与储能优化调度</h1>
+<h2 id="s1"><a class="hlink" href="#s1" aria-label="本节链接">§</a>4.1 问题分析</h2>
+<p>第二问与第三问均在<strong>确定性分时电价</strong>的前提下求解购电与储能调度：电价是已知的、分段常数的规则（尖峰、高峰、平段、谷段），日前 0:00 制定购电计划后，唯一的不确定性来自净负荷（负荷与光伏出力）本身。第四问的题设发生了实质性变化：附件 4 给出的是<strong>逐日、逐时段的实际波动电价</strong> $V[d,t]$，其数值在不同日期之间没有固定周期规律，必须与净负荷一样被当作<strong>随机变量</strong>处理。这一变化把第四问从"单一不确定性下的调度优化"升级为"双重不确定性下的联合决策优化"，具体带来三个新困难：</p>
+<p><strong>（1）不确定性维度增加，且两类不确定性相互关联。</strong> 电价波动往往与系统净负荷的波动同源（例如同一天的极端天气会同时推高负荷、压低光伏出力、并抬升实时电价），若把价格和净负荷当作两个独立随机变量分别建模、再叠加决策，会丢失二者的<strong>联合分布结构</strong>——尤其是同涨同跌的相关性。因此第四问不能沿用"先假设电价已知，只对净负荷做鲁棒/随机处理"的思路，而必须在情景生成阶段就把价格与净负荷<strong>成对抽取</strong>，保留其历史相关性，形成真正的联合情景。</p>
+<p><strong>（2）决策的经济后果对价格实现路径高度敏感，非预期性约束的重要性显著上升。</strong> 在确定性电价下，"提前多存/少存一点电"的经济代价是固定可算的；而在波动电价下，同样的储能操作，其经济价值取决于未来若干小时电价的<strong>实际实现路径</strong>，而这条路径在决策时刻是未知的。同时，由于计划购电与调整购电的结算价、增购的 1.5 倍溢价、减购净额退款、紧急购电的 5 倍惩罚都直接与"交付时段的实际电价"挂钩，任何决策都不能提前预支还未发布的价格信息，否则会产生"先知式"决策，使模型结果失去可信度、也不符合实际调度中信息逐步释放的物理过程。这就要求模型显式地把<strong>信息集（filtration）</strong>和<strong>非预期性约束（non-anticipativity）</strong>写入规划层，而不是像确定性电价下那样可以隐式满足。</p>
+<p><strong>（3）Q4-2 与 Q4-3 两个分支在信息可调整能力上的差异，在价格波动下被放大。</strong> 第三问已经说明，允许日内在 6:00 / 12:00 / 18:00 三个时刻调整购电计划（Q4-3 规则）比只在 0:00 下达全天计划、日内无普通增减购通道（Q4-2 规则）具有更强的信息利用能力；但在确定性电价下，这种能力差异主要体现在"跟随负荷波动重新配置储能"上。在波动电价下，日内调整还能够<strong>响应价格本身的实现</strong>——比如在价格上涨前完成增购、在价格意外走低时顺势减购——因此 Q4-2 与 Q4-3 之间的差距在第四问中理应比前两问更大，这也是本章要重点检验的问题之一。</p>
+<p>综上，第四问要求的模型必须同时满足：（i）用<strong>联合情景</strong>而非独立边缘分布刻画价格—净负荷的相关不确定性；（ii）用<strong>两阶段情景随机规划</strong>并显式嵌入<strong>非预期性约束</strong>保证决策的因果合法性；（iii）用<strong>终端库存价值函数</strong>把有限日历划分下的储能决策与未来连接起来，避免"日末清仓"式的短视；（iv）用<strong>参数搜索层</strong>处理规划层写不进去的非凸策略参数。第 4.4 节将逐层给出这些模型组件的完整数学描述。</p>
+<h2 id="s2"><a class="hlink" href="#s2" aria-label="本节链接">§</a>4.2 模型假设</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>假设内容</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1</td>
+<td>电价 $p_t^s=V[d,t]$ 在交付时段公布之前对决策者不可见，决策只能依赖截至当前决策时刻已经发布（已实现）的价格与净负荷信息</td>
+<td>保证决策的因果性，避免"先知"式利用未来价格信息，这是第四问相对第二、三问新增的核心约束（4.4.1 节非预期性约束据此展开）</td>
+</tr>
+<tr>
+<td>H2</td>
+<td>计划购电、调整购电（增/减）均按<strong>交付时段</strong>的实际电价结算，而非下单（发布）时刻电价</td>
+<td>与题面结算口径一致（BRIEF 结算口径），并作为全文统一主口径；下单时刻电价的读法仅作口径敏感性讨论（见 4.6.5 节第 5 条"结算口径敏感性"）</td>
+</tr>
+<tr>
+<td>H3</td>
+<td>允许无成本弃电，不允许向电网反向售电</td>
+<td>与题设一致，简化电量平衡方程中弃电与购电的非对称处理</td>
+</tr>
+<tr>
+<td>H4</td>
+<td>储能充、放电均遵循单向效率 $\eta=0.9$：电网侧每充入 $c$ kWh，库存增加 $\eta c$；库存每减少 $r/\eta$ kWh，向负荷侧释放 $r$ kWh</td>
+<td>符合电池储能单向损耗的通用建模惯例，使 SOC 动态方程线性、可直接嵌入 LP</td>
+</tr>
+<tr>
+<td>H5</td>
+<td>SOC 全程不越过 $[E^{\min},E^{\max}]=[1200,10800]$ kWh 的安全区间，充、放电功率不超过额定功率 $\bar P=5000$ kW</td>
+<td>物理约束，来自题目给定的储能容量、功率与 SOC 上下限参数</td>
+</tr>
+<tr>
+<td>H6</td>
+<td>情景层生成的联合情景按历史"同一天"成对抽取价格残差路径与净负荷残差路径，保留二者相关性；经 k-medoids 带权削减后用有限个代表情景（12 个）近似真实的连续分布</td>
+<td>避免独立边缘抽样丢失相关结构（见 4.1 节困难 1）；情景数量需要在"分布近似精度"与"两阶段 LP 求解规模"之间折衷，12 个情景是本方法采用的削减规模</td>
+</tr>
+<tr>
+<td>H7</td>
+<td>终端（日末）库存的继续价值用一个分段线性、边际非增的价值函数 $V(E)$ 近似，该函数通过一次 Bellman 回代拟合得到，并在评价期内固定使用</td>
+<td>使有限日历划分下的短视问题得到缓解，同时保证该项可以精确嵌入 LP 而不引入整数变量（见 4.4.5 节的证明性说明）</td>
+</tr>
+<tr>
+<td>H8</td>
+<td>Q4-3 的三个日内发布时刻（6:00 / 12:00 / 18:00）与 0:00 一起构成 4 个<strong>决策时点（epoch）</strong>，即信息更新与再决策的时刻；Q4-2 只有 0:00 一个决策时点，此后购电计划不可更改（deviation 只能靠储能充放电、弃电与紧急购电吸收）</td>
+<td>对应题面两个分支的规则定义</td>
+</tr>
+<tr>
+<td>H9</td>
+<td>影响策略表现的非凸参数（如 HYBRID 的 temper、shrink 系列、kappa、threshold、adj_premium，以及 Q4-2 的分位数 $\alpha$）的<strong>取值</strong>仅在 2025 年 1 月的三个滚动验证块上标定，并在评价期（2025-02-01—2025-12-31）顺序回放之前冻结，回放过程中不再更新</td>
+<td>适应度只在 1 月窗口上计算，保证参数取值与评价期数据在时间上分离。但必须同时说明：这些参数的<strong>搜索范围</strong>以及模型结构本身，在本文的研制过程中曾结合历史全年回放的稳定性表现作过修订，属于人为设定的正则化约束。因此评价期结果<strong>不构成严格独立盲测</strong>，而主要用于比较候选策略在同一历史样本上的回放稳定性（见 4.6.5 节第 1 条、4.8 节）</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="s3"><a class="hlink" href="#s3" aria-label="本节链接">§</a>4.3 符号说明</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>单位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$d$</td>
+<td>评价期内的日期序号，$d=1,\dots,334$</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$t$</td>
+<td>日内时段指标，步长 10 分钟，$t=1,\dots,144$</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$\Delta t$</td>
+<td>单个时段的时长（10 分钟）</td>
+<td>分钟</td>
+</tr>
+<tr>
+<td>$\tau_0,\tau_1,\tau_2,\tau_3$</td>
+<td>Q4-3 的四个决策时点（epoch），分别对应 0:00、6:00、12:00、18:00</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$s$</td>
+<td>情景指标</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$\mathcal S$</td>
+<td>k-medoids 削减后的情景集合，$</td>
+<td>\mathcal S</td>
+<td>=12$</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$\omega_s$</td>
+<td>情景 $s$ 的权重（概率质量），$\sum_{s\in\mathcal S}\omega_s=1$</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$L_t^s$</td>
+<td>情景 $s$ 下时段 $t$ 的净负荷（负荷减光伏出力后的净需求）</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$p_t^s$（即 $V[d,t]$）</td>
+<td>情景 $s$ 下时段 $t$ 的交付时段实际电价</td>
+<td>元/kWh</td>
+</tr>
+<tr>
+<td>$B_t$</td>
+<td>0:00 制定的全天购电计划（一阶段变量，不依赖情景）</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$x_t^s$</td>
+<td>情景 $s$ 下时段 $t$ 的最终有效购电量（计划量加调整量）</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$\delta_t^{+,s}$</td>
+<td>情景 $s$ 下时段 $t$ 的增购调整量（仅 Q4-3 非零）</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$\delta_t^{-,s}$</td>
+<td>情景 $s$ 下时段 $t$ 的减购（取消）调整量（仅 Q4-3 非零）</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$c_t^s$</td>
+<td>情景 $s$ 下时段 $t$ 的充电电量（电网侧计量）</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$r_t^s$</td>
+<td>情景 $s$ 下时段 $t$ 的放电电量（供负荷侧计量）</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$g_t^s$</td>
+<td>情景 $s$ 下时段 $t$ 的紧急购电量</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$u_t^s$</td>
+<td>情景 $s$ 下时段 $t$ 的弃电量</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$E_t^s$</td>
+<td>情景 $s$ 下时段 $t$ 末的储能库存（SOC）</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$E_0$</td>
+<td>日初（期初）库存</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$E_{144}^s$</td>
+<td>情景 $s$ 下日末（期末）库存</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$E^{\min},E^{\max}$</td>
+<td>SOC 下、上安全限，取值 1,200 与 10,800</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$E_{cap}$</td>
+<td>储能额定容量，取值 12,000</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>$\bar P$</td>
+<td>充、放电功率上限，取值 5,000</td>
+<td>kW</td>
+</tr>
+<tr>
+<td>$\eta$</td>
+<td>单向转换效率，取值 0.9</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$\mu^+$</td>
+<td>增购溢价倍数，取值 1.5</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$\mu^-$</td>
+<td>减购净额退款系数，对应"减购取消部分付 $0.5\times p$ 违约金"</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$\lambda$</td>
+<td>紧急购电倍数，取值 5</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$v_{E,ref}$</td>
+<td>库存校正单价，取值 0.4125555556</td>
+<td>元/kWh</td>
+</tr>
+<tr>
+<td>$V(\cdot)$</td>
+<td>分段线性、边际非增的终端库存价值函数</td>
+<td>元</td>
+</tr>
+<tr>
+<td>$a_k,b_k$</td>
+<td>$V(\cdot)$ 第 $k$ 段的斜率与截距</td>
+<td>—</td>
+</tr>
+<tr>
+<td>$\theta^s$</td>
+<td>嵌入 LP 表示 $V(E_{144}^s)$ 的辅助变量</td>
+<td>元</td>
+</tr>
+<tr>
+<td>$\alpha$</td>
+<td>Q4-2 分位法参数（主策略取值 0.675）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>temper, shrink_net, shrink_price, kappa, threshold, adj_premium</td>
+<td>Q4-3 主策略 HYBRID 的六个调参参数</td>
+<td>各异</td>
+</tr>
+<tr>
+<td>$\text{Cash}$</td>
+<td>一天（或全期）现金费用</td>
+<td>元</td>
+</tr>
+<tr>
+<td>$\text{Cost}^{\text{inv}}$</td>
+<td>库存校正费用 = 现金费用 + $v_{E,ref}(E_0-E_{144})$</td>
+<td>元</td>
+</tr>
+<tr>
+<td>$\mathrm{CVaR}_{0.95}$</td>
+<td>95% 置信水平的经验条件风险价值</td>
+<td>元</td>
+</tr>
+<tr>
+<td>$C_{(i)}$</td>
+<td>334 个等概率日费用降序排列后的第 $i$ 位统计量</td>
+<td>元</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="s4"><a class="hlink" href="#s4" aria-label="本节链接">§</a>4.4 模型建立</h2>
+<h3 id="s5"><a class="hlink" href="#s5" aria-label="本节链接">§</a>4.4.1 决策时序与信息集</h3>
+<p>Q4-2 与 Q4-3 都在每天 0:00 制定一份全天购电计划 $B_t\,(t=1,\dots,144)$；区别在于 Q4-3 允许在 6:00、12:00、18:00 三个额外的发布时刻，根据届时已经实现（发布）的信息，对<strong>尚未交付</strong>的时段重新决定增购/减购调整量 $\delta_t^{+,s},\delta_t^{-,s}$，而 Q4-2 在 0:00 之后再无调整通道，只能靠储能充放电、弃电与紧急购电吸收计划与实际净负荷、电价之间的偏差。</p>
+<p>把 4 个决策时点记为 $\tau_0=1$（对应 0:00 前的时段起点）、$\tau_1=37$（对应 6:00，前 6 小时即 36 个 10 分钟时段）、$\tau_2=73$（对应 12:00）、$\tau_3=109$（对应 18:00）。信息集（filtration）$\mathcal F_{\tau_k}$ 表示截至决策时点 $\tau_k$ 已经公开、可用于决策的全部历史实现（净负荷、价格及此前的调整决策）。<strong>非预期性约束</strong>要求：在任一决策时点 $\tau_k$ 做出的、覆盖 $[\tau_k,\tau_k+36)$ 这一"前视 6 小时锁定窗口"的决策，对所有仍与 $\mathcal F_{\tau_k}$ 一致的情景必须取相同的值，即不能因为情景 $s$ 与 $s'$ 在锁定窗口<strong>之后</strong>的实现不同，就让锁定窗口<strong>之内</strong>的决策提前分叉。用符号写出（Q4-3）：</p>
+<div class="eq">$$
+\delta_t^{+,s}=\delta_t^{+,s'},\quad \delta_t^{-,s}=\delta_t^{-,s'} \qquad \forall\, s,s'\in\mathcal S,\ \forall\, t\in[\tau_k,\tau_k+36),\ k=0,1,2,3 \tag{4-1}
+$$</div>
+<p>对 Q4-2，由于根本不存在调整通道，(4-1) 退化为对全天所有 $t$ 恒有 $\delta_t^{+,s}\equiv\delta_t^{-,s}\equiv 0$；但储能充放电 $c_t^s,r_t^s$、紧急购电 $g_t^s$、弃电 $u_t^s$ 仍然是<strong>逐情景</strong>的实时反馈变量（recourse variables），可以随情景内已实现的净负荷、价格瞬时调整——这一点在 4.6.5 节会重申，以避免"Q4-2 完全没有 recourse"的误解。</p>
+<figure class="fig"><img src="figures/Q4_决策时序与信息集.png" alt="Q4-2 与 Q4-3 的决策时序与信息集示意图" loading="lazy"><figcaption><span class="fig-n">图 4-1</span>Q4-2 与 Q4-3 的决策时序与信息集示意图<a class="fig-src" href="figures/Q4_决策时序与信息集.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<p>因果性作为模型必须满足的硬性质，本文在 4.7.1 节用扰动实验直接检验：对未释放的信息做扰动后，已经锁定的计划应保持不变。</p>
+<h3 id="s6"><a class="hlink" href="#s6" aria-label="本节链接">§</a>4.4.2 费用函数</h3>
+<p>记 $\delta_t^s = x_t^s-B_t$ 为情景 $s$ 下时段 $t$ 的净调整量（正为增购、负为减购），其正、负部分为 $(\delta_t^s)^+=\max(\delta_t^s,0)$、$(\delta_t^s)^-=\max(-\delta_t^s,0)$。按结算口径（4.2 节假设 H2），计划部分按交付时段实际电价 $p_t^s$ 结算，增购部分按 $\mu^+p_t^s$ 结算，减购（取消）部分按"净额退款"处理：日末对最终有效购电量相对 0:00 基准计划一次性结清，等价于对取消的量只收取 $(1-\mu^-)$ 比例的净费用（付 $\mu^-=0.5$ 倍电价的违约金，相当于该部分净退回 $1-\mu^-=0.5$ 倍电价）。于是情景 $s$ 、时段 $t$ 的购电分项费用为：</p>
+<div class="eq">$$
+\text{cost}^{\text{buy}}_{t,s} =
+\begin{cases}
+p_t^s\,B_t + \mu^+\,p_t^s\,(\delta_t^s)^+, &amp; \delta_t^s\ge 0 \\[4pt]
+p_t^s\,B_t - (1-\mu^-)\,p_t^s\,(\delta_t^s)^-, &amp; \delta_t^s&lt;0
+\end{cases}
+\;=\;
+p_t^s\,B_t + p_t^s\Big[\mu^+(\delta_t^s)^+ - (1-\mu^-)(\delta_t^s)^-\Big] \tag{4-2}
+$$</div>
+<p>其中 $\mu^+=1.5$，$\mu^-=0.5$。对 Q4-2，$\delta_t^s\equiv0$，(4-2) 退化为 $\text{cost}^{\text{buy}}_{t,s}=p_t^s B_t$。</p>
+<p>加上紧急购电（$\lambda=5$ 倍电价）分项费用 $\lambda\,p_t^s\,g_t^s$，情景 $s$ 的全天<strong>现金费用</strong>为：</p>
+<div class="eq">$$
+\text{Cash}^s=\sum_{t=1}^{144}\Big\{p_t^s B_t + p_t^s\big[\mu^+(\delta_t^s)^+-(1-\mu^-)(\delta_t^s)^-\big] + \lambda\,p_t^s\,g_t^s\Big\} \tag{4-3}
+$$</div>
+<p><strong>库存校正费用</strong>在现金费用的基础上，加入期初、期末库存差异按 $v_{E,ref}$ 折算的校正项，以消除"日末把储能清空套现、把成本转嫁给下一天"的会计漏洞：</p>
+<div class="eq">$$
+\text{Cost}^{\text{inv},s}=\text{Cash}^s + v_{E,ref}\,\big(E_0-E_{144}^s\big) \tag{4-4}
+$$</div>
+<p>其中 $v_{E,ref}=0.4125555556$ 元/kWh（取附件 1 最低分时电价除以效率 $\eta$）。本文全文以库存校正费用作为主口径评价指标，现金费用作为分量单独报告（两种口径的区分见 4.6.3 节）。</p>
+<h3 id="s7"><a class="hlink" href="#s7" aria-label="本节链接">§</a>4.4.3 两阶段情景随机线性规划</h3>
+<p>给定情景集 $\mathcal S$（$|\mathcal S|=12$，权重 $\omega_s$）及其非预期性结构 (4-1)，第四问的日前—日内联合决策问题可写成如下两阶段情景随机线性规划：</p>
+<p><strong>目标函数</strong>（对每个自然日，最小化期望库存校正费用，等价于最小化期望现金费用与终端价值函数之差）：</p>
+<div class="eq">$$
+\min_{B_t,\ \{\delta_t^{+,s},\delta_t^{-,s},c_t^s,r_t^s,g_t^s,u_t^s,E_t^s,\theta^s\}}
+\ \sum_{s\in\mathcal S}\omega_s\left[\sum_{t=1}^{144} p_t^s\Big(B_t+\mu^+(\delta_t^s)^+-(1-\mu^-)(\delta_t^s)^-+\lambda g_t^s\Big) - \theta^s \right] \tag{4-5}
+$$</div>
+<p>其中 $\theta^s$ 是 4.4.5 节将引入的、精确表示终端库存价值 $V(E_{144}^s)$ 的辅助变量。约束条件如下：</p>
+<p><strong>（a）逐时段电量平衡：</strong></p>
+<div class="eq">$$
+x_t^s - c_t^s + r_t^s + g_t^s - u_t^s = L_t^s,\qquad \forall t=1,\dots,144,\ \forall s\in\mathcal S \tag{4-6}
+$$</div>
+<div class="eq">$$
+x_t^s = B_t + \delta_t^{+,s} - \delta_t^{-,s} \tag{4-7}
+$$</div>
+<p>（4-6）左边为全部供给来源（购电 $x_t^s$、放电 $r_t^s$、紧急购电 $g_t^s$）减去全部占用去向（充电 $c_t^s$、弃电 $u_t^s$），右边为需要满足的净负荷 $L_t^s$；对 Q4-2，(4-7) 中 $\delta_t^{+,s}=\delta_t^{-,s}\equiv0$。</p>
+<p><strong>（b）储能 SOC 动态：</strong></p>
+<div class="eq">$$
+E_t^s = E_{t-1}^s + \eta\,c_t^s - \dfrac{r_t^s}{\eta},\qquad E_0^s=E_0\ \ (\text{给定初值}),\qquad \forall t,\ \forall s \tag{4-8}
+$$</div>
+<p><strong>（c）SOC 安全区间：</strong></p>
+<div class="eq">$$
+E^{\min}\le E_t^s\le E^{\max},\qquad \forall t,\ \forall s \tag{4-9}
+$$</div>
+<p><strong>（d）充、放电功率上限：</strong></p>
+<div class="eq">$$
+0\le c_t^s\le \bar P\,\Delta t,\qquad 0\le r_t^s\le \bar P\,\Delta t,\qquad \forall t,\ \forall s \tag{4-10}
+$$</div>
+<p><strong>（e）非预期性约束：</strong> 即 (4-1)（Q4-3），或对 Q4-2 恒有 $\delta_t^{+,s}=\delta_t^{-,s}=0$。</p>
+<p><strong>（f）非负性：</strong></p>
+<div class="eq">$$
+B_t,\ \delta_t^{+,s},\ \delta_t^{-,s},\ c_t^s,\ r_t^s,\ g_t^s,\ u_t^s\ \ge 0,\qquad \forall t,\ \forall s \tag{4-11}
+$$</div>
+<p><strong>（g）终端价值嵌入约束：</strong> 见 (4-14)–(4-15)（4.4.5 节）。</p>
+<p>模型的决策变量按物理含义可归为购电（含计划与调整）、充电、放电、紧急购电、弃电、库存六类，与 4.5 节所述"真下界"单个大规模 LP 中"每个时段 6 个变量"的结构一致。</p>
+<h3 id="s8"><a class="hlink" href="#s8" aria-label="本节链接">§</a>4.4.4 联合情景生成与 k-medoids 带权削减</h3>
+<p>为保留价格与净负荷的相关结构（4.1 节困难 1），情景生成不对二者分别做边缘抽样，而是按<strong>历史同一天</strong>成对抽取价格与净负荷的残差路径：对历史某一天 $d'$，同时取出该日全天 144 个时段的价格残差序列与净负荷残差序列，叠加到当前预测的中心路径上，构成一条候选情景路径 $(L_{1:144}^{(d')},p_{1:144}^{(d')})$。这样，只要历史上"高价日恰好也是高负荷/低光伏日"的相关性存在，抽取出的情景就会自动保留这种同涨同跌的联合结构，而不需要额外估计相关系数矩阵。</p>
+<p>每个决策日使用此前 28 条历史残差路径构造候选情景，若全部代入两阶段 LP 会使问题规模随候选数线性增长、求解变慢。为此采用 <strong>k-medoids 带权场景削减</strong>：以每条候选路径为一个点（在价格—负荷联合路径空间中定义距离度量），用 k-medoids 聚类挑出 $|\mathcal S|=12$ 个具有代表性的"中心情景"（medoids），并将每个中心情景的权重 $\omega_s$ 设为其所属聚类簇内全部候选路径数量占比之和（即带权削减，而非简单等权平均），从而在保留概率质量分布形状的同时，把情景规模由 28 条候选路径压缩到 $|\mathcal S|=12$ 条，落在两阶段 LP 可高效求解的量级。</p>
+<figure class="fig"><img src="figures/Q4_情景数收敛.png" alt="情景数收敛检验：削减规模 $|\mathcal S|$ 与回放费用的关系" loading="lazy"><figcaption><span class="fig-n">图 4-2</span>情景数收敛检验：削减规模 $|\mathcal S|$ 与回放费用的关系<a class="fig-src" href="figures/Q4_情景数收敛.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h3 id="s9"><a class="hlink" href="#s9" aria-label="本节链接">§</a>4.4.5 分段线性凹终端库存价值 V(E) 的 Bellman 回代拟合</h3>
+<p>由于评价期是 334 天的顺序前推回放，若把每一天都当作独立的、终端库存"零价值"的单日优化问题来求解，模型会在每天日末倾向于把储能放空以避免"浪费"库存持有成本，这是一种典型的有限日历短视（end-of-horizon effect），会系统性地低估储能的跨日连续价值。为纠正这一偏差，本文引入终端库存价值函数 $V(E)$，通过<strong>一次 Bellman 回代</strong>（backward induction）拟合得到，并在整个评价期内固定使用（对应 4.2 节假设 H7、H9）：从某个终止日开始，向前递推计算"以库存 $E$ 结束当天、此后按最优策略运行剩余天数"所对应的期望继续成本节省，将其对若干个库存取值点求出，再用分段线性函数拟合。具体地，Bellman 回代在 SOC 网格 1,200–10,800 kWh 上取 ngrid = 21 个等距网格点（步长 480 kWh）估值，再拟合为 $K=8$ 段的<strong>分段线性凹函数</strong> $V(E)$；各段边际价值单调非增，故凹性成立。其各段斜率 $a_k$（即"每多存 1 kWh 库存额外带来的继续价值"，边际库存价值）满足：</p>
+<div class="eq">$$
+a_1 \ge a_2 \ge \cdots \ge a_K \tag{4-12}
+$$</div>
+<p>即边际库存价值<strong>非增</strong>——储能库存越接近上限，再多存 1 kWh 带来的未来价值增量越小（收益递减）。</p>
+<p><strong>为什么"边际非增"能保证精确嵌入 LP。</strong> 斜率非增的分段线性函数是凹函数，可以等价地表示为有限个仿射函数的<strong>逐点最小值</strong>：</p>
+<div class="eq">$$
+V(E)=\min_{k=1,\dots,K}\big\{a_k E + b_k\big\} \tag{4-13}
+$$</div>
+<p>在两阶段 LP 的目标函数 (4-5) 中，用一个自由（不设符号约束）的辅助变量 $\theta^s$ 代表 $V(E_{144}^s)$，并加入约束：</p>
+<div class="eq">$$
+\theta^s \le a_k\,E_{144}^s + b_k,\qquad k=1,\dots,K,\ \forall s\in\mathcal S \tag{4-14}
+$$</div>
+<p>由于目标函数中 $\theta^s$ 以 $-\theta^s$ 计入成本（相当于"最大化 $\theta^s$"的方向），最小化目标会把 $\theta^s$ 推至 (4-14) 这 $K$ 条上界中<strong>最紧</strong>的那一条，即在最优解处恰好取到</p>
+<div class="eq">$$
+\theta^{s\ast}=\min_{k}\{a_k E_{144}^{s\ast}+b_k\}=V(E_{144}^{s\ast}) \tag{4-15}
+$$</div>
+<p>从而无需任何额外处理即可在 LP 内<strong>精确</strong>（而非近似）还原出 $V(E)$ 的真实取值。这一结论成立的关键条件正是 (4-12) 的边际非增性，即 $V$ 的凹性：若某个中间段的斜率反而高于前一段（边际先减后增），则 (4-13) 的逐点最小值只能给出原函数的<strong>凹包络</strong>而不再等于原函数本身，(4-14)–(4-15) 求出的 $\theta^s$ 会停在错误的分段上；此时若要精确表示一般的非凹分段函数，通常需要引入分段选择的 0-1 变量并转化为 MILP，其一般情形的最坏时间复杂度显著高于线性规划。这正是本节强调"分段线性凹"（边际非增）这一性质的建模价值所在：它使模型在<strong>不牺牲精确性</strong>的前提下，仍然是一个可由成熟求解器高效求解的线性规划。</p>
+<figure class="fig"><img src="figures/Q4_终端价值函数.png" alt="分段线性凹终端库存价值函数 V(E) 示意图" loading="lazy"><figcaption><span class="fig-n">图 4-3</span>分段线性凹终端库存价值函数 V(E) 示意图<a class="fig-src" href="figures/Q4_终端价值函数.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h3 id="s10"><a class="hlink" href="#s10" aria-label="本节链接">§</a>4.4.6 参数搜索层（模因算法：GA/DE/SA + Nelder-Mead）</h3>
+<p>规划层 (4-5)–(4-15) 中的决策变量都是连续的、由 LP 精确求解得到，但两个分支各自还包含若干<strong>非凸的策略级参数</strong>，它们不是 LP 的决策变量，而是决定"如何把情景层输出转化为规划层输入、以及规划层输出如何被 Q4-2/Q4-3 的实时反馈规则重新解释"的元参数，其对样本外费用的映射关系高度非线性、非凸，无法写成 LP 约束：</p>
+<ul>
+<li>Q4-3 主策略 <strong>HYBRID</strong> 的六个参数：temper（退火/软化系数）、shrink_net（净负荷收缩系数）、shrink_price（价格收缩系数）、kappa（风险厌恶/调整强度系数）、threshold（触发调整的阈值）、adj_premium（调整溢价系数）；</li>
+<li>Q4-2 主策略采用<strong>分位法</strong>，只有一个一维参数 $\alpha$（用于把储能/紧急购电的触发规则设定在净负荷分布的第 $\alpha$ 分位点上）。</li>
+</ul>
+<p>对这些参数，本文采用<strong>模因算法</strong>（memetic algorithm，即全局搜索与局部搜索相结合的混合元启发式）：先由一个全局搜索算子在参数空间中做广度探索（exploration），再把其最优候选解输入 <strong>Nelder-Mead 单纯形法</strong>做局部精修（exploitation），得到最终冻结的参数取值。全局算子在遗传算法（GA）、差分进化（DE）、模拟退火（SA）三者中<strong>按同一评估预算三选一</strong>（本文实际运行采用 GA；三者不并行、也不在同一次搜索内轮流更新，代码入口见 <code>code/hybrid_search.py</code>）。搜索预算为：GA 种群规模 pop = 16、进化 gens = 8 代，其后接 Nelder-Mead 精修 maxiter = 30 次。Q4-3 实际消耗 219 次适应度评估、约 2,150 秒；Q4-2 消耗 191 次评估、约 410 秒。</p>
+<p>参数标定的目标函数（适应度）在 2025 年 1 月的三个滚动验证块（1/8–1/15、1/16–1/23、1/24–1/31）上取平均，标定得到：</p>
+<ul>
+<li>Q4-3 主策略 HYBRID：temper=0.4732，shrink_net=0.55，shrink_price=0.7621，kappa=1.0584，threshold=237.09，adj_premium=1.2342，对应 1 月训练适应度 458,569.29；</li>
+<li>Q4-2 主策略：分位法 $\alpha=0.675$（一维标定；在所测试的 $\alpha\in[0.400,0.900]$、步长 0.025 的 21 点网格内取得最优，且最优点位于网格内部而非端点，见 <code>results4/q4_alpha_calibration.csv</code>），对应 1 月训练适应度 479,390.09。</li>
+</ul>
+<p>另需如实说明：<strong>Q4-2 分支上 HYBRID 结构未能胜过简单的分位法</strong>（见 4.6.5 节第 2 条），说明"更复杂的策略结构"并不必然带来更优的样本外表现，尤其是在 Q4-2 缺少日内调整通道、策略自由度本就有限的情形下。</p>
+<p>此外，本文还做了 <strong>NSGA-II 多目标搜索</strong>的对照实验，同时以期望费用与 CVaR（尾部风险）为两个目标搜索 Pareto 前沿。在本文设定的参数范围、搜索预算与数值精度下，获得的非支配解集中于费用—CVaR 平面上的同一点附近，<strong>未观察到稳定且可辨识的成本—CVaR 权衡</strong>。需要强调：这属于有限搜索条件下的经验现象，只说明在所考察的参数范围与搜索预算内降低期望费用与降低尾部风险的方向高度一致，<strong>不构成对全参数空间 Pareto 结构的理论证明</strong>，也不能排除搜索多样性不足所致。</p>
+<figure class="fig"><img src="figures/Q4_HYBRID4L框架.png" alt="HYBRID-4L 四层融合架构图" loading="lazy"><figcaption><span class="fig-n">图 4-4</span>HYBRID-4L 四层融合架构图<a class="fig-src" href="figures/Q4_HYBRID4L框架.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h2 id="s11"><a class="hlink" href="#s11" aria-label="本节链接">§</a>4.5 模型求解</h2>
+<p><strong>求解器。</strong> 两阶段情景随机 LP（4.4.3 节）与真下界对照 LP（见下文）统一使用开源求解器 <strong>HiGHS</strong>（同时实现单纯形法与内点法），通过 <code>scipy.optimize.linprog</code> 接口调用，约束矩阵以稀疏 COO 格式组装。</p>
+<p><strong>求解规模。</strong> 作为规模基准，本文单独构造了一个覆盖<strong>全评价期</strong>（334 天、48,096 个 10 分钟时段）的单一确定性完美信息 LP，用作"真下界"对照（见 4.6 节）：该 LP 含 $48{,}096\times 6=288{,}576$ 个决策变量（每个时段 6 个变量：购电、充电、放电、紧急购电、弃电、库存），HiGHS 求解耗时约 5–6 秒（Q4-2 6.15 秒、Q4-3 4.94 秒），说明该问题的线性结构在现代求解器实现下具有很好的可扩展性。逐日、逐次滚动更新的两阶段情景 LP（12 个情景 × 144 个时段规模）单次求解的具体变量数与平均耗时为单次两阶段随机 LP 的变量数为 $3n + S\\cdot 8n + S\\cdot K$，代入 $n=144$、$S=12$、$K=8$ 约 14,300 个变量；全期 334 天顺序前推回放的总求解耗时为样本外全分支重建约 14.5 分钟；消融与敏感性 23 个算例合计约 82 分钟。</p>
+<p><strong>算法流程。</strong> HYBRID-4L 框架在评价期内按日顺序前推回放，对每一天 $d=1,\dots,334$ 重复如下步骤：</p>
+<ol>
+<li><strong>情景生成</strong>：以当前已知的天气/负荷/价格预报为中心路径，按历史同一天成对抽取价格—净负荷残差路径，构造候选联合情景集合（4.4.4 节）；</li>
+<li><strong>情景削减</strong>：对候选情景集合做 k-medoids 带权聚类，削减至 $|\mathcal S|=12$ 个代表情景及其权重 $\omega_s$；</li>
+<li><strong>终端价值代入</strong>：读取预先由 Bellman 回代拟合并冻结的分段线性函数 $V(\cdot)$（4.4.5 节），生成约束 (4-14) 所需的 $(a_k,b_k)$ 系数；</li>
+<li><strong>0:00 求解一阶段 LP</strong>：调用 HiGHS 求解 (4-5)–(4-15)，得到当日购电计划 $B_t$ 及各情景下的初步储能/紧急购电/弃电安排；</li>
+<li><strong>逐决策时点的信息释放与（仅 Q4-3）再决策</strong>：对 Q4-3，在 6:00 / 12:00 / 18:00 三个决策时点，用已实现的净负荷/价格更新信息集 $\mathcal F_{\tau_k}$，对剩余未交付时段重新求解满足非预期性约束 (4-1) 的调整量 $\delta_t^{+,s},\delta_t^{-,s}$；对 Q4-2 跳过本步；</li>
+<li><strong>参数应用</strong>：将 4.4.6 节冻结的策略参数（HYBRID 六参数或 $\alpha$）代入第 4/5 步的求解过程，决定触发调整、储能充放电优先级等规则；</li>
+<li><strong>真实路径回放结算</strong>：用当天<strong>真实实现</strong>（而非情景近似）的净负荷与价格，按 (4-2)–(4-4) 结算当日现金费用与库存校正费用，记录储能真实 SOC 轨迹作为下一天的期初库存 $E_0$；</li>
+<li><strong>滚动前推</strong>：$d\leftarrow d+1$，重复步骤 1–7，直至完成 334 天。</li>
+</ol>
+<figure class="fig"><img src="figures/Q4_寻优收敛.png" alt="参数搜索层的寻优收敛过程（GA 逐代最优 + Nelder-Mead 精修）" loading="lazy"><figcaption><span class="fig-n">图 4-5</span>参数搜索层的寻优收敛过程（GA 逐代最优 + Nelder-Mead 精修）<a class="fig-src" href="figures/Q4_寻优收敛.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<p><strong>计算复杂度。</strong> 单个两阶段情景 LP 是标准线性规划，内点法对线性规划有多项式时间的理论保证（单纯形法虽在实践中高效，但不宜笼统宣称具有多项式时间保证）；工程上，HiGHS 在本文的规模（数千到数万变量量级）下经验求解时间通常为亚秒到秒级（对照真下界 LP 的 5–6 秒是 288,576 变量的规模，逐日滚动 LP 规模远小于此）。全流程的主要计算开销集中在<strong>情景生成与 k-medoids 削减</strong>（需要遍历历史残差路径库并做距离计算）和<strong>参数搜索层</strong>的元启发式迭代（全局算子与 Nelder-Mead 需要反复重跑三个滚动验证块上的完整回放以评估适应度），但这部分只在 1 月标定阶段发生一次，评价期内 334 天的回放使用已冻结参数，不再重复搜索。</p>
+<h2 id="s12"><a class="hlink" href="#s12" aria-label="本节链接">§</a>4.6 结果与分析</h2>
+<h3 id="s13"><a class="hlink" href="#s13" aria-label="本节链接">§</a>4.6.1 样本外结果总览</h3>
+<p>两个分支在评价期（334 天）内的样本外表现如下（单位：元）。为避免混淆，全文正文、图表与结果文件统一使用同一套策略标签：<strong>B0</strong> 为分位法 $\alpha=0.60$ 基线、<strong>B1</strong> 为"把波动电价当作固定分时电价"的对照、<strong>M2</strong> 为 Q4-2 主策略（分位法 $\alpha=0.675$）、<strong>H2/H3</strong> 为两分支的 HYBRID-4L、<strong>U2/U3</strong> 为冻结策略下的完美电价替换对照、<strong>W2/W3</strong> 为滚动视野完美信息对照、<strong>A3</strong> 为 Q4-3 关闭日内更新的消融、<strong>X3</strong> 为超出预设参数范围的未采纳候选解；对应的逐日账本文件为 <code>results4/q4_daily_&lt;分支&gt;_&lt;标签&gt;.csv</code>。</p>
+<p><strong>Q4-2 分支</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align:right">现金费用</th>
+<th style="text-align:right">库存校正费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B0 分位法 $\alpha=0.60$（沿用第三问标定）</td>
+<td style="text-align:right">15,586,991.42</td>
+<td style="text-align:right">15,585,897.85</td>
+</tr>
+<tr>
+<td><strong>M2 分位法 $\alpha=0.675$（主策略）</strong></td>
+<td style="text-align:right"><strong>15,128,648.30</strong></td>
+<td style="text-align:right"><strong>15,127,539.71</strong></td>
+</tr>
+<tr>
+<td>B1 当作固定分时电价</td>
+<td style="text-align:right">15,178,371.39</td>
+<td style="text-align:right">15,177,074.41</td>
+</tr>
+<tr>
+<td>H2 HYBRID-4L</td>
+<td style="text-align:right">15,151,527.92</td>
+<td style="text-align:right">15,152,826.36</td>
+</tr>
+<tr>
+<td>U2 主策略 + 完美电价</td>
+<td style="text-align:right">15,055,218.51</td>
+<td style="text-align:right">15,054,879.10</td>
+</tr>
+<tr>
+<td>W2 滚动视野完美信息对照</td>
+<td style="text-align:right">12,839,583.39</td>
+<td style="text-align:right">12,841,236.28</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Q4-3 分支</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align:right">现金费用</th>
+<th style="text-align:right">库存校正费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B0 分位法 $\alpha=0.60$（基线）</td>
+<td style="text-align:right">14,146,478.81</td>
+<td style="text-align:right">14,145,416.14</td>
+</tr>
+<tr>
+<td>B1 当作固定分时电价</td>
+<td style="text-align:right">14,177,316.34</td>
+<td style="text-align:right">14,176,067.99</td>
+</tr>
+<tr>
+<td><strong>H3 HYBRID-4L（主策略）</strong></td>
+<td style="text-align:right"><strong>14,029,554.00</strong></td>
+<td style="text-align:right"><strong>14,028,199.24</strong></td>
+</tr>
+<tr>
+<td>U3 主策略 + 完美电价</td>
+<td style="text-align:right">13,920,210.93</td>
+<td style="text-align:right">13,919,168.40</td>
+</tr>
+<tr>
+<td>W3 滚动视野完美信息对照</td>
+<td style="text-align:right">12,832,085.90</td>
+<td style="text-align:right">12,830,984.55</td>
+</tr>
+<tr>
+<td>A3 HYBRID 不做日内更新</td>
+<td style="text-align:right">15,278,750.70</td>
+<td style="text-align:right">15,277,271.32</td>
+</tr>
+<tr>
+<td>X3 1 月无约束最优（shrink 超范围·未采纳）</td>
+<td style="text-align:right">14,210,791.38</td>
+<td style="text-align:right">14,210,031.74</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><img src="figures/Q4_费用结构.png" alt="Q4-2 与 Q4-3 两分支费用结构分解对比" loading="lazy"><figcaption><span class="fig-n">图 4-6</span>Q4-2 与 Q4-3 两分支费用结构分解对比<a class="fig-src" href="figures/Q4_费用结构.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h3 id="s14"><a class="hlink" href="#s14" aria-label="本节链接">§</a>4.6.2 关键增益</h3>
+<ul>
+<li><strong>Q4-2</strong>：把分位数参数由沿用第三问标定的 $\alpha=0.60$ 重新标定为 $\alpha=0.675$ 后，库存校正费用降低 <strong>458,358 元（−2.94%）</strong>，逐月 11/11 个月均为正向节省；</li>
+<li><strong>Q4-3</strong>：HYBRID-4L 主策略相对 $\alpha=0.60$ 基线降低 <strong>117,216.90 元（−0.829%）</strong>，逐月 10/11 个月为正；</li>
+<li>Q4-3 主策略的应急（紧急购电）电量为 <strong>64,758.94 kWh</strong>，低于基线的 <strong>70,827.63 kWh</strong>，说明 HYBRID-4L 减少了对最贵购电通道（5 倍电价）的依赖；</li>
+<li><strong>日内更新的价值</strong>（Q4-3 主策略 vs A3 不做日内更新）= $15{,}277{,}271-14{,}028{,}199=$ <strong>1,249,072 元（8.0%）</strong>，是第四问中最大的单项收益来源，直接呼应 4.1 节关于"日内调整能力在波动电价下价值被放大"的分析。</li>
+</ul>
+<figure class="fig"><img src="figures/Q4_逐月节省.png" alt="主策略相对基线的逐月费用节省" loading="lazy"><figcaption><span class="fig-n">图 4-7</span>主策略相对基线的逐月费用节省<a class="fig-src" href="figures/Q4_逐月节省.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h3 id="s15"><a class="hlink" href="#s15" aria-label="本节链接">§</a>4.6.3 与真下界的差距</h3>
+<p>本文单独构造了覆盖全评价期的完美信息单一 LP（48,096 段 × 6 变量 = 288,576 变量，HiGHS 约 5–6 秒求解，见 4.5 节）作为"真下界"。需要<strong>严格区分两种口径</strong>：</p>
+<ul>
+<li><strong>库存校正口径下界</strong>：Q4-2 <strong>12,782,823.86</strong> 元；Q4-3 <strong>12,782,827.41</strong> 元；</li>
+<li><strong>现金口径下界</strong>（终端估值置零、单独最小化现金得到）：Q4-2 <strong>12,781,171.37</strong> 元；Q4-3 <strong>12,781,144.41</strong> 元。</li>
+</ul>
+<p>三个量必须分开：含终端估值目标的最优值 12,782,823.86／12,782,827.41 元是<strong>库存校正口径</strong>的下界；该最优解的<strong>现金分量</strong>为 12,781,203.22／12,781,176.26 元，它只是这一个解的一个分量，<strong>不是现金最小值</strong>；把终端估值置零后单独最小化现金，才得到现金口径下界 12,781,171.37／12,781,144.41 元，比前者低 31.85／31.85 元。本文主口径比较一律用库存校正费用。</p>
+<p>这两个下界<strong>不是同一个最优解的两个分量</strong>——含终端估值项的最优解，其现金分量并不等于单独最小化现金费用所得到的现金下界，因此不能把前者的现金分量称为"现金最小值"。</p>
+<p>主策略距真下界的差距为：Q4-2 <strong>2,344,715.85 元（15.50%）</strong>；Q4-3 <strong>1,245,371.83 元（8.88%）</strong>。作为参照，本文另外报告了<strong>滚动视野完美信息对照</strong>（W2/W3）：它虽然使用完美价格与完美净负荷信息，但仍然受限于 24 小时滚动视野与终端代理价值的近似约束，因此<strong>不是真下界</strong>，其库存校正费用分别比真下界高 <strong>58,412.43 元</strong>（Q4-2）与 <strong>48,157.15 元</strong>（Q4-3）。</p>
+<figure class="fig"><img src="figures/Q4_信息价值阶梯.png" alt="主策略、滚动视野完美信息对照与真下界的费用阶梯" loading="lazy"><figcaption><span class="fig-n">图 4-8</span>主策略、滚动视野完美信息对照与真下界的费用阶梯<a class="fig-src" href="figures/Q4_信息价值阶梯.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h3 id="s16"><a class="hlink" href="#s16" aria-label="本节链接">§</a>4.6.4 风险统计</h3>
+<p>采用精确经验 CVaR（而非近似的"最高若干日均值"）度量尾部风险：将 334 个等概率日损失（费用）按降序排列为 $C_{(1)}\ge C_{(2)}\ge\cdots\ge C_{(334)}$，取</p>
+<div class="eq">$$
+\mathrm{CVaR}_{0.95}=\dfrac{\sum_{i=1}^{16}C_{(i)} + 0.7\cdot C_{(17)}}{16.7} \tag{4-16}
+$$</div>
+<p>其中系数 16.7 与 0.7 来自精确的 5% 尾部质量截断（$334\times5\%=16.7$）。计算得到：Q4-2 主策略 CVaR$_{0.95}=$ <strong>94,181.41 元</strong>；Q4-3 主策略 CVaR$_{0.95}=$ <strong>74,840.01 元</strong>。作为对照，若使用"最高 17 日均值"这一旧口径（尾部质量 $17/334\approx5.09\%$，并非精确 5%），得到的数值分别为 93,854.97 元与 74,787.26 元——两者接近但不完全等同，本文以 (4-16) 的精确经验 CVaR 为主口径。</p>
+<figure class="fig"><img src="figures/Q4_CVaR风险分布.png" alt="两分支日费用分布与 CVaR₉₅ 尾部示意" loading="lazy"><figcaption><span class="fig-n">图 4-9</span>两分支日费用分布与 CVaR₉₅ 尾部示意<a class="fig-src" href="figures/Q4_CVaR风险分布.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<p>需要如实指出：<strong>Q4-3 尾部改善（HYBRID-4L 相对基线的 CVaR 降低量）的 bootstrap 置信区间跨零</strong>（具体区间数值为块长 7 日 [−1,302, +519]、14 日 [−1,446, +837]、28 日 [−1,519, +1,314]），因此<strong>不能宣称"显著降低尾部风险"</strong>。与此相对，对主策略与基线逐日现金费用差的均值检验则显示出统计显著性——沿用第三问的检验方法，配对 $t$ 检验 $p=0.0044$，Wilcoxon 符号秩检验 $p=1.2\times10^{-10}$，说明<strong>平均意义上</strong>的费用节省不是抽样噪声，但这一显著性结论<strong>不能延伸到尾部风险（CVaR）的改善</strong>，二者必须分开陈述。</p>
+<h3 id="s17"><a class="hlink" href="#s17" aria-label="本节链接">§</a>4.6.5 模型解释边界与稳健性说明</h3>
+<p><strong>1. 参数标定与泛化边界。</strong> 本文的参数标定窗口仅为 2025 年 1 月的三个滚动验证块，窗口偏短。在参数搜索中记录了两个"训练窗口内目标值更低、但后续回放费用更高"的候选解：Q4-2 放宽 shrink 范围后的候选解（shrink_net=0.298）1 月训练适应度为 475,899，低于最终方案的 479,390.09，但其评价期库存校正费用为原实验记录值 15,807,845 元；Q4-3 超出预设参数范围的候选解（shrink_net=0.215，即 4.6.1 节表中的 X3）训练适应度为 456,873.19，低于最终方案的 458,569.29，但评价期库存校正费用为 14,210,031.74 元。两者分别相对<strong>各自分支的 B0（分位法 $\alpha=0.60$）基线</strong>高 <strong>1.42%</strong> 与 <strong>0.46%</strong>。这些结果表明，在仅含 1 个月、3 个滚动验证块的短标定窗口下，仅依据训练适应度选参存在明显的泛化失败风险。预先限定参数范围、降低参数维度或采用其他正则化手段可以<strong>降低</strong>该风险，但不能保证完全消除过拟合。</p>
+<p>本文采用的正则化是给 shrink 系列参数设定取值范围（Q4-2 四维搜索用 $[0.55,1.30]$，Q4-3 用 $[0.30,1.60]$）。该范围属于<strong>人为设定的正则化约束</strong>，其经济解释是：shrink 是对两阶段 recourse 乐观偏差的修正系数，把经验残差尺度大幅改变就不再是"修正"而是自由拟合。此处必须如实说明取舍的来源：参数<strong>取值</strong>只在 1 月窗口上标定并在评价期回放前冻结（4.2 节假设 H9），但参数<strong>范围</strong>与模型结构的选择<strong>受到了历史回放稳定性实验的影响</strong>，其中包括上述两个候选解的回放表现。因此，本文的评价期结果<strong>不构成严格独立盲测</strong>，而主要用于比较候选策略在同一历史样本上的回放稳定性；文中报告的样本外差异<strong>不应解释为完全独立的泛化性能证明</strong>。</p>
+<p><strong>2. 复杂策略的适用边界。</strong> Q4-2 分支上 HYBRID 结构未能胜过简单的分位法：H2（HYBRID-4L）库存校正费用 15,152,826.36 元，高于 M2（分位法 $\alpha=0.675$）的 15,127,539.71 元，最终以 M2 作为 Q4-2 的主策略。该结论只适用于本文的数据、情景规模与搜索预算，说明更复杂的策略结构在信息通道受限（无日内调整）的分支上并不必然带来收益，而不能推广为"随机规划在缺乏日内调整通道的场景下普遍无效"。</p>
+<p><strong>3. Q4-2 的补救决策结构。</strong> Q4-2 确实没有日内增/减购的普通调整通道，但每个情景下仍然拥有独立的充电、放电、弃电、库存与紧急购电变量（见 4.4.1 节末尾说明），<strong>因此 Q4-2 仍包含 recourse</strong>。需要同时承认：当前两阶段 LP 的情景内决策是在给定该情景完整路径的条件下求解的，不能等同于现实中逐时段信息反馈的策略，可能带来乐观的前视近似。另外，Q4-2 固定 shrink=1（不对净负荷/价格做额外收缩）是短训练窗口下为控制估计不稳定性而采取的工程性降维/正则化选择，不是结构性定理。</p>
+<p><strong>4. 信息价值指标的命名边界。</strong> 本文报告的"融合策略相对分位基线的历史回放费用差"（如 Q4-3 的 117,216.90 元/0.829%）并非严格意义上的 VSS，因为分位法不是同一随机规划模型的期望值替代问题，且两类策略的参数标定口径并不完全一致。U2/U3 则是在保持策略结构及参数冻结的条件下，把<strong>决策阶段可获得的价格预测</strong>替换为未来真实价格路径后得到的历史回放费用改善，结算仍按真实实现价格进行（实现见 <code>code/q4_policy.py</code> 中 <code>price_mode='perfect'</code> 只改写 <code>price_paths()</code> 给出的情景中心路径，不改变 (4-2)–(4-4) 的结算价）；该试验没有证明策略达到完美信息条件下的全局最优，因此也不构成严格定义的 EVPI。本文仅把 0.48%（Q4-2）与 0.78%（Q4-3）解释为<strong>冻结策略下的价格信息敏感性</strong>结果，不将其解释为理论 EVPI，也不据此推断电价预测投入的经济性上限。</p>
+<p><strong>5. 结算口径敏感性。</strong> 主口径按<strong>交付时段</strong>实际电价计算增购溢价与减购违约金（4.2 节假设 H2）。若改按<strong>下单（发布）时刻</strong>电价计价，则在部分"发布时刻—后续可调整交付时段"配对中，$1.5p_{\tau}^{\mathrm{release}}$ 仍可能低于对应的 $p_t^{\mathrm{delivery}}$。按 4.4.1 节的调整窗口定义逐对计算（发布时刻 $\tau\in\{6{:}00,12{:}00,18{:}00\}$，其可调整交付时段为同日 $t\in[6h,144)$，发布价取该时刻已公布的实际电价，评价期 334 天），共 <strong>72,144</strong> 个有效配对中有 <strong>19,412</strong> 个满足 $1.5p_{\tau}^{\mathrm{release}}<p_t^{\mathrm{delivery}}$，占 <strong>26.91%</strong>；分发布时刻看，6:00 为 4.37%（1,577/36,072）、12:00 为 74.16%（17,835/24,048）、18:00 为 0.00%（0/12,024），集中出现在光伏大发、发布价处于日内低位的午间时刻。这会削弱 1.5 倍溢价所体现的增购成本约束，在上述配对中甚至使调整购电的单位成本低于对应交付时段的普通购电价格。因此本文将下单时刻计价仅作为<strong>口径敏感性讨论</strong>，主口径仍采用交付时段实际电价。（数据来源：<code>results4/q4_release_pricing_pairs.csv</code>。）</p>
+<figure class="fig"><img src="figures/Q4_下单计价配对.png" alt="下单时刻计价口径：按&quot;发布时点—可调整交付时段&quot;有效配对的重算结果" loading="lazy"><figcaption><span class="fig-n">图 4-10</span>下单时刻计价口径：按"发布时点—可调整交付时段"有效配对的重算结果<a class="fig-src" href="figures/Q4_下单计价配对.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<figure class="fig"><img src="figures/Q4_结算口径对比.png" alt="减购结算口径对比：净额退款、冻结计划按逐次重算、逐次合同下重新优化" loading="lazy"><figcaption><span class="fig-n">图 4-11</span>减购结算口径对比：净额退款、冻结计划按逐次重算、逐次合同下重新优化<a class="fig-src" href="figures/Q4_结算口径对比.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<p>此外，减购口径本身也做了并列对照：主口径为日末净额退款（net_refund）；若改为<strong>逐次调整分别计费</strong>（stepwise，每次调整均以上一次有效计划为基准单独计费），在同一合同下重新优化决策后，Q4-3 的现金费用为 14,080,126.50 元、库存校正费用为 14,078,771.73 元，比主口径贵 50,572.49 元；若冻结主口径计划仅重算账单，则为 14,097,321.00／14,095,966.23 元，贵 67,766.99 元。二者的先后关系由下述不变量保证：记同一交付时段的多次有符号调整为 $\delta_j$，$f(\delta)=p[1.5\max(\delta,0)-0.5\max(-\delta,0)]=p\delta+0.5p|\delta|$，则 $\sum_j f(\delta_j)-f(\sum_j\delta_j)=0.5p(\sum_j|\delta_j|-|\sum_j\delta_j|)\ge 0$，即<strong>同一计划下逐次计费不可能比净额结算便宜</strong>；重新优化可以收回一部分差额，但不可能反超。</p>
+<p><strong>6. 因果性与统计检验的边界。</strong> 对 3 天 $\times$ 4 个发布时点（0:00、6:00、12:00、18:00）共 <strong>12 次</strong>检查，扰动决策时刻<strong>尚未释放</strong>的负荷、光伏、电价预报后重新求解，已经锁定的计划变动量均为 <strong>0.0 kWh</strong>（详细协议见 4.7.1 节）。该结论只支持被实际测试的日期与时点，不等于对全部 334 天的形式化证明。统计检验方面：均值改善的配对检验与 CVaR 尾部改善是两个不同命题，不能用前者的显著性替代后者；4.7.4 节的 bootstrap 结论以修复后的重采样实现为准，并依赖日费用序列的局部平稳近似。</p>
+<h2 id="s18"><a class="hlink" href="#s18" aria-label="本节链接">§</a>4.7 模型检验</h2>
+<h3 id="s19"><a class="hlink" href="#s19" aria-label="本节链接">§</a>4.7.1 因果性检验</h3>
+<p>按 4.4.1 节 (4-1) 定义的非预期性约束，模型在任一决策时点之前锁定的计划不应因为"未来将要发生但当前尚未公布"的信息而改变。检验方法：随机抽取 3 天，对每天的 4 个发布时点（0:00、6:00、12:00、18:00），分别对该时点<strong>尚未释放</strong>的净负荷、光伏出力、电价预报施加扰动，重新运行同一套决策流程，比较扰动前后<strong>已经锁定</strong>部分的计划购电量。3 天 $\times$ 4 个发布时点共 12 次检查，结果显示计划变动量均为 <strong>0.0 kWh</strong>，即模型的决策严格只依赖于截至当前决策时点已公开的信息集 $\mathcal F_{\tau_k}$，不存在信息泄漏或"先知式"决策。</p>
+<figure class="fig"><img src="figures/Q4_因果性检验.png" alt="因果性检验：扰动未释放信息后的计划变动量" loading="lazy"><figcaption><span class="fig-n">图 4-12</span>因果性检验：扰动未释放信息后的计划变动量<a class="fig-src" href="figures/Q4_因果性检验.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h3 id="s20"><a class="hlink" href="#s20" aria-label="本节链接">§</a>4.7.2 账单重算与储能动态校验</h3>
+<p>为验证 4.4.2 节费用公式 (4-2)–(4-4) 与 4.4.3 节储能动态 (4-8) 在真实路径回放中被正确执行，本文对评价期内的每日结算独立重算账单（按真实实现的净负荷、价格代入 (4-2)–(4-4)），并逐时段校验储能 SOC 轨迹是否满足动态方程 (4-8) 与安全区间约束 (4-9)。校验结果为：日账单最大重算误差 Q4-2 2.599e-05 元、Q4-3 1.728e-05 元；电量平衡最大误差 1.333e-06 kWh；储能动态最大误差 1.444e-06 kWh；充放电功率与电价核对误差均为 0.0。</p>
+<p>交付工作表另做两层核对，因为<strong>仅核对电量不足以证明费用列正确</strong>：（i）电量层面，Excel 计划表/调整表与逐段账本的最大差为 0.0 kWh；（ii）费用层面，两簿各逐日明细表末列的合计与逐日账本对应费用列之差为 0.0 元，「费用汇总与版本」页的计划购电费、增购费、减购净额、紧急购电费四个分项与逐日账本之差亦均为 0.0 元。全部核验项通过（明细见 <code>results4/q4_verification.json</code> 的 <code>*_sheet_cost_detail</code>）。</p>
+<h3 id="s21"><a class="hlink" href="#s21" aria-label="本节链接">§</a>4.7.3 消融与敏感性</h3>
+<ul>
+<li><strong>日内更新通道的消融</strong>：对比 Q4-3 主策略（H3）与"HYBRID 不做日内更新"（A3）：库存校正费用由 15,277,271.32 元降至 14,028,199.24 元，差额 1,249,072 元（8.0%），是本文能够单独归因、量级最大的结构性收益，说明日内调整通道本身（而不仅是参数调优）在波动电价下具有实质价值（呼应 4.1 节的问题分析）。</li>
+<li><strong>策略结构的消融</strong>：对比 Q4-2 的 HYBRID-4L（H2，15,152,826.36 元）与分位法主策略（M2，15,127,539.71 元），前者反而更贵，说明在无日内调整通道的约束下，HYBRID 结构的额外自由度没有转化为样本外收益（见 4.6.5 节第 2 条）。</li>
+<li><strong>正则化先验范围的敏感性</strong>：分别使用较窄（$[0.55,1.30]$，Q4-2）与较宽（$[0.30,1.60]$，Q4-3）的 shrink 先验范围搜索，均在范围边界之外发现了"1 月训练适应度更优、评价期回放费用更高"的候选解（见 4.6.5 节第 1 条），说明评价期表现对该范围的选择敏感；该范围是人为设定的正则化约束而非理论边界，且其设定用到了历史回放信息（见 4.6.5 节第 1 条）。</li>
+</ul>
+<h3 id="s22"><a class="hlink" href="#s22" aria-label="本节链接">§</a>4.7.4 Bootstrap 不确定性</h3>
+<p>对 Q4-3 主策略相对基线的 CVaR$_{0.95}$ 尾部改善量做<strong>配对移动区块 bootstrap</strong> 重采样。重采样实现的要点为：合法块起点覆盖 $0$ 至 $n-L_b$（共 $n-L_b+1$ 个），抽取块数取 $\lceil n/L_b\rceil$，拼接后截断到恰好 $n=334$ 个观测；重采样次数 4,000，随机种子固定为 20260941，块长取 $L_b\in\{7,14,28\}$ 日；置信区间取重采样分布的 2.5%/97.5% 分位，并与 4.6.4 节 (4-16) 调用<strong>同一个</strong>精确经验 CVaR 统计函数（<code>code/q4_statistics.py</code>），以保证正文指标与统计检验指标口径一致。</p>
+<p>所得 95% 置信区间为：块长 7 日 [−1,302, +519]、14 日 [−1,446, +837]、28 日 [−1,519, +1,314]（见 <code>results4/q4_cvar_bootstrap.csv</code>）。由于三档区间<strong>均跨越零点</strong>，本文在给定重采样设定下<strong>不能</strong>认定 Q4-3 的尾部风险改善具有统计显著性。作为对照，Q4-2 主策略相对 B0 基线的 CVaR$_{0.95}$ 改善为 −6,044.22 元，三档区间分别为 [−9,162, −2,121]、[−9,540, −2,258]、[−9,766, −3,070]，均不跨零。</p>
+<figure class="fig"><img src="figures/Q4_bootstrap区间.png" alt="配对移动区块 bootstrap 的 95% 置信区间（灰色表示区间跨零）" loading="lazy"><figcaption><span class="fig-n">图 4-13</span>配对移动区块 bootstrap 的 95% 置信区间（灰色表示区间跨零）<a class="fig-src" href="figures/Q4_bootstrap区间.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<p>与此相对，Q4-3 逐日现金费用差的均值改善通过配对 $t$ 检验（$p=0.0044$）与 Wilcoxon 符号秩检验（$p=1.2\times10^{-10}$）验证为统计显著。<strong>均值改善的显著性不能延伸到尾部风险（CVaR）的改善</strong>，二者是不同命题，须分开陈述。此外需说明：日费用序列可能存在季节性，移动区块 bootstrap 依赖<strong>局部平稳近似</strong>，上述区间的有效性以该近似成立为前提。</p>
+<h3 id="s23"><a class="hlink" href="#s23" aria-label="本节链接">§</a>4.7.5 泛化失败的两次事后诊断</h3>
+<p>如 4.6.5 节第 1 条所述，本文在参数搜索过程中记录了两个"训练窗口内目标值更低、但后续回放费用更高"的候选解：Q4-2 放宽 shrink 范围后的候选解（1 月训练适应度 475,899 → 评价期库存校正费用相对该分支 B0 基线高 1.42%，未采纳）与 Q4-3 超出预设参数范围的候选解（1 月训练适应度 456,873.19 → 相对该分支 B0 基线高 0.46%，未采纳）。</p>
+<p>这两个候选解之所以未被采纳，直接依据是它们落在 shrink 参数的正则化取值范围之外；而该范围的设定，如 4.6.5 节第 1 条所述，<strong>受到了包括上述回放结果在内的历史回放稳定性实验的影响</strong>。因此本文不把这两条记录称为"独立留出检验"，而只把它们视为在同一历史样本上对短标定窗口泛化风险的经验证据：在 1 个月、3 个滚动验证块的标定窗口下，仅以训练适应度作为选参标准存在明显的泛化失败风险，需要借助参数范围限定等正则化手段加以抑制——但正则化只能降低而不能消除该风险，且范围本身的选择已经用到了历史回放信息，这一自由度必须计入方法的解释边界。</p>
+<figure class="fig"><img src="figures/Q4_过拟合证据.png" alt="两个候选解的 1 月训练适应度与评价期回放费用对照" loading="lazy"><figcaption><span class="fig-n">图 4-14</span>两个候选解的 1 月训练适应度与评价期回放费用对照<a class="fig-src" href="figures/Q4_过拟合证据.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h2 id="s24"><a class="hlink" href="#s24" aria-label="本节链接">§</a>4.8 模型的优点与不足</h2>
+<p><strong>优点：</strong></p>
+<ol>
+<li>情景层用历史同日成对抽取的方式构造联合情景，保留了价格与净负荷的相关结构，避免了独立边缘建模丢失相关性的问题（4.1、4.4.4 节）；</li>
+<li>规划层显式写入非预期性约束，并通过因果性检验（4.7.1 节，12 次检查计划变动量均为 0.0 kWh）证实模型没有利用未来信息，决策具有可信的因果合法性；</li>
+<li>终端层用一次 Bellman 回代拟合的分段线性、边际非增（即凹）的终端库存价值函数，能够在不引入整数变量的前提下<strong>精确</strong>嵌入线性规划（4.4.5 节的证明性说明），兼顾了跨日连续价值与求解效率；</li>
+<li>搜索层用模因算法（全局算子三选一 + Nelder-Mead 精修）处理规划层写不进去的非凸策略参数，并辅以 NSGA-II 多目标对照，如实报告了"在本文的参数范围与搜索预算内未观察到可辨识的成本—CVaR 权衡"这一有限搜索条件下的经验现象，而非用复杂算法制造虚假的多目标叙事；</li>
+<li>全文如实记录了两次泛化失败的事后诊断、一个分支上更复杂结构反而失败的反例，以及结算口径选择（1.5 倍条款的两种读法、净额与逐次计费）、下界口径区分等容易被误报的细节，符合可复核的建模报告规范。</li>
+</ol>
+<p><strong>不足：</strong></p>
+<ol>
+<li>参数标定窗口仅为 2025 年 1 月的三个滚动验证块，参数取值虽在评价期回放之前冻结，但参数搜索范围与模型结构的选择曾结合历史全年回放的稳定性表现作过修订，因此评价期结果<strong>不构成严格意义上的独立盲测</strong>，其表现优势既不能完全排除对 1 月数据分布特征的依赖，也不能解释为对未知年份的泛化保证；</li>
+<li>主策略距真下界仍有明显差距（Q4-2 15.50%，Q4-3 8.88%），说明模型在信息利用效率上仍有改进空间，尤其 Q4-2 由于缺乏日内调整通道，差距显著大于 Q4-3；</li>
+<li>Q4-2 分支上更复杂的 HYBRID 结构未能超越简单分位法，说明本文的四层融合框架并非在所有信息约束条件下都具有普适优势，其复杂度—收益的权衡在受限信息通道下需要重新评估；</li>
+<li>情景内部仍然存在一定的前视近似——两阶段 LP 在给定情景路径全长的条件下求解，与现实中信息严格逐段释放存在差距（见 4.6.5 节第 3 条），该近似的误差量级未被单独量化；</li>
+<li>Q4-3 尾部风险（CVaR）的改善未通过 bootstrap 显著性检验（区间跨零），只能报告均值意义上的费用节省具有统计显著性，风险控制方面的收益证据尚不充分；</li>
+<li>本文未使用严格定义的 VSS/EVPI 指标（理由见 4.6.5 节第 4 条），无法就"电价预测投入的边际性价比"给出具备理论保证的强结论，相关讨论只能停留在冻结策略下回放费用差的经验层面。</li>
+</ol>
+<p>综上，第四问所建立的联合情景两阶段随机规划模型，在保持线性规划可精确求解、决策满足因果性的前提下，针对两个分支分别给出了经过样本外验证、并如实报告了失败案例与统计边界的主策略，是在标定数据有限、评价期表现不可提前得知的现实约束下的一个可解释、可复核的折衷方案。</p>
+  </main>
+</div>
+
+<footer>
+  <h4>本稿引用的图（共 14 张，点击查看原图；交付包内另附同名 PDF 矢量版）</h4>
+  <ul>
+  <li><a href="figures/Q4_决策时序与信息集.png" target="_blank" rel="noopener">Q4_决策时序与信息集</a></li>
+  <li><a href="figures/Q4_情景数收敛.png" target="_blank" rel="noopener">Q4_情景数收敛</a></li>
+  <li><a href="figures/Q4_终端价值函数.png" target="_blank" rel="noopener">Q4_终端价值函数</a></li>
+  <li><a href="figures/Q4_HYBRID4L框架.png" target="_blank" rel="noopener">Q4_HYBRID4L框架</a></li>
+  <li><a href="figures/Q4_寻优收敛.png" target="_blank" rel="noopener">Q4_寻优收敛</a></li>
+  <li><a href="figures/Q4_费用结构.png" target="_blank" rel="noopener">Q4_费用结构</a></li>
+  <li><a href="figures/Q4_逐月节省.png" target="_blank" rel="noopener">Q4_逐月节省</a></li>
+  <li><a href="figures/Q4_信息价值阶梯.png" target="_blank" rel="noopener">Q4_信息价值阶梯</a></li>
+  <li><a href="figures/Q4_CVaR风险分布.png" target="_blank" rel="noopener">Q4_CVaR风险分布</a></li>
+  <li><a href="figures/Q4_下单计价配对.png" target="_blank" rel="noopener">Q4_下单计价配对</a></li>
+  <li><a href="figures/Q4_结算口径对比.png" target="_blank" rel="noopener">Q4_结算口径对比</a></li>
+  <li><a href="figures/Q4_因果性检验.png" target="_blank" rel="noopener">Q4_因果性检验</a></li>
+  <li><a href="figures/Q4_bootstrap区间.png" target="_blank" rel="noopener">Q4_bootstrap区间</a></li>
+  <li><a href="figures/Q4_过拟合证据.png" target="_blank" rel="noopener">Q4_过拟合证据</a></li></ul>
+  <p>全部数字与图表由交付包 <code>results4/</code> 自动生成，版本 <span class="vid">Q4-e2549ddb99</span>；
+  该版本的代码、数据、结果与交付物指纹见 <code>results4/fingerprint_manifest.json</code>，
+  可用 <code>python code/q4_freeze.py</code> 复核。</p>
+</footer>
+</div>
+
+<script>
+window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],processEscapes:true,
+    tags:'none',macros:{}},
+  svg:{fontCache:'global',scale:1.0},
+  options:{skipHtmlTags:['script','noscript','style','textarea','pre','code'],
+           ignoreHtmlClass:'no-mathjax'},
+  startup:{typeset:true}};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" id="MathJax-script" async></script>
+<script>
+// 目录高亮
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var heads=[].slice.call(document.querySelectorAll('main h1[id],main h2[id],main h3[id]'));
+  if(!heads.length||!('IntersectionObserver' in window))return;
+  var seen={};
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){seen[e.target.id]=e.isIntersecting;});
+    var cur=null;
+    for(var i=0;i<heads.length;i++){if(seen[heads[i].id]){cur=heads[i].id;break;}}
+    links.forEach(function(a){a.classList.remove('on');});
+    if(cur&&map[cur])map[cur].classList.add('on');
+  },{rootMargin:'-8% 0px -78% 0px'});
+  heads.forEach(function(h){io.observe(h);});
+})();
+</script>

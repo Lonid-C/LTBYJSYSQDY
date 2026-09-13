@@ -1,0 +1,17 @@
+Q4-2 初始最优在边界的参数: 无；命中结构性下界（不可延展）: ['temper']（强制再延展一轮确认）
+  [GA] gen=0 evals=16 best=479,065.3 mean=495,245.2
+  [GA] gen=1 evals=32 best=479,065.3 mean=483,763.7
+  [GA] gen=2 evals=48 best=479,065.3 mean=482,919.3
+  [GA] gen=3 evals=64 best=479,065.3 mean=483,029.1
+  [GA] gen=4 evals=80 best=479,065.3 mean=481,907.7
+  [GA] gen=5 evals=96 best=478,424.4 mean=480,589.9
+  [GA] gen=6 evals=112 best=478,424.4 mean=480,046.7
+  [GA] gen=7 evals=128 best=477,256.8 mean=479,791.2
+  [NM] it=0 evals=5 best=477,170.7
+  [NM] it=5 evals=14 best=477,156.9
+  [NM] it=10 evals=21 best=476,146.1
+  [NM] it=15 evals=27 best=476,146.1
+  [NM] it=20 evals=36 best=476,023.6
+Q4-2 延展后 best=475,898.9 x=[0.0495 0.2982 1.8146 1.1841] 仍在边界: 无 (547s)
+Q4-3 初始最优在边界的参数: 无
+选参已更新，请运行 q4_finalize.py 重建全部下游账本

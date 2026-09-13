@@ -1,0 +1,9 @@
+{
+  "window": 28,
+  "decay": 14.0,
+  "slope": 1000000.0,
+  "weekday": 0.025,
+  "correction": 0.5,
+  "bias_window": 6,
+  "bias_decay": 3.0
+}

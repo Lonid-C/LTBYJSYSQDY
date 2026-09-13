@@ -1,0 +1,17 @@
+  [GA] gen=0 evals=16 best=479,452.2 mean=496,046.3
+  [GA] gen=1 evals=32 best=479,452.2 mean=486,829.7
+  [GA] gen=2 evals=48 best=479,452.2 mean=484,666.9
+  [GA] gen=3 evals=64 best=477,937.6 mean=483,658.1
+  [GA] gen=4 evals=80 best=477,937.6 mean=482,043.5
+  [GA] gen=5 evals=96 best=477,720.7 mean=479,944.1
+  [GA] gen=6 evals=112 best=477,472.7 mean=480,032.5
+  [GA] gen=7 evals=128 best=477,255.3 mean=478,883.1
+  [GA] gen=8 evals=144 best=477,255.3 mean=479,446.7
+  [NM] it=0 evals=5 best=476,647.5
+  [NM] it=5 evals=13 best=476,520.0
+  [NM] it=10 evals=21 best=476,260.7
+  [NM] it=15 evals=29 best=476,260.7
+  [NM] it=20 evals=36 best=476,221.3
+  [NM] it=25 evals=45 best=476,153.3
+加宽框 Q4-2 best=476150.5 x=[0.     0.3027 1.6137 1.512 ]  旧值 481357.6
+已更新选参

@@ -1,0 +1,115 @@
+{
+  "q4_2": {
+    "cost": 2.5990884751081467e-05,
+    "balance": 1.333333443653828e-06,
+    "soc": 1.4444451217343612e-06,
+    "power": 0.0,
+    "price": 0.0
+  },
+  "q4_2_pass": true,
+  "q4_2_sheet_plan_max_diff": 0.0,
+  "q4_2_sheet_cost_max_diff": 0.0,
+  "q4_2_sheet_cost_detail": {
+    "计划购电量_末列合计_减_total_cost": 0.0,
+    "汇总页_计划购电费": 0.0,
+    "汇总页_增购费": 0.0,
+    "汇总页_减购净额": 0.0,
+    "汇总页_紧急购电费": 0.0
+  },
+  "q4_3": {
+    "cost": 1.7278871382586658e-05,
+    "balance": 1.333333365494127e-06,
+    "soc": 1.444445146603357e-06,
+    "power": 0.0,
+    "price": 0.0
+  },
+  "q4_3_pass": true,
+  "q4_3_sheet_plan_max_diff": 0.0,
+  "q4_3_sheet_adjusted_max_diff": 0.0,
+  "q4_3_sheet_cost_max_diff": 0.0,
+  "q4_3_sheet_cost_detail": {
+    "计划购电量_末列合计_减_plan_cost": 0.0,
+    "调整购电量_末列合计_减_total_cost": 0.0,
+    "汇总页_计划购电费": 0.0,
+    "汇总页_增购费": 0.0,
+    "汇总页_减购净额": 0.0,
+    "汇总页_紧急购电费": 0.0
+  },
+  "causality_by_issue": [
+    {
+      "date": "2025-05-01",
+      "issue": 0,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-05-01",
+      "issue": 6,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-05-01",
+      "issue": 12,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-05-01",
+      "issue": 18,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-07-20",
+      "issue": 0,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-07-20",
+      "issue": 6,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-07-20",
+      "issue": 12,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-07-20",
+      "issue": 18,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-10-28",
+      "issue": 0,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-10-28",
+      "issue": 6,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-10-28",
+      "issue": 12,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    },
+    {
+      "date": "2025-10-28",
+      "issue": 18,
+      "max_plan_diff_kwh": 0.0,
+      "passed": true
+    }
+  ],
+  "causality_max_plan_diff_kwh": 0.0,
+  "causality_pass": true,
+  "all_pass": true
+}

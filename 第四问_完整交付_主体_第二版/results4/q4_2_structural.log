@@ -1,0 +1,15 @@
+对照基线 1 月适应度 486345.8
+  [GA] gen=0 evals=12 best=496,210.8 mean=499,156.7
+  [GA] gen=1 evals=24 best=495,779.0 mean=499,229.2
+  [GA] gen=2 evals=36 best=495,692.2 mean=496,879.4
+  [GA] gen=3 evals=48 best=495,664.4 mean=496,327.7
+  [GA] gen=4 evals=60 best=495,516.9 mean=496,174.7
+  [GA] gen=5 evals=72 best=495,481.0 mean=495,885.8
+  [GA] gen=6 evals=84 best=495,480.2 mean=495,912.0
+  [GA] gen=7 evals=96 best=495,480.2 mean=495,710.2
+  [NM] it=0 evals=3 best=495,480.2
+  [NM] it=5 evals=14 best=495,456.7
+  [NM] it=10 evals=25 best=495,424.1
+  [NM] it=15 evals=36 best=495,413.0
+Q4-2 结构受限寻优 best=495412.8 x=[1.0528 0.7003] 分块=[584665. 496231. 405342.] (439s)
+已写入选参

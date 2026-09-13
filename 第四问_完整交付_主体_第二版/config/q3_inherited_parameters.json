@@ -1,0 +1,20 @@
+{
+  "_note": "第四问从第三问继承的预报与风险参数（唯一配置入口）。第四问交付包不含第三问的 results/ 目录，此前 run_q4_experiment.boot() 直接读 results/parameters.json，导致本包内 q4_freeze.py / q4_verify.py 无法运行。现把这组值固定在本文件，并由 code/q4_config.py 提供唯一读取入口。",
+  "_provenance": {
+    "alpha0, alpha_update": "第三问风险分位标定结果 (0.60, 0.60)，70 组候选 + 边界自动延展后位于区域内部；见 CHANGELOG.md「扩大风险分位搜索范围 + 边界自动延展」与「结果：与 V2 完全一致（α₀=0.60, αₕ=0.60）」",
+    "slope, weekday": "岭正则系数按预测精度（滚动原点时序 CV）选择：λ_slope=1e6、λ_weekday=0.00625；见 CHANGELOG.md「岭正则系数归类为预测子模型工程超参数」",
+    "window, decay_days, bias_window, bias_decay, epsilon": "三级/四级参数，取 q3.Params 的既定值（window=28 为 4 个完整周周期，decay_days=14 为 2 个周周期，bias_window=6 即 1 小时，bias_decay=6 为相邻发布间隔，epsilon 为数值退化惩罚）",
+    "_verification": "用本文件复跑后，results4/ 中 q4_2_daily.csv 与 q4_3_daily.csv 的逐日费用必须与冻结值逐项一致；核验入口 python code/q4_check_reproduce.py"
+  },
+  "selected": {
+    "alpha0": 0.60,
+    "alpha_update": 0.60,
+    "window": 28,
+    "decay_days": 14.0,
+    "bias_window": 6,
+    "bias_decay": 6.0,
+    "slope": 1000000.0,
+    "weekday": 0.00625,
+    "epsilon": 1e-07
+  }
+}

@@ -1,0 +1,27 @@
+<script>
+window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],processEscapes:true,
+    tags:'none',macros:{}},
+  svg:{fontCache:'global',scale:1.0},
+  options:{skipHtmlTags:['script','noscript','style','textarea','pre','code'],
+           ignoreHtmlClass:'no-mathjax'},
+  startup:{typeset:true}};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" id="MathJax-script" async></script>
+<script>
+// 目录高亮
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var heads=[].slice.call(document.querySelectorAll('main h1[id],main h2[id],main h3[id]'));
+  if(!heads.length||!('IntersectionObserver' in window))return;
+  var seen={};
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){seen[e.target.id]=e.isIntersecting;});
+    var cur=null;
+    for(var i=0;i<heads.length;i++){if(seen[heads[i].id]){cur=heads[i].id;break;}}
+    links.forEach(function(a){a.classList.remove('on');});
+    if(cur&&map[cur])map[cur].classList.add('on');
+  },{rootMargin:'-8% 0px -78% 0px'});
+  heads.forEach(function(h){io.observe(h);});
+})();
+</script>
