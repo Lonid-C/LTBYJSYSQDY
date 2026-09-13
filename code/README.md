@@ -25,6 +25,9 @@
 | `build_q2_v32_notebook.py` | 生成 `problem2_v32_final.ipynb`。 |
 | `../第三问_量化建模_改进版+分层融合/code/q3.py` | **问题3正式分位法LP-MPC入口**，现金费用13,386,086.28元。 |
 | `../第三问_量化建模_改进版+分层融合/results/strategy_comparison.csv` | Q3正式数值来源：`6+12+18`行。 |
+| `../第四问_完整交付_主体_第二版/code/` | **问题4正式主体代码**，对应 Q4-2/Q4-3 工作簿与论文主结果。 |
+| `../第四问_Q4三项专项改进_v1/code/run_q4_three_improvements.py` | **Q4最终稳健性增强入口**：风险候选、Bootstrap、多种子与时间泛化。 |
+| `../第四问_Q4三项专项改进_v1/code/run_q4_causality_expanded.py` | Q4 扩展因果性检查（56日、224状态）。 |
 | `q2_v32/colab_pack_v32.py` | 打包 Colab 上传所需的输入（附件、模型、notebook、预测文件）。 |
 | `q2_v32/colab_prepare_v32.py` | 在 Colab 上解包并安装运行环境。 |
 | `q2_v32/colab_launch_v32.py` | 在 Colab 上后台执行 notebook 并打包产物。 |

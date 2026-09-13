@@ -1,0 +1,8 @@
+{
+  "days": 56,
+  "decision_states": 224,
+  "workers": 6,
+  "max_plan_diff_kwh": 0.0,
+  "all_pass": true,
+  "wall_seconds": 60.95665933999999
+}

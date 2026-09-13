@@ -1,0 +1,617 @@
+smoke test passed; max diff=0.000e+00
+
+parallel annual replays:   0%|          | 0/6 [00:00<?, ?run/s]
+
+
+
+
+
+
+
+rho0.15_seed0 monthly replay:   0%|          | 0/11 [00:00<?, ?month/s]
+rho0.15_seed2 monthly replay:   0%|          | 0/11 [00:00<?, ?month/s]
+rho0.00_seed2 monthly replay:   0%|          | 0/11 [00:00<?, ?month/s][A[A[A[A[A[A[A
+rho0.00_seed1 monthly replay:   0%|          | 0/11 [00:00<?, ?month/s]
+
+
+
+
+
+
+
+
+rho0.15_seed1 monthly replay:   0%|          | 0/11 [00:00<?, ?month/s]
+rho0.25_seed0 monthly replay:   0%|          | 0/11 [00:00<?, ?month/s][A[A[A[A[A[A[A[A
+rho0.00_seed1 monthly replay:   0%|          | 0/11 [00:32<?, ?month/s, days=28, soc=3459]
+rho0.00_seed1 monthly replay:   9%|▉         | 1/11 [00:32<05:25, 32.53s/month, days=28, soc=3459]
+
+rho0.00_seed2 monthly replay:   0%|          | 0/11 [00:32<?, ?month/s, days=28, soc=3557][A
+
+rho0.00_seed2 monthly replay:   9%|▉         | 1/11 [00:32<05:26, 32.69s/month, days=28, soc=3557][A
+
+
+
+
+rho0.15_seed2 monthly replay:   0%|          | 0/11 [00:50<?, ?month/s, days=28, soc=3393][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:   9%|▉         | 1/11 [00:50<08:27, 50.72s/month, days=28, soc=3393][A[A[A[A
+
+
+
+rho0.15_seed1 monthly replay:   0%|          | 0/11 [00:51<?, ?month/s, days=28, soc=3467][A[A[A
+
+
+
+rho0.15_seed1 monthly replay:   9%|▉         | 1/11 [00:51<08:31, 51.11s/month, days=28, soc=3467][A[A[A
+
+
+rho0.15_seed0 monthly replay:   0%|          | 0/11 [00:52<?, ?month/s, days=28, soc=3548][A[A
+
+
+rho0.15_seed0 monthly replay:   9%|▉         | 1/11 [00:52<08:40, 52.08s/month, days=28, soc=3548][A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:   0%|          | 0/11 [00:54<?, ?month/s, days=28, soc=3463][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:   9%|▉         | 1/11 [00:54<09:05, 54.53s/month, days=28, soc=3463][A[A[A[A[A
+rho0.00_seed1 monthly replay:   9%|▉         | 1/11 [01:07<05:25, 32.53s/month, days=59, soc=8437]
+rho0.00_seed1 monthly replay:  18%|█▊        | 2/11 [01:07<05:04, 33.78s/month, days=59, soc=8437]
+
+rho0.00_seed2 monthly replay:   9%|▉         | 1/11 [01:07<05:26, 32.69s/month, days=59, soc=8572][A
+
+rho0.00_seed2 monthly replay:  18%|█▊        | 2/11 [01:07<05:04, 33.82s/month, days=59, soc=8572][A
+
+rho0.00_seed2 monthly replay:  18%|█▊        | 2/11 [01:38<05:04, 33.82s/month, days=89, soc=9648][A
+
+rho0.00_seed2 monthly replay:  27%|██▋       | 3/11 [01:38<04:22, 32.83s/month, days=89, soc=9648][A
+rho0.00_seed1 monthly replay:  18%|█▊        | 2/11 [01:38<05:04, 33.78s/month, days=89, soc=9676]
+rho0.00_seed1 monthly replay:  27%|██▋       | 3/11 [01:38<04:22, 32.87s/month, days=89, soc=9676]
+
+
+
+
+rho0.15_seed2 monthly replay:   9%|▉         | 1/11 [01:44<08:27, 50.72s/month, days=59, soc=8579][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  18%|█▊        | 2/11 [01:44<07:50, 52.28s/month, days=59, soc=8579][A[A[A[A
+
+
+
+rho0.15_seed1 monthly replay:   9%|▉         | 1/11 [01:44<08:31, 51.11s/month, days=59, soc=8482][A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  18%|█▊        | 2/11 [01:44<07:50, 52.29s/month, days=59, soc=8482][A[A[A
+
+
+rho0.15_seed0 monthly replay:   9%|▉         | 1/11 [01:46<08:40, 52.08s/month, days=59, soc=8675][A[A
+
+
+rho0.15_seed0 monthly replay:  18%|█▊        | 2/11 [01:46<07:59, 53.23s/month, days=59, soc=8675][A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:   9%|▉         | 1/11 [01:49<09:05, 54.53s/month, days=59, soc=8683][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  18%|█▊        | 2/11 [01:49<08:11, 54.61s/month, days=59, soc=8683][A[A[A[A[A
+rho0.00_seed1 monthly replay:  27%|██▋       | 3/11 [02:11<04:22, 32.87s/month, days=120, soc=2217]
+rho0.00_seed1 monthly replay:  36%|███▋      | 4/11 [02:11<03:48, 32.63s/month, days=120, soc=2217]
+
+rho0.00_seed2 monthly replay:  27%|██▋       | 3/11 [02:11<04:22, 32.83s/month, days=120, soc=2321][A
+
+rho0.00_seed2 monthly replay:  36%|███▋      | 4/11 [02:11<03:48, 32.69s/month, days=120, soc=2321][A
+
+
+
+
+rho0.15_seed2 monthly replay:  18%|█▊        | 2/11 [02:30<07:50, 52.28s/month, days=89, soc=9506][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  27%|██▋       | 3/11 [02:30<06:35, 49.49s/month, days=89, soc=9506][A[A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  18%|█▊        | 2/11 [02:30<07:50, 52.29s/month, days=89, soc=9491][A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  27%|██▋       | 3/11 [02:30<06:36, 49.50s/month, days=89, soc=9491][A[A[A
+
+
+rho0.15_seed0 monthly replay:  18%|█▊        | 2/11 [02:32<07:59, 53.23s/month, days=89, soc=10660][A[A
+
+
+rho0.15_seed0 monthly replay:  27%|██▋       | 3/11 [02:32<06:41, 50.14s/month, days=89, soc=10660][A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  18%|█▊        | 2/11 [02:37<08:11, 54.61s/month, days=89, soc=10042][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  27%|██▋       | 3/11 [02:37<06:54, 51.76s/month, days=89, soc=10042][A[A[A[A[A
+
+rho0.00_seed2 monthly replay:  36%|███▋      | 4/11 [02:45<03:48, 32.69s/month, days=150, soc=1843][A
+
+rho0.00_seed2 monthly replay:  45%|████▌     | 5/11 [02:45<03:18, 33.05s/month, days=150, soc=1843][A
+rho0.00_seed1 monthly replay:  36%|███▋      | 4/11 [02:45<03:48, 32.63s/month, days=150, soc=1881]
+rho0.00_seed1 monthly replay:  45%|████▌     | 5/11 [02:45<03:19, 33.24s/month, days=150, soc=1881]
+
+rho0.00_seed2 monthly replay:  45%|████▌     | 5/11 [03:18<03:18, 33.05s/month, days=181, soc=5025][A
+
+rho0.00_seed2 monthly replay:  55%|█████▍    | 6/11 [03:18<02:46, 33.27s/month, days=181, soc=5025][A
+rho0.00_seed1 monthly replay:  45%|████▌     | 5/11 [03:18<03:19, 33.24s/month, days=181, soc=4492]
+rho0.00_seed1 monthly replay:  55%|█████▍    | 6/11 [03:18<02:46, 33.29s/month, days=181, soc=4492]
+
+
+
+
+rho0.15_seed2 monthly replay:  27%|██▋       | 3/11 [03:19<06:35, 49.49s/month, days=120, soc=2433][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  36%|███▋      | 4/11 [03:19<05:45, 49.42s/month, days=120, soc=2433][A[A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  27%|██▋       | 3/11 [03:19<06:36, 49.50s/month, days=120, soc=2388][A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  36%|███▋      | 4/11 [03:19<05:46, 49.46s/month, days=120, soc=2388][A[A[A
+
+
+rho0.15_seed0 monthly replay:  27%|██▋       | 3/11 [03:21<06:41, 50.14s/month, days=120, soc=2388][A[A
+
+
+rho0.15_seed0 monthly replay:  36%|███▋      | 4/11 [03:21<05:48, 49.80s/month, days=120, soc=2388][A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  27%|██▋       | 3/11 [03:28<06:54, 51.76s/month, days=120, soc=2606][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  36%|███▋      | 4/11 [03:28<06:00, 51.54s/month, days=120, soc=2606][A[A[A[A[A
+
+rho0.00_seed2 monthly replay:  55%|█████▍    | 6/11 [03:52<02:46, 33.27s/month, days=212, soc=3254][A
+
+rho0.00_seed2 monthly replay:  64%|██████▎   | 7/11 [03:52<02:12, 33.25s/month, days=212, soc=3254][A
+rho0.00_seed1 monthly replay:  55%|█████▍    | 6/11 [03:52<02:46, 33.29s/month, days=212, soc=3216]
+rho0.00_seed1 monthly replay:  64%|██████▎   | 7/11 [03:52<02:13, 33.29s/month, days=212, soc=3216]
+
+
+
+rho0.15_seed1 monthly replay:  36%|███▋      | 4/11 [04:14<05:46, 49.46s/month, days=150, soc=1853][A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  45%|████▌     | 5/11 [04:14<05:08, 51.47s/month, days=150, soc=1853][A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  36%|███▋      | 4/11 [04:16<05:45, 49.42s/month, days=150, soc=1860][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  45%|████▌     | 5/11 [04:16<05:12, 52.01s/month, days=150, soc=1860][A[A[A[A
+
+
+rho0.15_seed0 monthly replay:  36%|███▋      | 4/11 [04:17<05:48, 49.80s/month, days=150, soc=1928][A[A
+
+
+rho0.15_seed0 monthly replay:  45%|████▌     | 5/11 [04:17<05:12, 52.07s/month, days=150, soc=1928][A[A
+
+rho0.00_seed2 monthly replay:  64%|██████▎   | 7/11 [04:24<02:12, 33.25s/month, days=242, soc=6777][A
+
+rho0.00_seed2 monthly replay:  73%|███████▎  | 8/11 [04:24<01:38, 32.89s/month, days=242, soc=6777][A
+rho0.00_seed1 monthly replay:  64%|██████▎   | 7/11 [04:24<02:13, 33.29s/month, days=242, soc=6660]
+rho0.00_seed1 monthly replay:  73%|███████▎  | 8/11 [04:24<01:39, 33.04s/month, days=242, soc=6660]
+
+
+
+
+
+rho0.25_seed0 monthly replay:  36%|███▋      | 4/11 [04:28<06:00, 51.54s/month, days=150, soc=1970][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  45%|████▌     | 5/11 [04:28<05:26, 54.39s/month, days=150, soc=1970][A[A[A[A[A
+
+rho0.00_seed2 monthly replay:  73%|███████▎  | 8/11 [04:57<01:38, 32.89s/month, days=273, soc=1325][A
+
+rho0.00_seed2 monthly replay:  82%|████████▏ | 9/11 [04:57<01:05, 32.97s/month, days=273, soc=1325][A
+rho0.00_seed1 monthly replay:  73%|███████▎  | 8/11 [04:57<01:39, 33.04s/month, days=273, soc=1246]
+rho0.00_seed1 monthly replay:  82%|████████▏ | 9/11 [04:57<01:06, 33.01s/month, days=273, soc=1246]
+
+
+
+rho0.15_seed1 monthly replay:  45%|████▌     | 5/11 [05:12<05:08, 51.47s/month, days=181, soc=4376][A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  55%|█████▍    | 6/11 [05:12<04:27, 53.41s/month, days=181, soc=4376][A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  45%|████▌     | 5/11 [05:12<05:12, 52.01s/month, days=181, soc=4077][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  55%|█████▍    | 6/11 [05:12<04:27, 53.49s/month, days=181, soc=4077][A[A[A[A
+
+
+rho0.15_seed0 monthly replay:  45%|████▌     | 5/11 [05:16<05:12, 52.07s/month, days=181, soc=4007][A[A
+
+
+rho0.15_seed0 monthly replay:  55%|█████▍    | 6/11 [05:16<04:30, 54.17s/month, days=181, soc=4007][A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  45%|████▌     | 5/11 [05:28<05:26, 54.39s/month, days=181, soc=4101][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  55%|█████▍    | 6/11 [05:28<04:41, 56.33s/month, days=181, soc=4101][A[A[A[A[A
+
+rho0.00_seed2 monthly replay:  82%|████████▏ | 9/11 [05:32<01:05, 32.97s/month, days=303, soc=9945][A
+
+rho0.00_seed2 monthly replay:  91%|█████████ | 10/11 [05:32<00:33, 33.56s/month, days=303, soc=9945][A
+rho0.00_seed1 monthly replay:  82%|████████▏ | 9/11 [05:32<01:06, 33.01s/month, days=303, soc=9917]
+rho0.00_seed1 monthly replay:  91%|█████████ | 10/11 [05:32<00:33, 33.55s/month, days=303, soc=9917]
+
+
+
+rho0.15_seed1 monthly replay:  55%|█████▍    | 6/11 [06:04<04:27, 53.41s/month, days=212, soc=3241][A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  64%|██████▎   | 7/11 [06:04<03:32, 53.00s/month, days=212, soc=3241][A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  55%|█████▍    | 6/11 [06:05<04:27, 53.49s/month, days=212, soc=3233][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  64%|██████▎   | 7/11 [06:05<03:32, 53.15s/month, days=212, soc=3233][A[A[A[A
+
+
+rho0.15_seed0 monthly replay:  55%|█████▍    | 6/11 [06:08<04:30, 54.17s/month, days=212, soc=3905][A[A
+
+
+rho0.15_seed0 monthly replay:  64%|██████▎   | 7/11 [06:08<03:34, 53.65s/month, days=212, soc=3905][A[A
+
+rho0.00_seed2 monthly replay:  91%|█████████ | 10/11 [06:10<00:33, 33.56s/month, days=334, soc=9518][A
+
+rho0.00_seed2 monthly replay: 100%|██████████| 11/11 [06:10<00:00, 34.93s/month, days=334, soc=9518][A
+rho0.00_seed2 monthly replay: 100%|██████████| 11/11 [06:10<00:00, 33.66s/month, days=334, soc=9518]
+
+parallel annual replays:  17%|█▋        | 1/6 [06:10<30:51, 370.24s/run]
+rho0.00_seed1 monthly replay:  91%|█████████ | 10/11 [06:10<00:33, 33.55s/month, days=334, soc=9512]
+rho0.00_seed1 monthly replay: 100%|██████████| 11/11 [06:10<00:00, 35.04s/month, days=334, soc=9512]
+rho0.00_seed1 monthly replay: 100%|██████████| 11/11 [06:10<00:00, 33.71s/month, days=334, soc=9512]
+
+parallel annual replays:  33%|███▎      | 2/6 [06:10<10:11, 152.83s/run]
+
+
+
+
+
+rho0.25_seed0 monthly replay:  55%|█████▍    | 6/11 [06:20<04:41, 56.33s/month, days=212, soc=3902][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  64%|██████▎   | 7/11 [06:20<03:40, 55.09s/month, days=212, soc=3902][A[A[A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  64%|██████▎   | 7/11 [06:51<03:32, 53.00s/month, days=242, soc=6174][A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  73%|███████▎  | 8/11 [06:51<02:33, 51.30s/month, days=242, soc=6174][A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  64%|██████▎   | 7/11 [06:52<03:32, 53.15s/month, days=242, soc=6380][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  73%|███████▎  | 8/11 [06:52<02:33, 51.27s/month, days=242, soc=6380][A[A[A[A
+
+
+rho0.15_seed0 monthly replay:  64%|██████▎   | 7/11 [06:57<03:34, 53.65s/month, days=242, soc=6242][A[A
+
+
+rho0.15_seed0 monthly replay:  73%|███████▎  | 8/11 [06:57<02:36, 52.15s/month, days=242, soc=6242][A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  64%|██████▎   | 7/11 [07:10<03:40, 55.09s/month, days=242, soc=6107][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  73%|███████▎  | 8/11 [07:10<02:40, 53.44s/month, days=242, soc=6107][A[A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  73%|███████▎  | 8/11 [07:40<02:33, 51.27s/month, days=273, soc=1338][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  82%|████████▏ | 9/11 [07:40<01:40, 50.41s/month, days=273, soc=1338][A[A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  73%|███████▎  | 8/11 [07:41<02:33, 51.30s/month, days=273, soc=1288][A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  82%|████████▏ | 9/11 [07:41<01:41, 50.72s/month, days=273, soc=1288][A[A[A
+
+
+rho0.15_seed0 monthly replay:  73%|███████▎  | 8/11 [07:46<02:36, 52.15s/month, days=273, soc=1302][A[A
+
+
+rho0.15_seed0 monthly replay:  82%|████████▏ | 9/11 [07:46<01:42, 51.20s/month, days=273, soc=1302][A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  73%|███████▎  | 8/11 [08:01<02:40, 53.44s/month, days=273, soc=1312][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  82%|████████▏ | 9/11 [08:01<01:45, 52.56s/month, days=273, soc=1312][A[A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  82%|████████▏ | 9/11 [08:35<01:40, 50.41s/month, days=303, soc=9941][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  91%|█████████ | 10/11 [08:35<00:51, 51.62s/month, days=303, soc=9941][A[A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  82%|████████▏ | 9/11 [08:35<01:41, 50.72s/month, days=303, soc=9914][A[A[A
+
+
+
+rho0.15_seed1 monthly replay:  91%|█████████ | 10/11 [08:35<00:51, 51.76s/month, days=303, soc=9914][A[A[A
+
+
+rho0.15_seed0 monthly replay:  82%|████████▏ | 9/11 [08:40<01:42, 51.20s/month, days=303, soc=9974][A[A
+
+
+rho0.15_seed0 monthly replay:  91%|█████████ | 10/11 [08:40<00:52, 52.09s/month, days=303, soc=9974][A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  82%|████████▏ | 9/11 [08:57<01:45, 52.56s/month, days=303, soc=9968][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay:  91%|█████████ | 10/11 [08:57<00:53, 53.51s/month, days=303, soc=9968][A[A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay:  91%|█████████ | 10/11 [09:41<00:51, 51.62s/month, days=334, soc=9564][A[A[A[A
+
+
+
+
+rho0.15_seed2 monthly replay: 100%|██████████| 11/11 [09:41<00:00, 56.15s/month, days=334, soc=9564][A[A[A[A
+rho0.15_seed2 monthly replay: 100%|██████████| 11/11 [09:41<00:00, 52.86s/month, days=334, soc=9564]
+
+parallel annual replays:  50%|█████     | 3/6 [09:41<08:57, 179.23s/run]
+
+
+
+rho0.15_seed1 monthly replay:  91%|█████████ | 10/11 [09:41<00:51, 51.76s/month, days=334, soc=9506][A[A[A
+
+
+
+rho0.15_seed1 monthly replay: 100%|██████████| 11/11 [09:41<00:00, 56.17s/month, days=334, soc=9506][A[A[A
+rho0.15_seed1 monthly replay: 100%|██████████| 11/11 [09:41<00:00, 52.87s/month, days=334, soc=9506]
+
+
+
+rho0.15_seed0 monthly replay:  91%|█████████ | 10/11 [09:48<00:52, 52.09s/month, days=334, soc=9284][A[A
+
+
+rho0.15_seed0 monthly replay: 100%|██████████| 11/11 [09:48<00:00, 56.75s/month, days=334, soc=9284][A[A
+rho0.15_seed0 monthly replay: 100%|██████████| 11/11 [09:48<00:00, 53.47s/month, days=334, soc=9284]
+
+parallel annual replays:  83%|████████▎ | 5/6 [09:48<01:19, 79.67s/run]
+
+
+
+
+
+rho0.25_seed0 monthly replay:  91%|█████████ | 10/11 [10:05<00:53, 53.51s/month, days=334, soc=9296][A[A[A[A[A
+
+
+
+
+
+rho0.25_seed0 monthly replay: 100%|██████████| 11/11 [10:05<00:00, 58.10s/month, days=334, soc=9296][A[A[A[A[A
+rho0.25_seed0 monthly replay: 100%|██████████| 11/11 [10:05<00:00, 55.05s/month, days=334, soc=9296]
+
+parallel annual replays: 100%|██████████| 6/6 [10:05<00:00, 61.72s/run]
+parallel annual replays: 100%|██████████| 6/6 [10:05<00:00, 100.93s/run]
+
+rho=0.15 intervals:   0%|          | 0/3 [00:00<?, ?block/s]
+
+bootstrap L=7:   0%|          | 0/4000 [00:00<?, ?sample/s][A
+
+bootstrap L=7:  34%|███▍      | 1362/4000 [00:00<00:00, 13615.47sample/s][A
+
+bootstrap L=7:  68%|██████▊   | 2732/4000 [00:00<00:00, 13664.18sample/s][A
+
+                                                                         [A
+rho=0.15 intervals:  33%|███▎      | 1/3 [00:00<00:00,  3.40block/s]
+
+bootstrap L=14:   0%|          | 0/4000 [00:00<?, ?sample/s][A
+
+bootstrap L=14:  34%|███▍      | 1356/4000 [00:00<00:00, 13559.43sample/s][A
+
+bootstrap L=14:  68%|██████▊   | 2717/4000 [00:00<00:00, 13588.44sample/s][A
+
+                                                                          [A
+rho=0.15 intervals:  67%|██████▋   | 2/3 [00:00<00:00,  3.40block/s]
+
+bootstrap L=28:   0%|          | 0/4000 [00:00<?, ?sample/s][A
+
+bootstrap L=28:  33%|███▎      | 1335/4000 [00:00<00:00, 13347.02sample/s][A
+
+bootstrap L=28:  68%|██████▊   | 2719/4000 [00:00<00:00, 13632.61sample/s][A
+
+                                                                          [A
+rho=0.15 intervals: 100%|██████████| 3/3 [00:00<00:00,  3.40block/s]
+rho=0.15 intervals: 100%|██████████| 3/3 [00:00<00:00,  3.40block/s]
+
+rho=0.25 intervals:   0%|          | 0/3 [00:00<?, ?block/s]
+
+bootstrap L=7:   0%|          | 0/4000 [00:00<?, ?sample/s][A
+
+bootstrap L=7:  34%|███▍      | 1353/4000 [00:00<00:00, 13523.66sample/s][A
+
+bootstrap L=7:  68%|██████▊   | 2719/4000 [00:00<00:00, 13603.57sample/s][A
+
+                                                                         [A
+rho=0.25 intervals:  33%|███▎      | 1/3 [00:00<00:00,  3.38block/s]
+
+bootstrap L=14:   0%|          | 0/4000 [00:00<?, ?sample/s][A
+
+bootstrap L=14:  34%|███▍      | 1368/4000 [00:00<00:00, 13677.14sample/s][A
+
+bootstrap L=14:  69%|██████▊   | 2747/4000 [00:00<00:00, 13736.64sample/s][A
+
+                                                                          [A
+rho=0.25 intervals:  67%|██████▋   | 2/3 [00:00<00:00,  3.40block/s]
+
+bootstrap L=28:   0%|          | 0/4000 [00:00<?, ?sample/s][A
+
+bootstrap L=28:  34%|███▍      | 1369/4000 [00:00<00:00, 13688.48sample/s][A
+
+bootstrap L=28:  68%|██████▊   | 2738/4000 [00:00<00:00, 13534.76sample/s][A
+
+                                                                          [A
+rho=0.25 intervals: 100%|██████████| 3/3 [00:00<00:00,  3.40block/s]
+rho=0.25 intervals: 100%|██████████| 3/3 [00:00<00:00,  3.40block/s]
+numerical experiments complete in 10.1 min
+
+causality days:   0%|          | 0/56 [00:00<?, ?day/s]
+causality days:   2%|▏         | 1/56 [00:07<06:45,  7.38s/day]
+causality days:   9%|▉         | 5/56 [00:07<00:58,  1.14s/day]
+causality days:  12%|█▎        | 7/56 [00:12<01:21,  1.66s/day]
+causality days:  14%|█▍        | 8/56 [00:12<01:04,  1.34s/day]
+causality days:  20%|█▉        | 11/56 [00:12<00:32,  1.37day/s]
+causality days:  21%|██▏       | 12/56 [00:13<00:27,  1.58day/s]
+causality days:  23%|██▎       | 13/56 [00:17<01:02,  1.46s/day]
+causality days:  25%|██▌       | 14/56 [00:18<00:50,  1.21s/day]
+causality days:  29%|██▊       | 16/56 [00:18<00:31,  1.26day/s]
+causality days:  30%|███       | 17/56 [00:18<00:26,  1.46day/s]
+causality days:  34%|███▍      | 19/56 [00:24<00:55,  1.49s/day]
+causality days:  38%|███▊      | 21/56 [00:24<00:34,  1.01day/s]
+causality days:  39%|███▉      | 22/56 [00:24<00:28,  1.17day/s]
+causality days:  41%|████      | 23/56 [00:24<00:22,  1.45day/s]
+causality days:  43%|████▎     | 24/56 [00:25<00:18,  1.72day/s]
+causality days:  45%|████▍     | 25/56 [00:29<00:50,  1.64s/day]
+causality days:  46%|████▋     | 26/56 [00:30<00:39,  1.32s/day]
+causality days:  50%|█████     | 28/56 [00:30<00:23,  1.19day/s]
+causality days:  52%|█████▏    | 29/56 [00:30<00:17,  1.51day/s]
+causality days:  54%|█████▎    | 30/56 [00:30<00:14,  1.84day/s]
+causality days:  55%|█████▌    | 31/56 [00:35<00:41,  1.64s/day]
+causality days:  57%|█████▋    | 32/56 [00:36<00:33,  1.39s/day]
+causality days:  59%|█████▉    | 33/56 [00:36<00:24,  1.05s/day]
+causality days:  61%|██████    | 34/56 [00:36<00:17,  1.26day/s]
+causality days:  64%|██████▍   | 36/56 [00:36<00:09,  2.17day/s]
+causality days:  66%|██████▌   | 37/56 [00:41<00:29,  1.56s/day]
+causality days:  68%|██████▊   | 38/56 [00:42<00:23,  1.29s/day]
+causality days:  71%|███████▏  | 40/56 [00:42<00:13,  1.22day/s]
+causality days:  77%|███████▋  | 43/56 [00:47<00:15,  1.20s/day]
+causality days:  79%|███████▊  | 44/56 [00:48<00:13,  1.14s/day]
+causality days:  80%|████████  | 45/56 [00:48<00:10,  1.06day/s]
+causality days:  82%|████████▏ | 46/56 [00:48<00:07,  1.32day/s]
+causality days:  84%|████████▍ | 47/56 [00:48<00:05,  1.68day/s]
+causality days:  86%|████████▌ | 48/56 [00:49<00:04,  1.91day/s]
+causality days:  88%|████████▊ | 49/56 [00:54<00:12,  1.73s/day]
+causality days:  89%|████████▉ | 50/56 [00:54<00:08,  1.39s/day]
+causality days:  91%|█████████ | 51/56 [00:55<00:05,  1.12s/day]
+causality days:  93%|█████████▎| 52/56 [00:55<00:03,  1.18day/s]
+causality days:  95%|█████████▍| 53/56 [00:55<00:02,  1.46day/s]
+causality days:  98%|█████████▊| 55/56 [01:00<00:01,  1.45s/day]
+causality days: 100%|██████████| 56/56 [01:00<00:00,  1.24s/day]
+causality days: 100%|██████████| 56/56 [01:00<00:00,  1.09s/day]
+{
+  "days": 56,
+  "decision_states": 224,
+  "workers": 6,
+  "max_plan_diff_kwh": 0.0,
+  "all_pass": true,
+  "wall_seconds": 60.95665933999999
+}

@@ -24,7 +24,7 @@
 | 问题 1 | ✅ 完成 | `result1.xlsx` | `code/problem1.ipynb` |
 | 问题 2 | ✅ 完成 | `result2.xlsx` | `code/q2_v32/q2_final.py` → `code/problem2_v32_final_output.ipynb` |
 | 问题 3 | ✅ 用户确认采用分位法 LP-MPC，现金费用13,386,086.28元 | `第三问_量化建模_改进版+分层融合/result3.xlsx` | 该目录 `code/q3.py` |
-| 问题 4 | ✅ 第二版交付包已入库并完成审查（variant Q4-e2549ddb99） | `第四问_完整交付_主体_第二版/result4-2.xlsx`、`result4-3.xlsx` | 该目录 `code/`（入口见包内 README_Q4.md） |
+| 问题 4 | ✅ 最终版：第二版主交付 + CVaR/因果性/泛化增强 | `第四问_完整交付_主体_第二版/result4-2.xlsx`、`result4-3.xlsx` | `第四问_Q4三项专项改进_v1/`（主体依赖第二版） |
 
 ---
 
@@ -54,7 +54,8 @@
 | `code/q2_v2/dispatch.py` | H1 逐时因果执行器（日前计划 → 日内实际动作） |
 | `code/q2_v2/utils.py` | 统一参数、单位与时间网格定义 |
 | `第三问_量化建模_改进版+分层融合/code/q3.py` | **问题 3 正式版**：分位法 LP-MPC（午夜/日内 α=0.60），正式工作簿为根目录与该包 `result3.xlsx`（现金费用 13,386,086.28 元） |
-| `第四问_完整交付_主体_第二版/` | **问题 4 正式交付包**（variant Q4-e2549ddb99）：Q4-2 分位法 α=0.675 = 15,127,539.71 元；Q4-3 HYBRID-4L = 14,028,199.24 元；工作簿在包内 |
+| `第四问_完整交付_主体_第二版/` | **问题 4 正式主交付包**（variant Q4-e2549ddb99）：Q4-2 分位法 α=0.675 = 15,127,539.71 元；Q4-3 HYBRID-4L = 14,028,199.24 元；工作簿在包内 |
+| `第四问_Q4三项专项改进_v1/` | **问题 4 最终稳健性补充**：冻结原六参数，增加 CVaR95 风险候选、224 状态因果性检查、时间泛化及 67 个续跑断点 |
 
 ### 研究记录（支撑论证，但不是生产口径）
 
@@ -81,6 +82,7 @@
 | `results/q2_v3_dual_terminal/` | 对偶终端价值首次实现 + VSS/EVPI |
 | `results/q2_fused_v2_extensions/` | CVaR 前沿、VSS/EVPI、滚动规划 |
 | `results/q2_hybrid_v1/`、`results/q2_planning_v1/`、`results/q2_fused_v2/` | 早期融合与规划实验 |
+| `第四问_Q4三项专项改进_v1/results/` | **Q4 最终稳健性证据**：CVaR95 Bootstrap、多种子、时间泛化与因果性检查 |
 
 ### 问题 2 最终模型一句话概括
 
